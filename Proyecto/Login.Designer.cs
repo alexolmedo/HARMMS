@@ -97,7 +97,6 @@
         }
 
         #endregion
-
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
