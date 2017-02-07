@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace Proyecto.Cliente
 {
     public partial class AgregarCliente : Form
     {
+        Conexion conexion = new Conexion();
         public AgregarCliente()
         {
             InitializeComponent();
@@ -27,6 +29,7 @@ namespace Proyecto.Cliente
             else
             {
                 MessageBox.Show("La cedula SI es valida", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
             }
         }
 
@@ -104,6 +107,11 @@ namespace Proyecto.Cliente
                 else
                 {
                     MessageBox.Show("La cedula SI es valida", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                    string sql = "INSERT INTO cliente VALUES ('" + txtCedAgrCliente.Text + "','" + txtNomAgrCliente.Text + "','" + txtTelAgrCliente.Text + "','" + txtDirecAgrCliente.Text + "','" + txtRUCAgrCliente.Text + "','" + txtCorreoAgrCliente.Text + "','H')";
+                    conexion.command = new SqlCommand(sql, conexion.connection);
+                    conexion.command.ExecuteNonQuery();
+                    conexion.command.Dispose();
                 }
             }
         }
