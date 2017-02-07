@@ -26,8 +26,16 @@ namespace Proyecto
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new VentanaModulos().Show();
-            this.Hide();
+            if (txtUsuario.Text.Equals("admin", StringComparison.Ordinal) && txtContrasena.Text.Equals("12345", StringComparison.Ordinal)){
+                new VentanaModulos().Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Los datos ingresados son incorrectos", "Login", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                txtContrasena.Text = "";
+                txtUsuario.Text = "";
+            }
         }
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
