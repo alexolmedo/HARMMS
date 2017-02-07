@@ -93,6 +93,7 @@
     <Compile Include="Cliente\SeleccionarCliente.Designer.cs">
       <DependentUpon>SeleccionarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Conexion.cs" />
     <Compile Include="Facturacion\ConsultarFactura.cs">
       <SubType>Form</SubType>
     </Compile>
