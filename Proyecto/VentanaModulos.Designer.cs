@@ -49,10 +49,10 @@
             this.deshabilitarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.consultarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -222,13 +222,6 @@
             this.nuevaCompraToolStripMenuItem.Text = "Ingresar";
             this.nuevaCompraToolStripMenuItem.Click += new System.EventHandler(this.nuevaVentaToolStripMenuItem_Click);
             // 
-            // eliminarCompraToolStripMenuItem
-            // 
-            this.eliminarCompraToolStripMenuItem.Name = "eliminarCompraToolStripMenuItem";
-            this.eliminarCompraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.eliminarCompraToolStripMenuItem.Text = "Eliminar";
-            this.eliminarCompraToolStripMenuItem.Click += new System.EventHandler(this.eliminarCompraToolStripMenuItem_Click);
-            // 
             // modificarCompraToolStripMenuItem
             // 
             this.modificarCompraToolStripMenuItem.Name = "modificarCompraToolStripMenuItem";
@@ -236,26 +229,33 @@
             this.modificarCompraToolStripMenuItem.Text = "Actualizar";
             this.modificarCompraToolStripMenuItem.Click += new System.EventHandler(this.modificarCompraToolStripMenuItem_Click);
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.facturaciónToolStripMenuItem,
-            this.repuestosToolStripMenuItem,
-            this.órdenesDeTrabajoToolStripMenuItem,
-            this.ventasToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(774, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
             // consultarToolStripMenuItem2
             // 
             this.consultarToolStripMenuItem2.Name = "consultarToolStripMenuItem2";
             this.consultarToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.consultarToolStripMenuItem2.Text = "Consultar";
             this.consultarToolStripMenuItem2.Click += new System.EventHandler(this.consultarToolStripMenuItem2_Click);
+            // 
+            // eliminarCompraToolStripMenuItem
+            // 
+            this.eliminarCompraToolStripMenuItem.Name = "eliminarCompraToolStripMenuItem";
+            this.eliminarCompraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eliminarCompraToolStripMenuItem.Text = "Eliminar";
+            this.eliminarCompraToolStripMenuItem.Click += new System.EventHandler(this.eliminarCompraToolStripMenuItem_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.repuestosToolStripMenuItem,
+            this.ventasToolStripMenuItem,
+            this.órdenesDeTrabajoToolStripMenuItem,
+            this.facturaciónToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(774, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // VentanaModulos
             // 
