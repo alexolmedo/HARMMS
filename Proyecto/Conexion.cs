@@ -20,7 +20,7 @@ namespace Proyecto
             string connectionString;
 
             // Debe existir un archivo de texto loginbase.txt conteniendo un string de la forma:
-            // Data Source=localhost;Initial Catalog=propietarios;User ID=sa;Password=qwerty
+            // Data Source=localhost;Initial Catalog=ProyPropietarios;User ID=sa;Password=qwerty
             // en la carpeta Proyecto\
 
             System.IO.StreamReader file = new System.IO.StreamReader("../../../loginbase.txt");

@@ -13,9 +13,6 @@ namespace Proyecto
 {
     public partial class Login : Form
     {
-        SqlConnection connection;
-        SqlCommand command;
-
         public Login()
         {
             InitializeComponent();
