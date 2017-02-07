@@ -136,3 +136,35 @@ C:\Users\Mayra\Documents\Visual Studio 2013\Projects\ProyectoAct\Proyecto\obj\De
 C:\Users\Mayra\Documents\Visual Studio 2013\Projects\ProyectoAct\Proyecto\obj\Debug\Proyecto.Repuestos.DeshabilitarRepuesto.resources
 C:\Users\Mayra\Documents\Visual Studio 2013\Projects\ProyectoAct\Proyecto\obj\Debug\Proyecto.Repuestos.ModificarRepuesto.resources
 C:\Users\Mayra\Documents\Visual Studio 2013\Projects\ProyectoAct\Proyecto\obj\Debug\Proyecto.OrdenesTrabajo.DeshabilitarOrden.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\bin\Debug\Proyecto.exe.config
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.exe
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.pdb
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\bin\Debug\Proyecto.exe
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\bin\Debug\Proyecto.pdb
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.csprojResolveAssemblyReference.cache
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.Cliente.ActualizarCliente.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.Cliente.AgregarCliente.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.Cliente.ConsultarCliente.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.Cliente.DeshabilitarCliente.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.Cliente.SeleccionarCliente.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.Facturacion.ConsultarFactura.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.Facturacion.DeshabilitarFactura.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.Facturacion.GenerarFactura.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.GestionElectrodomesticos.ConsultarElectrodomestico.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.GestionElectrodomesticos.EliminarCompra.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.GestionElectrodomesticos.SeleccionarElectrodomestico.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.GestionElectrodomesticos.IngresarCompra.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.GestionElectrodomesticos.ModificarCompra.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.Login.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.OrdenesTrabajo.ConsultarOrden.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.OrdenesTrabajo.DeshabilitarOrden.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.OrdenesTrabajo.IngresarOrden.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.OrdenesTrabajo.ModificarOrden.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.Repuestos.ConsultarRepuesto.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.Repuestos.DeshabilitarRepuesto.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.Repuestos.IngresarRepuesto.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.Repuestos.ModificarRepuesto.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.VentanaModulos.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.SplashScreen.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.Properties.Resources.resources
+C:\Users\Mayra\Documents\GitHub\Proyecto\Proyecto\obj\Debug\Proyecto.csproj.GenerateResource.Cache
