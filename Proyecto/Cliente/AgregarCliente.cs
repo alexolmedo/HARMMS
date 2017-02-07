@@ -90,13 +90,21 @@ namespace Proyecto.Cliente
 
         private void btnAgregarAgrCliente_Click(object sender, EventArgs e)
         {
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtCedAgrCliente.Text, "^[0-9]{10}$"))
-            {
-                MessageBox.Show("La cedula NO es valida", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            if (txtNomAgrCliente.Text.Equals("") || txtCedAgrCliente.Text.Equals("") || txtDirecAgrCliente.Text.Equals("") || txtTelAgrCliente.Text.Equals("") || txtCorreoAgrCliente.Text.Equals("")) {
+
+                MessageBox.Show("Datos Incompletos, los campos con * son obligatorios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
             }
-            else
-            {
-                MessageBox.Show("La cedula SI es valida", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            else if (!txtNomAgrCliente.Text.Equals("") || !txtCedAgrCliente.Text.Equals("") || !txtDirecAgrCliente.Text.Equals("") || !txtTelAgrCliente.Text.Equals("") || !txtCorreoAgrCliente.Text.Equals("")) {
+
+                if (!System.Text.RegularExpressions.Regex.IsMatch(txtCedAgrCliente.Text, "^[0-9]{10}$"))
+                {
+                    MessageBox.Show("La cedula NO es valida", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                else
+                {
+                    MessageBox.Show("La cedula SI es valida", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
             }
         }
 
@@ -138,6 +146,11 @@ namespace Proyecto.Cliente
             {
                 e.Handled = true;
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
