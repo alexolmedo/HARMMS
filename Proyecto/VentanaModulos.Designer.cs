@@ -218,28 +218,28 @@
             // nuevaCompraToolStripMenuItem
             // 
             this.nuevaCompraToolStripMenuItem.Name = "nuevaCompraToolStripMenuItem";
-            this.nuevaCompraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nuevaCompraToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.nuevaCompraToolStripMenuItem.Text = "Ingresar";
             this.nuevaCompraToolStripMenuItem.Click += new System.EventHandler(this.nuevaVentaToolStripMenuItem_Click);
             // 
             // modificarCompraToolStripMenuItem
             // 
             this.modificarCompraToolStripMenuItem.Name = "modificarCompraToolStripMenuItem";
-            this.modificarCompraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.modificarCompraToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.modificarCompraToolStripMenuItem.Text = "Actualizar";
             this.modificarCompraToolStripMenuItem.Click += new System.EventHandler(this.modificarCompraToolStripMenuItem_Click);
             // 
             // consultarToolStripMenuItem2
             // 
             this.consultarToolStripMenuItem2.Name = "consultarToolStripMenuItem2";
-            this.consultarToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.consultarToolStripMenuItem2.Size = new System.Drawing.Size(126, 22);
             this.consultarToolStripMenuItem2.Text = "Consultar";
             this.consultarToolStripMenuItem2.Click += new System.EventHandler(this.consultarToolStripMenuItem2_Click);
             // 
             // eliminarCompraToolStripMenuItem
             // 
             this.eliminarCompraToolStripMenuItem.Name = "eliminarCompraToolStripMenuItem";
-            this.eliminarCompraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eliminarCompraToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.eliminarCompraToolStripMenuItem.Text = "Eliminar";
             this.eliminarCompraToolStripMenuItem.Click += new System.EventHandler(this.eliminarCompraToolStripMenuItem_Click);
             // 
@@ -269,6 +269,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "VentanaModulos";
             this.Text = "HARMMS";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.VentanaModulos_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
