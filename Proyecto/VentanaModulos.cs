@@ -25,93 +25,93 @@ namespace Proyecto
 
         private void insertarClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Cliente.AgregarCliente().Show();
+            new Cliente.AgregarCliente().ShowDialog();
             //this.Enabled = false;
         }
 
         private void consultarClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Cliente.ConsultarCliente().Show();
+            new Cliente.ConsultarCliente().ShowDialog();
         }
 
         private void actualizarClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Cliente.ActualizarCliente().Show();
+            new Cliente.ActualizarCliente().ShowDialog();
         }
 
         private void eliminarClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Cliente.DeshabilitarCliente().Show();
+            new Cliente.DeshabilitarCliente().ShowDialog();
         }
 
         private void generarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Facturacion.GenerarFactura().Show();
+            new Facturacion.GenerarFactura().ShowDialog();
         }
 
         private void consultarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Facturacion.ConsultarFactura().Show();
+            new Facturacion.ConsultarFactura().ShowDialog();
         }
 
         private void deshabilitarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Facturacion.DeshabilitarFactura().Show();
+            new Facturacion.DeshabilitarFactura().ShowDialog();
         }
 
         private void ingresarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Repuestos.IngresarRepuesto().Show();
+            new Repuestos.IngresarRepuesto().ShowDialog();
         }
 
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Repuestos.ModificarRepuesto().Show();
+            new Repuestos.ModificarRepuesto().ShowDialog();
         }
 
         private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new Repuestos.ConsultarRepuesto().Show();
+            new Repuestos.ConsultarRepuesto().ShowDialog();
         }
 
         private void deshabilitarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new Repuestos.DeshabilitarRepuesto().Show();
+            new Repuestos.DeshabilitarRepuesto().ShowDialog();
         }
 
         private void insertarOrdenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new OrdenesTrabajo.IngresarOrden().Show();
+            new OrdenesTrabajo.IngresarOrden().ShowDialog();
         }
 
         private void consultarOrdenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new OrdenesTrabajo.ModificarOrden().Show();
+            new OrdenesTrabajo.ModificarOrden().ShowDialog();
         }
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new OrdenesTrabajo.ConsultarOrden().Show();
+            new OrdenesTrabajo.ConsultarOrden().ShowDialog();
         }
 
         private void deshabilitarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new OrdenesTrabajo.DeshabilitarOrden().Show();
+            new OrdenesTrabajo.DeshabilitarOrden().ShowDialog();
         }
 
         private void nuevaVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new GestionElectrodomesticos.IngresarCompra().Show();
+            new GestionElectrodomesticos.IngresarCompra().ShowDialog();
         }
 
         private void modificarCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new GestionElectrodomesticos.ModificarCompra().Show();
+            new GestionElectrodomesticos.ModificarCompra().ShowDialog();
         }
 
         private void eliminarCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new GestionElectrodomesticos.EliminarCompra().Show();
+            new GestionElectrodomesticos.EliminarCompra().ShowDialog();
         }
 
         private void usadoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -121,7 +121,7 @@ namespace Proyecto
 
         private void consultarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            new GestionElectrodomesticos.ConsultarElectrodomestico().Show();
+            new GestionElectrodomesticos.ConsultarElectrodomestico().ShowDialog();
         }
     }
 }
