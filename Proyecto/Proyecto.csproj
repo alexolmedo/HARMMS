@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4AD887FF-1FE8-4231-8A43-80F0505ED18F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Proyecto</RootNamespace>
+    <AssemblyName>Proyecto</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cliente\ActualizarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\ActualizarCliente.Designer.cs">
+      <DependentUpon>ActualizarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\AgregarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\AgregarCliente.Designer.cs">
+      <DependentUpon>AgregarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\ConsultarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\ConsultarCliente.Designer.cs">
+      <DependentUpon>ConsultarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\DeshabilitarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\DeshabilitarCliente.Designer.cs">
+      <DependentUpon>DeshabilitarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\SeleccionarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\SeleccionarCliente.Designer.cs">
+      <DependentUpon>SeleccionarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\ConsultarFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturacion\ConsultarFactura.Designer.cs">
+      <DependentUpon>ConsultarFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\DeshabilitarFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturacion\DeshabilitarFactura.Designer.cs">
+      <DependentUpon>DeshabilitarFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\GenerarFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturacion\GenerarFactura.Designer.cs">
+      <DependentUpon>GenerarFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionElectrodomesticos\EliminarCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionElectrodomesticos\EliminarCompra.Designer.cs">
+      <DependentUpon>EliminarCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionElectrodomesticos\ConsultarElectrodomestico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionElectrodomesticos\ConsultarElectrodomestico.Designer.cs">
+      <DependentUpon>ConsultarElectrodomestico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionElectrodomesticos\SeleccionarElectrodomestico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionElectrodomesticos\SeleccionarElectrodomestico.Designer.cs">
+      <DependentUpon>SeleccionarElectrodomestico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionElectrodomesticos\IngresarCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionElectrodomesticos\IngresarCompra.Designer.cs">
+      <DependentUpon>IngresarCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionElectrodomesticos\ModificarCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionElectrodomesticos\ModificarCompra.Designer.cs">
+      <DependentUpon>ModificarCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdenesTrabajo\ConsultarOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdenesTrabajo\ConsultarOrden.Designer.cs">
+      <DependentUpon>ConsultarOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdenesTrabajo\DeshabilitarOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdenesTrabajo\DeshabilitarOrden.Designer.cs">
+      <DependentUpon>DeshabilitarOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdenesTrabajo\IngresarOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdenesTrabajo\IngresarOrden.Designer.cs">
+      <DependentUpon>IngresarOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdenesTrabajo\ModificarOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdenesTrabajo\ModificarOrden.Designer.cs">
+      <DependentUpon>ModificarOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Repuestos\ConsultarRepuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Repuestos\ConsultarRepuesto.Designer.cs">
+      <DependentUpon>ConsultarRepuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repuestos\DeshabilitarRepuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Repuestos\DeshabilitarRepuesto.Designer.cs">
+      <DependentUpon>DeshabilitarRepuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repuestos\IngresarRepuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Repuestos\IngresarRepuesto.Designer.cs">
+      <DependentUpon>IngresarRepuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repuestos\ModificarRepuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Repuestos\ModificarRepuesto.Designer.cs">
+      <DependentUpon>ModificarRepuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaModulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaModulos.Designer.cs">
+      <DependentUpon>VentanaModulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Cliente\ActualizarCliente.resx">
+      <DependentUpon>ActualizarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\AgregarCliente.resx">
+      <DependentUpon>AgregarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\ConsultarCliente.resx">
+      <DependentUpon>ConsultarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\DeshabilitarCliente.resx">
+      <DependentUpon>DeshabilitarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\SeleccionarCliente.resx">
+      <DependentUpon>SeleccionarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\ConsultarFactura.resx">
+      <DependentUpon>ConsultarFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\DeshabilitarFactura.resx">
+      <DependentUpon>DeshabilitarFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\GenerarFactura.resx">
+      <DependentUpon>GenerarFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionElectrodomesticos\ConsultarElectrodomestico.resx">
+      <DependentUpon>ConsultarElectrodomestico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionElectrodomesticos\EliminarCompra.resx">
+      <DependentUpon>EliminarCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionElectrodomesticos\SeleccionarElectrodomestico.resx">
+      <DependentUpon>SeleccionarElectrodomestico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionElectrodomesticos\IngresarCompra.resx">
+      <DependentUpon>IngresarCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionElectrodomesticos\ModificarCompra.resx">
+      <DependentUpon>ModificarCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdenesTrabajo\ConsultarOrden.resx">
+      <DependentUpon>ConsultarOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdenesTrabajo\DeshabilitarOrden.resx">
+      <DependentUpon>DeshabilitarOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdenesTrabajo\IngresarOrden.resx">
+      <DependentUpon>IngresarOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdenesTrabajo\ModificarOrden.resx">
+      <DependentUpon>ModificarOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repuestos\ConsultarRepuesto.resx">
+      <DependentUpon>ConsultarRepuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repuestos\DeshabilitarRepuesto.resx">
+      <DependentUpon>DeshabilitarRepuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repuestos\IngresarRepuesto.resx">
+      <DependentUpon>IngresarRepuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Repuestos\ModificarRepuesto.resx">
+      <DependentUpon>ModificarRepuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaModulos.resx">
+      <DependentUpon>VentanaModulos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\retinaicons_180x180_appliancerepair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spinner.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backround.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blanco1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actualizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deshabilitar.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
