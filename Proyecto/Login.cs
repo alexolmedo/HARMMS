@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,42 @@ namespace Proyecto
 {
     public partial class Login : Form
     {
+        SqlConnection connection;
+        SqlCommand command;
+
         public Login()
         {
             InitializeComponent();
             this.CenterToScreen();
+
+            string connectionString;
+
+            // Debe existir un archivo de texto loginbase.txt conteniendo un string de la forma:
+            // Data Source=localhost;Initial Catalog=propietarios;User ID=sa;Password=qwerty
+            // en la carpeta Proyecto\
+
+            System.IO.StreamReader file = new System.IO.StreamReader("../../../loginbase.txt");
+            connectionString = file.ReadLine();
+
+            string sql = null;
+
+            sql = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES";
+
+            connection = new SqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                command = new SqlCommand(sql, connection);
+                command.ExecuteNonQuery();
+                command.Dispose();
+                //connection.Close();
+                MessageBox.Show("¡La conexion es correcta! ");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("¡No se puede conectar! ");
+            }
+
         }
 
         private void label1_Click(object sender, EventArgs e)
