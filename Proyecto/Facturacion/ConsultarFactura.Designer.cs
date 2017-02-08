@@ -75,6 +75,7 @@
             this.btnCerrarAgrCliente.Text = "Cerrar";
             this.btnCerrarAgrCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCerrarAgrCliente.UseVisualStyleBackColor = true;
+            this.btnCerrarAgrCliente.Click += new System.EventHandler(this.btnCerrarAgrCliente_Click);
             // 
             // groupBox2
             // 
@@ -177,6 +178,8 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(563, 125);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
             // id_Prod_OT
             // 
@@ -340,7 +343,7 @@
             this.textBox14.Size = new System.Drawing.Size(153, 20);
             this.textBox14.TabIndex = 0;
             // 
-            // Form1
+            // ConsultarFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -349,7 +352,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
-            this.Name = "Form1";
+            this.Name = "ConsultarFactura";
             this.Text = "Consultar Factura";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

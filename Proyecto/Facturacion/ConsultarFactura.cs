@@ -16,5 +16,21 @@ namespace Proyecto.Facturacion
         {
             InitializeComponent();
         }
+
+        private void btnCerrarAgrCliente_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Console.Write("doble click");
+            new Facturacion.ConsultarFactura().ShowDialog();
+        }
     }
 }

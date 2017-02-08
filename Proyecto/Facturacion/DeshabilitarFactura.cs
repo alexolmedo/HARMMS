@@ -17,5 +17,10 @@ namespace Proyecto.Facturacion
             InitializeComponent();
             this.CenterToScreen();
         }
+
+        private void btnCerrarAgrCliente_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

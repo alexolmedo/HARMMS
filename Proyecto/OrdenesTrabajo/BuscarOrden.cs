@@ -8,17 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Proyecto.Repuestos
+namespace Proyecto.OrdenesTrabajo
 {
-    public partial class ModificarRepuesto : Form
+    public partial class BuscarOrden : Form
     {
-        public ModificarRepuesto()
+        public BuscarOrden()
         {
             InitializeComponent();
-            this.CenterToScreen();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
             this.Close();
         }

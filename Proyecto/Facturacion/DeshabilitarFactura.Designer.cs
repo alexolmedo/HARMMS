@@ -352,6 +352,7 @@
             this.btnCerrarAgrCliente.Text = "Cerrar";
             this.btnCerrarAgrCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCerrarAgrCliente.UseVisualStyleBackColor = true;
+            this.btnCerrarAgrCliente.Click += new System.EventHandler(this.btnCerrarAgrCliente_Click);
             // 
             // DeshabilitarFactura
             // 
