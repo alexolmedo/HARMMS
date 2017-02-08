@@ -39,11 +39,6 @@ namespace Proyecto
             new Cliente.ActualizarCliente().ShowDialog();
         }
 
-        private void eliminarClienteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new Cliente.DeshabilitarCliente().ShowDialog();
-        }
-
         private void generarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Facturacion.GenerarFactura().ShowDialog();

@@ -32,7 +32,6 @@
             this.insertarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.darDeBajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generarFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,8 +65,7 @@
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.insertarClienteToolStripMenuItem,
             this.actualizarClienteToolStripMenuItem,
-            this.consultarClienteToolStripMenuItem,
-            this.darDeBajaToolStripMenuItem});
+            this.consultarClienteToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(56, 20);
             this.toolStripMenuItem1.Text = "Cliente";
@@ -83,7 +81,7 @@
             // 
             this.actualizarClienteToolStripMenuItem.Name = "actualizarClienteToolStripMenuItem";
             this.actualizarClienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.actualizarClienteToolStripMenuItem.Text = "Actualizar";
+            this.actualizarClienteToolStripMenuItem.Text = "Modificar";
             this.actualizarClienteToolStripMenuItem.Click += new System.EventHandler(this.actualizarClienteToolStripMenuItem_Click);
             // 
             // consultarClienteToolStripMenuItem
@@ -92,13 +90,6 @@
             this.consultarClienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.consultarClienteToolStripMenuItem.Text = "Consultar";
             this.consultarClienteToolStripMenuItem.Click += new System.EventHandler(this.consultarClienteToolStripMenuItem_Click);
-            // 
-            // darDeBajaToolStripMenuItem
-            // 
-            this.darDeBajaToolStripMenuItem.Name = "darDeBajaToolStripMenuItem";
-            this.darDeBajaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.darDeBajaToolStripMenuItem.Text = "Dar de baja";
-            this.darDeBajaToolStripMenuItem.Click += new System.EventHandler(this.darDeBajaToolStripMenuItem_Click);
             // 
             // facturaciónToolStripMenuItem
             // 
@@ -352,7 +343,6 @@
         private System.Windows.Forms.ToolStripMenuItem administraciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem parámetrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem darDeBajaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem parámetrosOrdenDeTrabajoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
 
