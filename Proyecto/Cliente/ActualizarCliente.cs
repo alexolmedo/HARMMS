@@ -80,7 +80,7 @@ namespace Proyecto.Cliente
             {
                 Console.WriteLine(dirActCliente);
                 string sql = "Update cliente set CI_Cliente = '" + cedActCliente.Text + "', NombreCliente ='" + nomActCliente.Text + "', TelefonoCliente='" + telActCliente.Text + 
-                    "',DireccionCliente='" + dirActCliente.Text + "',RUCCliente='" + RUCActCliente.Text + "',correoCliente='" + correoActCliente.Text + "',EstadoCliente ='" + comboBoxEstC + "' where CI_Cliente = '"+ cedActCliente.Text +"'";
+                    "',DireccionCliente='" + dirActCliente.Text + "',RUCCliente='" + RUCActCliente.Text + "',correoCliente='" + correoActCliente.Text + "',EstadoCliente ='" + comboBoxEstC.SelectedItem + "' where CI_Cliente = '"+ cedActCliente.Text +"'";
                 Console.WriteLine(sql);
                    
                 conexion.command = new SqlCommand(sql, conexion.connection);
@@ -205,6 +205,7 @@ namespace Proyecto.Cliente
                     dirActCliente.Text = r[3].ToString();
                     RUCActCliente.Text = r[4].ToString();
                     correoActCliente.Text = r[5].ToString();
+                    comboBoxEstC.SelectedItem = r[6];
                 }
 
             }

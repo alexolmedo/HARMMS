@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBoxEstC = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.correoActCliente = new System.Windows.Forms.TextBox();
             this.RUCActCliente = new System.Windows.Forms.TextBox();
             this.dirActCliente = new System.Windows.Forms.TextBox();
@@ -44,13 +46,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.radioButCed = new System.Windows.Forms.RadioButton();
             this.radioButNombre = new System.Windows.Forms.RadioButton();
             this.btnCerrarAgrCliente = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBoxEstC = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -78,6 +78,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // comboBoxEstC
+            // 
+            this.comboBoxEstC.FormattingEnabled = true;
+            this.comboBoxEstC.Items.AddRange(new object[] {
+            "H",
+            "D"});
+            this.comboBoxEstC.Location = new System.Drawing.Point(350, 100);
+            this.comboBoxEstC.Name = "comboBoxEstC";
+            this.comboBoxEstC.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxEstC.TabIndex = 62;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(269, 103);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.TabIndex = 61;
+            this.label7.Text = "Estado";
             // 
             // correoActCliente
             // 
@@ -209,6 +229,19 @@
             this.txtNombre.Size = new System.Drawing.Size(167, 20);
             this.txtNombre.TabIndex = 20;
             // 
+            // button2
+            // 
+            this.button2.Image = global::Proyecto.Properties.Resources.buscar;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(357, 52);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 32);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Buscar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // radioButCed
             // 
             this.radioButCed.AutoSize = true;
@@ -246,19 +279,6 @@
             this.btnCerrarAgrCliente.UseVisualStyleBackColor = true;
             this.btnCerrarAgrCliente.Click += new System.EventHandler(this.btnCerrarAgrCliente_Click);
             // 
-            // button2
-            // 
-            this.button2.Image = global::Proyecto.Properties.Resources.buscar;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(357, 52);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 32);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Buscar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button1
             // 
             this.button1.Image = global::Proyecto.Properties.Resources.Notepad;
@@ -271,26 +291,6 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(269, 103);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
-            this.label7.TabIndex = 61;
-            this.label7.Text = "Estado";
-            // 
-            // comboBoxEstC
-            // 
-            this.comboBoxEstC.FormattingEnabled = true;
-            this.comboBoxEstC.Items.AddRange(new object[] {
-            "Habilitado",
-            "Deshabilitado"});
-            this.comboBoxEstC.Location = new System.Drawing.Point(350, 100);
-            this.comboBoxEstC.Name = "comboBoxEstC";
-            this.comboBoxEstC.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxEstC.TabIndex = 62;
             // 
             // ActualizarCliente
             // 
