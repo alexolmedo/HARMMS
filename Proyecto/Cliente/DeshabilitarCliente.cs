@@ -76,7 +76,20 @@ namespace Proyecto.Cliente
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("¿Confirma eliminar cliente?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
+
+
+            DialogResult dr = MessageBox.Show("¿Confirma dar de baja cliente?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
+
+            if (dr == DialogResult.Yes)
+            {
+                Console.WriteLine(dirBCliente);
+                string sql = "delete from cliente where CI_Cliente = '" + cedBCliente.Text + "'";
+                Console.WriteLine(sql);
+
+                conexion.command = new SqlCommand(sql, conexion.connection);
+                conexion.command.ExecuteNonQuery();
+                conexion.command.Dispose();
+            }
         }
 
         private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
@@ -96,6 +109,50 @@ namespace Proyecto.Cliente
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string strquery3 = "";
+
+                if (radioButNombre.Checked)
+                {
+                    strquery3 = "Select * from cliente where NombreCliente = '" + txtNombre.Text + "'";
+                }
+
+                if (radioButCed.Checked)
+                {
+                    strquery3 = "Select * from cliente where CI_Cliente = " + txtCedula.Text + "";
+                }
+
+                conexion.command = new SqlCommand(strquery3, conexion.connection);
+
+                da = new SqlDataAdapter();
+                //fetching query in the database.
+                da.SelectCommand = conexion.command;
+                //inicializar nueva datatable
+                dt = new DataTable();
+                //refresca las filas segun el rango especificado en el datasource. 
+                da.Fill(dt);
+
+                foreach (DataRow r in dt.Rows)
+                {
+                    //obtiene todas las filas de una columna
+                    cedBCliente.Text = r[0].ToString();
+                    nomBCliente.Text = r[1].ToString();
+                    telBCliente.Text = r[2].ToString();
+                    dirBCliente.Text = r[3].ToString();
+                    RUCBCliente.Text = r[4].ToString();
+                    correoBCliente.Text = r[5].ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
     }
 }

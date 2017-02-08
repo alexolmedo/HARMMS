@@ -80,7 +80,7 @@ namespace Proyecto.Cliente
             {
                 Console.WriteLine(dirActCliente);
                 string sql = "Update cliente set CI_Cliente = '" + cedActCliente.Text + "', NombreCliente ='" + nomActCliente.Text + "', TelefonoCliente='" + telActCliente.Text + 
-                    "',DireccionCliente='" + dirActCliente.Text + "',RUCCliente='" + RUCActCliente.Text + "',correoCliente='" + correoActCliente.Text + "',EstadoCliente ='H' where CI_Cliente = '"+ cedActCliente.Text +"'";
+                    "',DireccionCliente='" + dirActCliente.Text + "',RUCCliente='" + RUCActCliente.Text + "',correoCliente='" + correoActCliente.Text + "',EstadoCliente ='" + comboBoxEstC + "' where CI_Cliente = '"+ cedActCliente.Text +"'";
                 Console.WriteLine(sql);
                    
                 conexion.command = new SqlCommand(sql, conexion.connection);
@@ -217,6 +217,11 @@ namespace Proyecto.Cliente
         private void btnCerrarAgrCliente_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
