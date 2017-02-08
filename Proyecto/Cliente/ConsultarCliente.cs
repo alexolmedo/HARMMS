@@ -109,25 +109,26 @@ namespace Proyecto.Cliente
                     strquery3 = "Select * from cliente where CI_Cliente = " + txtCedula.Text + "";
                 }
                 
-            conexion.command = new SqlCommand(strquery3, conexion.connection);
+                conexion.command = new SqlCommand(strquery3, conexion.connection);
 
-            da = new SqlDataAdapter();
-            //fetching query in the database.
-            da.SelectCommand = conexion.command;
-            //inicializar nueva datatable
-            dt = new DataTable();
-            //refresca las filas segun el rango especificado en el datasource. 
-            da.Fill(dt);
+                da = new SqlDataAdapter();
+                //fetching query in the database.
+                da.SelectCommand = conexion.command;
+                //inicializar nueva datatable
+                dt = new DataTable();
+                //refresca las filas segun el rango especificado en el datasource. 
+                da.Fill(dt);
 
-            foreach (DataRow r in dt.Rows)
-            {
-                //obtiene todas las filas de una columna
-                nomConCliente.Text = r[1].ToString();
-                cedConCliente.Text = r[0].ToString();
-
-                
-    
-            }
+                foreach (DataRow r in dt.Rows)
+                {
+                    //obtiene todas las filas de una columna
+                    cedConCliente.Text = r[0].ToString();
+                    nomConCliente.Text = r[1].ToString();
+                    telConCliente.Text = r[2].ToString();
+                    dirConCliente.Text = r[3].ToString();
+                    RUCConCliente.Text = r[4].ToString();
+                    correoConCliente.Text = r[5].ToString();
+                }
 
             }
             catch (Exception ex)
