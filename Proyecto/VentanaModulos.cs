@@ -51,7 +51,7 @@ namespace Proyecto
 
         private void consultarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Facturacion.ConsultarFactura().ShowDialog();
+            new Facturacion.BuscarFactura().ShowDialog();
         }
 
         private void deshabilitarFacturaToolStripMenuItem_Click(object sender, EventArgs e)

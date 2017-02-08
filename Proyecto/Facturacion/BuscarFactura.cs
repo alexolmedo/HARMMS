@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Proyecto.Facturacion
 {
-    public partial class ConsultarFactura : Form
+    public partial class BuscarFactura : Form
     {
-        public ConsultarFactura()
+        public BuscarFactura()
         {
             InitializeComponent();
             this.CenterToScreen();
@@ -44,6 +44,11 @@ namespace Proyecto.Facturacion
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
         {
 
         }

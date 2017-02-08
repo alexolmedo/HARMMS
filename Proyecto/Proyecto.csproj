@@ -94,11 +94,11 @@
       <DependentUpon>SeleccionarCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Conexion.cs" />
-    <Compile Include="Facturacion\ConsultarFactura.cs">
+    <Compile Include="Facturacion\BuscarFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Facturacion\ConsultarFactura.Designer.cs">
-      <DependentUpon>ConsultarFactura.cs</DependentUpon>
+    <Compile Include="Facturacion\BuscarFactura.Designer.cs">
+      <DependentUpon>BuscarFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="Facturacion\DeshabilitarFactura.cs">
       <SubType>Form</SubType>
@@ -230,8 +230,8 @@
     <EmbeddedResource Include="Cliente\SeleccionarCliente.resx">
       <DependentUpon>SeleccionarCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Facturacion\ConsultarFactura.resx">
-      <DependentUpon>ConsultarFactura.cs</DependentUpon>
+    <EmbeddedResource Include="Facturacion\BuscarFactura.resx">
+      <DependentUpon>BuscarFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion\DeshabilitarFactura.resx">
       <DependentUpon>DeshabilitarFactura.cs</DependentUpon>
