@@ -57,5 +57,40 @@ namespace Proyecto.OrdenesTrabajo
         {
 
         }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            new Cliente.AgregarCliente().ShowDialog();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            new Cliente.AgregarCliente().ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
