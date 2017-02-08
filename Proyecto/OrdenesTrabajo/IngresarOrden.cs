@@ -42,5 +42,10 @@ namespace Proyecto.OrdenesTrabajo
         {
             new GestionElectrodomesticos.IngresarCompra().Show();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

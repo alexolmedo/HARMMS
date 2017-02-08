@@ -63,7 +63,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabReparacion);
             this.tabControl1.Controls.Add(this.tabVenta);
-            this.tabControl1.Location = new System.Drawing.Point(71, 36);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(644, 386);
@@ -202,7 +202,7 @@
             this.tabVenta.Location = new System.Drawing.Point(4, 22);
             this.tabVenta.Name = "tabVenta";
             this.tabVenta.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVenta.Size = new System.Drawing.Size(636, 433);
+            this.tabVenta.Size = new System.Drawing.Size(636, 360);
             this.tabVenta.TabIndex = 1;
             this.tabVenta.Text = "Venta";
             this.tabVenta.UseVisualStyleBackColor = true;

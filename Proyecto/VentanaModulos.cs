@@ -123,5 +123,15 @@ namespace Proyecto
         {
             new GestionElectrodomesticos.ConsultarElectrodomestico().ShowDialog();
         }
+
+        private void parámetrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void darDeBajaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

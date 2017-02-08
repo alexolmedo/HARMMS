@@ -48,6 +48,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.btnCerrarAgrCliente = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -189,7 +190,7 @@
             // 
             this.button1.Image = global::Proyecto.Properties.Resources.actualizar;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(217, 375);
+            this.button1.Location = new System.Drawing.Point(339, 378);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(80, 32);
             this.button1.TabIndex = 13;
@@ -249,11 +250,24 @@
             this.radioButton1.Text = "Nombre";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
+            // btnCerrarAgrCliente
+            // 
+            this.btnCerrarAgrCliente.Image = global::Proyecto.Properties.Resources.cancel1;
+            this.btnCerrarAgrCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarAgrCliente.Location = new System.Drawing.Point(434, 378);
+            this.btnCerrarAgrCliente.Name = "btnCerrarAgrCliente";
+            this.btnCerrarAgrCliente.Size = new System.Drawing.Size(67, 32);
+            this.btnCerrarAgrCliente.TabIndex = 41;
+            this.btnCerrarAgrCliente.Text = "Cerrar";
+            this.btnCerrarAgrCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrarAgrCliente.UseVisualStyleBackColor = true;
+            // 
             // ActualizarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(543, 419);
+            this.Controls.Add(this.btnCerrarAgrCliente);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
@@ -290,5 +304,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button btnCerrarAgrCliente;
     }
 }
