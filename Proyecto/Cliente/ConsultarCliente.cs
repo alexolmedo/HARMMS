@@ -128,6 +128,7 @@ namespace Proyecto.Cliente
                     dirConCliente.Text = r[3].ToString();
                     RUCConCliente.Text = r[4].ToString();
                     correoConCliente.Text = r[5].ToString();
+                    estadoConCliente.Text = r[6].ToString();
                 }
 
             }
@@ -136,6 +137,16 @@ namespace Proyecto.Cliente
                 Console.WriteLine(ex.ToString());
             }
  
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void correoConCliente_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -48,12 +48,16 @@
             this.radioButCed = new System.Windows.Forms.RadioButton();
             this.radioButNombre = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.estadoConCliente = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.estadoConCliente);
+            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.correoConCliente);
             this.groupBox2.Controls.Add(this.RUCConCliente);
             this.groupBox2.Controls.Add(this.dirConCliente);
@@ -68,22 +72,23 @@
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(12, 124);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(467, 163);
+            this.groupBox2.Size = new System.Drawing.Size(467, 209);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Consulta";
             // 
             // correoConCliente
             // 
-            this.correoConCliente.Location = new System.Drawing.Point(337, 110);
+            this.correoConCliente.Location = new System.Drawing.Point(337, 71);
             this.correoConCliente.Name = "correoConCliente";
             this.correoConCliente.ReadOnly = true;
             this.correoConCliente.Size = new System.Drawing.Size(121, 20);
             this.correoConCliente.TabIndex = 60;
+            this.correoConCliente.TextChanged += new System.EventHandler(this.correoConCliente_TextChanged);
             // 
             // RUCConCliente
             // 
-            this.RUCConCliente.Location = new System.Drawing.Point(337, 72);
+            this.RUCConCliente.Location = new System.Drawing.Point(337, 35);
             this.RUCConCliente.Name = "RUCConCliente";
             this.RUCConCliente.ReadOnly = true;
             this.RUCConCliente.Size = new System.Drawing.Size(121, 20);
@@ -91,16 +96,16 @@
             // 
             // dirConCliente
             // 
-            this.dirConCliente.Location = new System.Drawing.Point(337, 32);
+            this.dirConCliente.Location = new System.Drawing.Point(92, 155);
             this.dirConCliente.Name = "dirConCliente";
             this.dirConCliente.ReadOnly = true;
-            this.dirConCliente.Size = new System.Drawing.Size(121, 20);
+            this.dirConCliente.Size = new System.Drawing.Size(366, 20);
             this.dirConCliente.TabIndex = 58;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(256, 113);
+            this.label6.Location = new System.Drawing.Point(264, 78);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 57;
@@ -109,7 +114,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(264, 75);
+            this.label5.Location = new System.Drawing.Point(264, 38);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(30, 13);
             this.label5.TabIndex = 56;
@@ -118,7 +123,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(242, 35);
+            this.label4.Location = new System.Drawing.Point(8, 158);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 55;
@@ -246,7 +251,7 @@
             // 
             this.button1.Image = global::Proyecto.Properties.Resources.cancel1;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(412, 293);
+            this.button1.Location = new System.Drawing.Point(412, 339);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(67, 29);
             this.button1.TabIndex = 62;
@@ -255,11 +260,29 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(262, 115);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.TabIndex = 63;
+            this.label7.Text = "Estado";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // estadoConCliente
+            // 
+            this.estadoConCliente.Location = new System.Drawing.Point(337, 107);
+            this.estadoConCliente.Name = "estadoConCliente";
+            this.estadoConCliente.ReadOnly = true;
+            this.estadoConCliente.Size = new System.Drawing.Size(121, 20);
+            this.estadoConCliente.TabIndex = 64;
+            // 
             // ConsultarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(487, 331);
+            this.ClientSize = new System.Drawing.Size(487, 380);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -295,5 +318,7 @@
         private System.Windows.Forms.RadioButton radioButNombre;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox estadoConCliente;
     }
 }
