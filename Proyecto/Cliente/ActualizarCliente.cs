@@ -86,6 +86,7 @@ namespace Proyecto.Cliente
                 conexion.command = new SqlCommand(sql, conexion.connection);
                 conexion.command.ExecuteNonQuery();
                 conexion.command.Dispose();
+                MessageBox.Show("El cliente se modificó correctamente", "Cliente Modificado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
 
         }
