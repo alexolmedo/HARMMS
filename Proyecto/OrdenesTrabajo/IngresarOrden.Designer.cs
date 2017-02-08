@@ -172,7 +172,7 @@
             this.groupBox4.Controls.Add(this.button6);
             this.groupBox4.Controls.Add(this.label25);
             this.groupBox4.Controls.Add(this.textBox14);
-            this.groupBox4.Location = new System.Drawing.Point(8, 58);
+            this.groupBox4.Location = new System.Drawing.Point(8, 60);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(575, 99);
             this.groupBox4.TabIndex = 48;
