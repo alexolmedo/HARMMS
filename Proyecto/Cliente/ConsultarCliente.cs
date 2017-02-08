@@ -97,9 +97,9 @@ namespace Proyecto.Cliente
         {
             try
             {
-            String CI = txtCedula.Text;
 
-            string strquery3 = "Select * from cliente where CI_Cliente = " + CI + "";
+                if (radioButNombre)
+               string strquery3 = "Select * from cliente where CI_Cliente = " + txtCedula.Text + "";
             conexion.command = new SqlCommand(strquery3, conexion.connection);
 
             da = new SqlDataAdapter();
@@ -113,9 +113,9 @@ namespace Proyecto.Cliente
             foreach (DataRow r in dt.Rows)
             {
                 //obtiene todas las filas de una columna
-                var rw = r.Field<string>("nombrecliente");
-                nomConCliente.Text = rw;
-                var ced = r.Field<string>("CI_Cliente");
+                nomConCliente.Text = r[1].ToString();
+                cedConCliente.Text = r[0].ToString();
+                
       
 
               
