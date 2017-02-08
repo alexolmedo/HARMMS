@@ -46,8 +46,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButCed = new System.Windows.Forms.RadioButton();
+            this.radioButNombre = new System.Windows.Forms.RadioButton();
             this.btnCerrarAgrCliente = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -136,6 +136,7 @@
             // 
             this.cedActCliente.Location = new System.Drawing.Point(85, 70);
             this.cedActCliente.Name = "cedActCliente";
+            this.cedActCliente.ReadOnly = true;
             this.cedActCliente.Size = new System.Drawing.Size(126, 20);
             this.cedActCliente.TabIndex = 41;
             this.cedActCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cedAgrCliente_KeyPress);
@@ -185,6 +186,7 @@
             this.button2.Text = "Buscar";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -203,8 +205,8 @@
             // 
             this.groupBox1.Controls.Add(this.txtCedula);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radioButCed);
+            this.groupBox1.Controls.Add(this.radioButNombre);
             this.groupBox1.Location = new System.Drawing.Point(34, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(467, 123);
@@ -228,29 +230,29 @@
             this.txtNombre.Size = new System.Drawing.Size(167, 20);
             this.txtNombre.TabIndex = 20;
             // 
-            // radioButton2
+            // radioButCed
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(70, 80);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(58, 17);
-            this.radioButton2.TabIndex = 19;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Cédula";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.radioButCed.AutoSize = true;
+            this.radioButCed.Location = new System.Drawing.Point(70, 80);
+            this.radioButCed.Name = "radioButCed";
+            this.radioButCed.Size = new System.Drawing.Size(58, 17);
+            this.radioButCed.TabIndex = 19;
+            this.radioButCed.TabStop = true;
+            this.radioButCed.Text = "Cédula";
+            this.radioButCed.UseVisualStyleBackColor = true;
+            this.radioButCed.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // radioButton1
+            // radioButNombre
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(70, 33);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(62, 17);
-            this.radioButton1.TabIndex = 18;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nombre";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButNombre.AutoSize = true;
+            this.radioButNombre.Location = new System.Drawing.Point(70, 33);
+            this.radioButNombre.Name = "radioButNombre";
+            this.radioButNombre.Size = new System.Drawing.Size(62, 17);
+            this.radioButNombre.TabIndex = 18;
+            this.radioButNombre.TabStop = true;
+            this.radioButNombre.Text = "Nombre";
+            this.radioButNombre.UseVisualStyleBackColor = true;
+            this.radioButNombre.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // btnCerrarAgrCliente
             // 
@@ -263,6 +265,7 @@
             this.btnCerrarAgrCliente.Text = "Cerrar";
             this.btnCerrarAgrCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCerrarAgrCliente.UseVisualStyleBackColor = true;
+            this.btnCerrarAgrCliente.Click += new System.EventHandler(this.btnCerrarAgrCliente_Click);
             // 
             // ActualizarCliente
             // 
@@ -304,8 +307,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButCed;
+        private System.Windows.Forms.RadioButton radioButNombre;
         private System.Windows.Forms.Button btnCerrarAgrCliente;
     }
 }

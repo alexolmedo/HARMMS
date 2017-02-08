@@ -74,10 +74,15 @@ namespace Proyecto.Cliente
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            if (MessageBox.Show("¿Confirma actualización?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk).Equals(MessageBoxButtons.OK))
+            DialogResult dr = MessageBox.Show("¿Confirma actualización?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
+                
+            if (dr == DialogResult.Yes)
             {
-                string sql = "INSERT INTO cliente VALUES ('" + cedActCliente.Text + "','" + nomActCliente.Text + "','" + telActCliente.Text + "','" + dirActCliente.Text + "','" + RUCActCliente.Text + "','" + correoActCliente.Text + "','H')";
+                Console.WriteLine(dirActCliente);
+                string sql = "Update cliente set CI_Cliente = '" + cedActCliente.Text + "', NombreCliente ='" + nomActCliente.Text + "', TelefonoCliente='" + telActCliente.Text + 
+                    "',DireccionCliente='" + dirActCliente.Text + "',RUCCliente='" + RUCActCliente.Text + "',correoCliente='" + correoActCliente.Text + "',EstadoCliente ='H' where CI_Cliente = '"+ cedActCliente.Text +"'";
+                Console.WriteLine(sql);
+                   
                 conexion.command = new SqlCommand(sql, conexion.connection);
                 conexion.command.ExecuteNonQuery();
                 conexion.command.Dispose();
@@ -162,6 +167,56 @@ namespace Proyecto.Cliente
             txtNombre.ReadOnly = true;
             txtNombre.Text = "";
             txtCedula.ReadOnly = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string strquery3 = "";
+
+                if (radioButNombre.Checked)
+                {
+                    strquery3 = "Select * from cliente where NombreCliente = '" + txtNombre.Text + "'";
+                }
+
+                if (radioButCed.Checked)
+                {
+                    strquery3 = "Select * from cliente where CI_Cliente = " + txtCedula.Text + "";
+                }
+
+                conexion.command = new SqlCommand(strquery3, conexion.connection);
+
+                da = new SqlDataAdapter();
+                //fetching query in the database.
+                da.SelectCommand = conexion.command;
+                //inicializar nueva datatable
+                dt = new DataTable();
+                //refresca las filas segun el rango especificado en el datasource. 
+                da.Fill(dt);
+
+                foreach (DataRow r in dt.Rows)
+                {
+                    //obtiene todas las filas de una columna
+                    cedActCliente.Text = r[0].ToString();
+                    nomActCliente.Text = r[1].ToString();
+                    telActCliente.Text = r[2].ToString();
+                    dirActCliente.Text = r[3].ToString();
+                    RUCActCliente.Text = r[4].ToString();
+                    correoActCliente.Text = r[5].ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+ 
+        }
+
+        private void btnCerrarAgrCliente_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
