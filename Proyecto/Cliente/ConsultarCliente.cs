@@ -125,6 +125,7 @@ namespace Proyecto.Cliente
                 nomConCliente.Text = r[1].ToString();
                 cedConCliente.Text = r[0].ToString();
 
+
                 
     
             }

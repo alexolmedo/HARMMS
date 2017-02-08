@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.correoAgrCliente = new System.Windows.Forms.TextBox();
-            this.RUCAgrCliente = new System.Windows.Forms.TextBox();
-            this.dirAgrCliente = new System.Windows.Forms.TextBox();
+            this.correoActCliente = new System.Windows.Forms.TextBox();
+            this.RUCActCliente = new System.Windows.Forms.TextBox();
+            this.dirActCliente = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.telAgrCliente = new System.Windows.Forms.TextBox();
-            this.cedAgrCliente = new System.Windows.Forms.TextBox();
-            this.nomAgrCliente = new System.Windows.Forms.TextBox();
+            this.telActCliente = new System.Windows.Forms.TextBox();
+            this.cedActCliente = new System.Windows.Forms.TextBox();
+            this.nomActCliente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,15 +55,15 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.correoAgrCliente);
-            this.groupBox2.Controls.Add(this.RUCAgrCliente);
-            this.groupBox2.Controls.Add(this.dirAgrCliente);
+            this.groupBox2.Controls.Add(this.correoActCliente);
+            this.groupBox2.Controls.Add(this.RUCActCliente);
+            this.groupBox2.Controls.Add(this.dirActCliente);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.telAgrCliente);
-            this.groupBox2.Controls.Add(this.cedAgrCliente);
-            this.groupBox2.Controls.Add(this.nomAgrCliente);
+            this.groupBox2.Controls.Add(this.telActCliente);
+            this.groupBox2.Controls.Add(this.cedActCliente);
+            this.groupBox2.Controls.Add(this.nomActCliente);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
@@ -75,27 +75,27 @@
             this.groupBox2.Text = "Modificar";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // correoAgrCliente
+            // correoActCliente
             // 
-            this.correoAgrCliente.Location = new System.Drawing.Point(330, 109);
-            this.correoAgrCliente.Name = "correoAgrCliente";
-            this.correoAgrCliente.Size = new System.Drawing.Size(121, 20);
-            this.correoAgrCliente.TabIndex = 60;
+            this.correoActCliente.Location = new System.Drawing.Point(330, 109);
+            this.correoActCliente.Name = "correoActCliente";
+            this.correoActCliente.Size = new System.Drawing.Size(121, 20);
+            this.correoActCliente.TabIndex = 60;
             // 
-            // RUCAgrCliente
+            // RUCActCliente
             // 
-            this.RUCAgrCliente.Location = new System.Drawing.Point(330, 71);
-            this.RUCAgrCliente.Name = "RUCAgrCliente";
-            this.RUCAgrCliente.Size = new System.Drawing.Size(121, 20);
-            this.RUCAgrCliente.TabIndex = 59;
-            this.RUCAgrCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RUCAgrCliente_KeyPress);
+            this.RUCActCliente.Location = new System.Drawing.Point(330, 71);
+            this.RUCActCliente.Name = "RUCActCliente";
+            this.RUCActCliente.Size = new System.Drawing.Size(121, 20);
+            this.RUCActCliente.TabIndex = 59;
+            this.RUCActCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RUCAgrCliente_KeyPress);
             // 
-            // dirAgrCliente
+            // dirActCliente
             // 
-            this.dirAgrCliente.Location = new System.Drawing.Point(330, 31);
-            this.dirAgrCliente.Name = "dirAgrCliente";
-            this.dirAgrCliente.Size = new System.Drawing.Size(121, 20);
-            this.dirAgrCliente.TabIndex = 58;
+            this.dirActCliente.Location = new System.Drawing.Point(330, 31);
+            this.dirActCliente.Name = "dirActCliente";
+            this.dirActCliente.Size = new System.Drawing.Size(121, 20);
+            this.dirActCliente.TabIndex = 58;
             // 
             // label6
             // 
@@ -124,28 +124,28 @@
             this.label4.TabIndex = 55;
             this.label4.Text = "Dirección";
             // 
-            // telAgrCliente
+            // telActCliente
             // 
-            this.telAgrCliente.Location = new System.Drawing.Point(85, 107);
-            this.telAgrCliente.Name = "telAgrCliente";
-            this.telAgrCliente.Size = new System.Drawing.Size(126, 20);
-            this.telAgrCliente.TabIndex = 42;
-            this.telAgrCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telAgrCliente_KeyPress);
+            this.telActCliente.Location = new System.Drawing.Point(85, 107);
+            this.telActCliente.Name = "telActCliente";
+            this.telActCliente.Size = new System.Drawing.Size(126, 20);
+            this.telActCliente.TabIndex = 42;
+            this.telActCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telAgrCliente_KeyPress);
             // 
-            // cedAgrCliente
+            // cedActCliente
             // 
-            this.cedAgrCliente.Location = new System.Drawing.Point(85, 70);
-            this.cedAgrCliente.Name = "cedAgrCliente";
-            this.cedAgrCliente.Size = new System.Drawing.Size(126, 20);
-            this.cedAgrCliente.TabIndex = 41;
-            this.cedAgrCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cedAgrCliente_KeyPress);
+            this.cedActCliente.Location = new System.Drawing.Point(85, 70);
+            this.cedActCliente.Name = "cedActCliente";
+            this.cedActCliente.Size = new System.Drawing.Size(126, 20);
+            this.cedActCliente.TabIndex = 41;
+            this.cedActCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cedAgrCliente_KeyPress);
             // 
-            // nomAgrCliente
+            // nomActCliente
             // 
-            this.nomAgrCliente.Location = new System.Drawing.Point(85, 34);
-            this.nomAgrCliente.Name = "nomAgrCliente";
-            this.nomAgrCliente.Size = new System.Drawing.Size(126, 20);
-            this.nomAgrCliente.TabIndex = 40;
+            this.nomActCliente.Location = new System.Drawing.Point(85, 34);
+            this.nomActCliente.Name = "nomActCliente";
+            this.nomActCliente.Size = new System.Drawing.Size(126, 20);
+            this.nomActCliente.TabIndex = 40;
             // 
             // label3
             // 
@@ -288,15 +288,15 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox telAgrCliente;
-        private System.Windows.Forms.TextBox cedAgrCliente;
-        private System.Windows.Forms.TextBox nomAgrCliente;
+        private System.Windows.Forms.TextBox telActCliente;
+        private System.Windows.Forms.TextBox cedActCliente;
+        private System.Windows.Forms.TextBox nomActCliente;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox correoAgrCliente;
-        private System.Windows.Forms.TextBox RUCAgrCliente;
-        private System.Windows.Forms.TextBox dirAgrCliente;
+        private System.Windows.Forms.TextBox correoActCliente;
+        private System.Windows.Forms.TextBox RUCActCliente;
+        private System.Windows.Forms.TextBox dirActCliente;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

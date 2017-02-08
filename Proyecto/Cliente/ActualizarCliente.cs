@@ -74,7 +74,14 @@ namespace Proyecto.Cliente
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("¿Confirma actualización?","Confirmación",MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
+            
+            if (MessageBox.Show("¿Confirma actualización?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk).Equals(MessageBoxButtons.OK))
+            {
+                string sql = "INSERT INTO cliente VALUES ('" + cedActCliente.Text + "','" + nomActCliente.Text + "','" + telActCliente.Text + "','" + dirActCliente.Text + "','" + RUCActCliente.Text + "','" + correoActCliente.Text + "','H')";
+                conexion.command = new SqlCommand(sql, conexion.connection);
+                conexion.command.ExecuteNonQuery();
+                conexion.command.Dispose();
+            }
 
         }
 
