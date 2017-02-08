@@ -97,9 +97,17 @@ namespace Proyecto.Cliente
         {
             try
             {
+                string strquery3 = "";
+                if (radioButNombre.Checked)
+                {
+                    strquery3 = "Select * from cliente where NombreCliente = " + txtNombre.Text + "";
+                }
+                else if (radioButCed.Checked)
+                {
+                    strquery3 = "Select * from cliente where CI_Cliente = " + txtCedula.Text + "";
+                }
 
-                if (radioButNombre)
-               string strquery3 = "Select * from cliente where CI_Cliente = " + txtCedula.Text + "";
+               
             conexion.command = new SqlCommand(strquery3, conexion.connection);
 
             da = new SqlDataAdapter();
