@@ -106,6 +106,12 @@
     <Compile Include="Facturacion\DeshabilitarFactura.Designer.cs">
       <DependentUpon>DeshabilitarFactura.cs</DependentUpon>
     </Compile>
+    <Compile Include="Facturacion\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturacion\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Facturacion\GenerarFactura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion\DeshabilitarFactura.resx">
       <DependentUpon>DeshabilitarFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion\GenerarFactura.resx">
       <DependentUpon>GenerarFactura.cs</DependentUpon>
