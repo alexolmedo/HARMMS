@@ -1,6 +1,6 @@
 ﻿namespace Proyecto.Facturacion
 {
-    partial class Form1
+    partial class ConsultarFactura
     {
         /// <summary>
         /// Required designer variable.
