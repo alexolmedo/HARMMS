@@ -73,12 +73,11 @@ namespace Proyecto.Cliente
                 }
                 else
                 {
-                    MessageBox.Show("La cedula SI es valida", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
                     string sql = "INSERT INTO cliente VALUES ('" + txtCedAgrCliente.Text + "','" + txtNomAgrCliente.Text + "','" + txtTelAgrCliente.Text + "','" + txtDirecAgrCliente.Text + "','" + txtRUCAgrCliente.Text + "','" + txtCorreoAgrCliente.Text + "','H')";
                     conexion.command = new SqlCommand(sql, conexion.connection);
                     conexion.command.ExecuteNonQuery();
                     conexion.command.Dispose();
+                    MessageBox.Show("El cliente se agregó correctamente", "Cliente Agregado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
         }
