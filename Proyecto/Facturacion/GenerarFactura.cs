@@ -47,5 +47,10 @@ namespace Proyecto.Facturacion
         {
 
         }
+
+        private void btnCerrarAgrCliente_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
