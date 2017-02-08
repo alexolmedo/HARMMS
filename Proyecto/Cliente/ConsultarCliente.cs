@@ -14,7 +14,6 @@ namespace Proyecto.Cliente
     public partial class ConsultarCliente : Form
     {
         Conexion conexion = new Conexion();
-       
         SqlDataAdapter da;
         DataTable dt;
 
@@ -72,8 +71,6 @@ namespace Proyecto.Cliente
                 //adding all rows into the textbox
                 txtNombre.AutoCompleteCustomSource.Add(rw);
             }
-
-
 
         }
 
