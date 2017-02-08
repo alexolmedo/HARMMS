@@ -133,5 +133,15 @@ namespace Proyecto
         {
 
         }
+
+        private void VentanaModulos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
