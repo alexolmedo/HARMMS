@@ -312,6 +312,9 @@
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Entregada",
+            "No Entregada"});
             this.comboBox4.Location = new System.Drawing.Point(144, 113);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(200, 21);
@@ -539,6 +542,9 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Entregada",
+            "No Entregada"});
             this.comboBox3.Location = new System.Drawing.Point(145, 118);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(199, 21);
