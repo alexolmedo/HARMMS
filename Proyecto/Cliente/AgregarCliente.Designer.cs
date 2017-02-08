@@ -67,7 +67,6 @@
             this.groupBox1.TabIndex = 25;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtCorreoAgrCliente
             // 
@@ -132,7 +131,6 @@
             this.txtCedAgrCliente.Name = "txtCedAgrCliente";
             this.txtCedAgrCliente.Size = new System.Drawing.Size(187, 20);
             this.txtCedAgrCliente.TabIndex = 29;
-            this.txtCedAgrCliente.TextChanged += new System.EventHandler(this.cedAgrCliente_TextChanged);
             this.txtCedAgrCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedAgrCliente_KeyPress);
             // 
             // txtNomAgrCliente
@@ -141,7 +139,6 @@
             this.txtNomAgrCliente.Name = "txtNomAgrCliente";
             this.txtNomAgrCliente.Size = new System.Drawing.Size(187, 20);
             this.txtNomAgrCliente.TabIndex = 28;
-            this.txtNomAgrCliente.TextChanged += new System.EventHandler(this.nomAgrCliente_TextChanged);
             // 
             // label3
             // 
@@ -169,7 +166,6 @@
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 25;
             this.label1.Text = "Nombre *";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnCerrarAgrCliente
             // 
@@ -221,7 +217,6 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "AgregarCliente";
             this.Text = "Ingresar Cliente";
-            this.Load += new System.EventHandler(this.AgregarCliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

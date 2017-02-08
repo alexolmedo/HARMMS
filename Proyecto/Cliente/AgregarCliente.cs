@@ -14,33 +14,11 @@ namespace Proyecto.Cliente
     public partial class AgregarCliente : Form
     {
         Conexion conexion = new Conexion();
+
         public AgregarCliente()
         {
             InitializeComponent();
             this.CenterToScreen();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtCedAgrCliente.Text, "^[0-9]{10}$"))
-            {
-                MessageBox.Show("La cedula NO es valida", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
-            else
-            {
-                MessageBox.Show("La cedula SI es valida", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
-            }
-        }
-
-        private void AgregarCliente_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -53,20 +31,9 @@ namespace Proyecto.Cliente
             txtCorreoAgrCliente.Text = "";
         }
 
-        private void nomAgrCliente_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cedAgrCliente_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCerrarAgrCliente_Click(object sender, EventArgs e)
         {
-           
-            this.Close();
+           this.Close();
         }
 
         private void txtCedAgrCliente_KeyPress(object sender, KeyPressEventArgs e)
@@ -154,11 +121,6 @@ namespace Proyecto.Cliente
             {
                 e.Handled = true;
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
