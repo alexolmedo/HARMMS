@@ -100,11 +100,13 @@ namespace Proyecto.Cliente
                 string strquery3 = "";
                 if (radioButNombre.Checked)
                 {
-                    strquery3 = "Select * from cliente where NombreCliente = " + txtNombre.Text + "";
+                    strquery3 = "Select * from cliente where NombreCliente = '" + txtNombre.Text + "'";
+                    MessageBox.Show(strquery3);
                 }
                 else if (radioButCed.Checked)
                 {
                     strquery3 = "Select * from cliente where CI_Cliente = " + txtCedula.Text + "";
+                    MessageBox.Show(strquery3);
                 }
 
                
