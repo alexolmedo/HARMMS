@@ -77,12 +77,14 @@ namespace Proyecto.Cliente
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             txtNombre.ReadOnly = false;
+            txtCedula.Text = "";
             txtCedula.ReadOnly = true;
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             txtNombre.ReadOnly = true;
+            txtNombre.Text = "";
             txtCedula.ReadOnly = false;
         }
     }
