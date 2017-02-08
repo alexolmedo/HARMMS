@@ -95,7 +95,31 @@ namespace Proyecto.Cliente
 
         private void button2_Click(object sender, EventArgs e)
         {
+            try
+            {
+            String CI = txtCedula.Text;
+            SqlDataReader myReader = null;
 
+            string sql = "Select NombreCliente from cliente where CI_Cliente = " + CI +"";
+            conexion.command = new SqlCommand(sql, conexion.connection);
+            
+            //Ejecutar el comando SQL
+            myReader = conexion.command.ExecuteReader();
+
+            //Imprimir un encabezado para mostrar una tabla de resultados
+            Console.WriteLine("ID\tNombre\tCi");
+            Console.WriteLine("---------------------------------------------------------");
+
+            //Mostrar los datos de la tabla
+            
+            Console.WriteLine(myReader["NombreCliente"].ToString());
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+ 
         }
     }
 }

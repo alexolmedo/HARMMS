@@ -51,9 +51,7 @@ namespace Proyecto.GestionElectrodomesticos
 
         private void button4_Click(object sender, EventArgs e)
         {
-            txtNombreIngElectR.Text = "";
-            txtModeloIngElectR.Text = "";
-            txtNumSerIngElectR.Text = "";
+            
         }
 
         private void button3_Click(object sender, EventArgs e)

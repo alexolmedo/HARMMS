@@ -32,14 +32,22 @@ namespace Proyecto.GestionElectrodomesticos
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
-            txtPorModeloR.ReadOnly = false;
-            txtPorNumSerR.ReadOnly = true;
+           
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-            txtPorModeloR.ReadOnly = true;
-            txtPorNumSerR.ReadOnly = false;
+           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
 
     }
