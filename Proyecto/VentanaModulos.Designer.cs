@@ -32,7 +32,6 @@
             this.insertarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.darDeBajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generarFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,7 +67,6 @@
             this.insertarClienteToolStripMenuItem,
             this.actualizarClienteToolStripMenuItem,
             this.consultarClienteToolStripMenuItem,
-            this.eliminarClienteToolStripMenuItem,
             this.darDeBajaToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(56, 20);
@@ -77,35 +75,28 @@
             // insertarClienteToolStripMenuItem
             // 
             this.insertarClienteToolStripMenuItem.Name = "insertarClienteToolStripMenuItem";
-            this.insertarClienteToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.insertarClienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.insertarClienteToolStripMenuItem.Text = "Ingresar";
             this.insertarClienteToolStripMenuItem.Click += new System.EventHandler(this.insertarClienteToolStripMenuItem_Click);
             // 
             // actualizarClienteToolStripMenuItem
             // 
             this.actualizarClienteToolStripMenuItem.Name = "actualizarClienteToolStripMenuItem";
-            this.actualizarClienteToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.actualizarClienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.actualizarClienteToolStripMenuItem.Text = "Actualizar";
             this.actualizarClienteToolStripMenuItem.Click += new System.EventHandler(this.actualizarClienteToolStripMenuItem_Click);
             // 
             // consultarClienteToolStripMenuItem
             // 
             this.consultarClienteToolStripMenuItem.Name = "consultarClienteToolStripMenuItem";
-            this.consultarClienteToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.consultarClienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.consultarClienteToolStripMenuItem.Text = "Consultar";
             this.consultarClienteToolStripMenuItem.Click += new System.EventHandler(this.consultarClienteToolStripMenuItem_Click);
-            // 
-            // eliminarClienteToolStripMenuItem
-            // 
-            this.eliminarClienteToolStripMenuItem.Name = "eliminarClienteToolStripMenuItem";
-            this.eliminarClienteToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.eliminarClienteToolStripMenuItem.Text = "Eliminar";
-            this.eliminarClienteToolStripMenuItem.Click += new System.EventHandler(this.eliminarClienteToolStripMenuItem_Click);
             // 
             // darDeBajaToolStripMenuItem
             // 
             this.darDeBajaToolStripMenuItem.Name = "darDeBajaToolStripMenuItem";
-            this.darDeBajaToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.darDeBajaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.darDeBajaToolStripMenuItem.Text = "Dar de baja";
             this.darDeBajaToolStripMenuItem.Click += new System.EventHandler(this.darDeBajaToolStripMenuItem_Click);
             // 
@@ -187,7 +178,7 @@
             this.consultarToolStripMenuItem,
             this.deshabilitarToolStripMenuItem});
             this.órdenesDeTrabajoToolStripMenuItem.Name = "órdenesDeTrabajoToolStripMenuItem";
-            this.órdenesDeTrabajoToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
+            this.órdenesDeTrabajoToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
             this.órdenesDeTrabajoToolStripMenuItem.Text = "Orden deTrabajo";
             // 
             // insertarOrdenToolStripMenuItem
@@ -286,14 +277,14 @@
             // parámetrosToolStripMenuItem
             // 
             this.parámetrosToolStripMenuItem.Name = "parámetrosToolStripMenuItem";
-            this.parámetrosToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.parámetrosToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.parámetrosToolStripMenuItem.Text = "Parámetros Factura";
             this.parámetrosToolStripMenuItem.Click += new System.EventHandler(this.parámetrosToolStripMenuItem_Click);
             // 
             // parámetrosOrdenDeTrabajoToolStripMenuItem
             // 
             this.parámetrosOrdenDeTrabajoToolStripMenuItem.Name = "parámetrosOrdenDeTrabajoToolStripMenuItem";
-            this.parámetrosOrdenDeTrabajoToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.parámetrosOrdenDeTrabajoToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.parámetrosOrdenDeTrabajoToolStripMenuItem.Text = "Parámetros Orden de Trabajo";
             // 
             // ayudaToolStripMenuItem
@@ -338,7 +329,6 @@
         private System.Windows.Forms.ToolStripMenuItem insertarClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem actualizarClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarClienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facturaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generarFacturaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarFacturaToolStripMenuItem;
