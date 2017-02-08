@@ -103,10 +103,12 @@ namespace Proyecto.Cliente
                 {
                     strquery3 = "Select * from cliente where NombreCliente = '" + txtNombre.Text + "'";
                 }
-                
-                
 
-               
+                if (radioButCed.Checked)
+                {
+                    strquery3 = "Select * from cliente where CI_Cliente = " + txtCedula.Text + "";
+                }
+                
             conexion.command = new SqlCommand(strquery3, conexion.connection);
 
             da = new SqlDataAdapter();
@@ -122,6 +124,7 @@ namespace Proyecto.Cliente
                 //obtiene todas las filas de una columna
                 nomConCliente.Text = r[1].ToString();
                 cedConCliente.Text = r[0].ToString();
+
                 
     
             }
