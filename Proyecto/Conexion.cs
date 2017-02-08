@@ -43,6 +43,7 @@ namespace Proyecto
             catch (Exception ex)
             {
                 MessageBox.Show("¡No se puede conectar! ");
+                Console.WriteLine(ex.Message);
             }
         }
     }
