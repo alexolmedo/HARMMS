@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.correoAgrCliente = new System.Windows.Forms.TextBox();
-            this.RUCAgrCliente = new System.Windows.Forms.TextBox();
-            this.dirAgrCliente = new System.Windows.Forms.TextBox();
+            this.correoConCliente = new System.Windows.Forms.TextBox();
+            this.RUCConCliente = new System.Windows.Forms.TextBox();
+            this.dirConCliente = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.telAgrCliente = new System.Windows.Forms.TextBox();
-            this.cedAgrCliente = new System.Windows.Forms.TextBox();
-            this.nomAgrCliente = new System.Windows.Forms.TextBox();
+            this.telConCliente = new System.Windows.Forms.TextBox();
+            this.cedConCliente = new System.Windows.Forms.TextBox();
+            this.nomConCliente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -54,15 +54,15 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.correoAgrCliente);
-            this.groupBox2.Controls.Add(this.RUCAgrCliente);
-            this.groupBox2.Controls.Add(this.dirAgrCliente);
+            this.groupBox2.Controls.Add(this.correoConCliente);
+            this.groupBox2.Controls.Add(this.RUCConCliente);
+            this.groupBox2.Controls.Add(this.dirConCliente);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.telAgrCliente);
-            this.groupBox2.Controls.Add(this.cedAgrCliente);
-            this.groupBox2.Controls.Add(this.nomAgrCliente);
+            this.groupBox2.Controls.Add(this.telConCliente);
+            this.groupBox2.Controls.Add(this.cedConCliente);
+            this.groupBox2.Controls.Add(this.nomConCliente);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
@@ -73,29 +73,29 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Consulta";
             // 
-            // correoAgrCliente
+            // correoConCliente
             // 
-            this.correoAgrCliente.Location = new System.Drawing.Point(337, 110);
-            this.correoAgrCliente.Name = "correoAgrCliente";
-            this.correoAgrCliente.ReadOnly = true;
-            this.correoAgrCliente.Size = new System.Drawing.Size(121, 20);
-            this.correoAgrCliente.TabIndex = 60;
+            this.correoConCliente.Location = new System.Drawing.Point(337, 110);
+            this.correoConCliente.Name = "correoConCliente";
+            this.correoConCliente.ReadOnly = true;
+            this.correoConCliente.Size = new System.Drawing.Size(121, 20);
+            this.correoConCliente.TabIndex = 60;
             // 
-            // RUCAgrCliente
+            // RUCConCliente
             // 
-            this.RUCAgrCliente.Location = new System.Drawing.Point(337, 72);
-            this.RUCAgrCliente.Name = "RUCAgrCliente";
-            this.RUCAgrCliente.ReadOnly = true;
-            this.RUCAgrCliente.Size = new System.Drawing.Size(121, 20);
-            this.RUCAgrCliente.TabIndex = 59;
+            this.RUCConCliente.Location = new System.Drawing.Point(337, 72);
+            this.RUCConCliente.Name = "RUCConCliente";
+            this.RUCConCliente.ReadOnly = true;
+            this.RUCConCliente.Size = new System.Drawing.Size(121, 20);
+            this.RUCConCliente.TabIndex = 59;
             // 
-            // dirAgrCliente
+            // dirConCliente
             // 
-            this.dirAgrCliente.Location = new System.Drawing.Point(337, 32);
-            this.dirAgrCliente.Name = "dirAgrCliente";
-            this.dirAgrCliente.ReadOnly = true;
-            this.dirAgrCliente.Size = new System.Drawing.Size(121, 20);
-            this.dirAgrCliente.TabIndex = 58;
+            this.dirConCliente.Location = new System.Drawing.Point(337, 32);
+            this.dirConCliente.Name = "dirConCliente";
+            this.dirConCliente.ReadOnly = true;
+            this.dirConCliente.Size = new System.Drawing.Size(121, 20);
+            this.dirConCliente.TabIndex = 58;
             // 
             // label6
             // 
@@ -124,29 +124,29 @@
             this.label4.TabIndex = 55;
             this.label4.Text = "Dirección";
             // 
-            // telAgrCliente
+            // telConCliente
             // 
-            this.telAgrCliente.Location = new System.Drawing.Point(92, 108);
-            this.telAgrCliente.Name = "telAgrCliente";
-            this.telAgrCliente.ReadOnly = true;
-            this.telAgrCliente.Size = new System.Drawing.Size(126, 20);
-            this.telAgrCliente.TabIndex = 42;
+            this.telConCliente.Location = new System.Drawing.Point(92, 108);
+            this.telConCliente.Name = "telConCliente";
+            this.telConCliente.ReadOnly = true;
+            this.telConCliente.Size = new System.Drawing.Size(126, 20);
+            this.telConCliente.TabIndex = 42;
             // 
-            // cedAgrCliente
+            // cedConCliente
             // 
-            this.cedAgrCliente.Location = new System.Drawing.Point(92, 71);
-            this.cedAgrCliente.Name = "cedAgrCliente";
-            this.cedAgrCliente.ReadOnly = true;
-            this.cedAgrCliente.Size = new System.Drawing.Size(126, 20);
-            this.cedAgrCliente.TabIndex = 41;
+            this.cedConCliente.Location = new System.Drawing.Point(92, 71);
+            this.cedConCliente.Name = "cedConCliente";
+            this.cedConCliente.ReadOnly = true;
+            this.cedConCliente.Size = new System.Drawing.Size(126, 20);
+            this.cedConCliente.TabIndex = 41;
             // 
-            // nomAgrCliente
+            // nomConCliente
             // 
-            this.nomAgrCliente.Location = new System.Drawing.Point(92, 35);
-            this.nomAgrCliente.Name = "nomAgrCliente";
-            this.nomAgrCliente.ReadOnly = true;
-            this.nomAgrCliente.Size = new System.Drawing.Size(126, 20);
-            this.nomAgrCliente.TabIndex = 40;
+            this.nomConCliente.Location = new System.Drawing.Point(92, 35);
+            this.nomConCliente.Name = "nomConCliente";
+            this.nomConCliente.ReadOnly = true;
+            this.nomConCliente.Size = new System.Drawing.Size(126, 20);
+            this.nomConCliente.TabIndex = 40;
             // 
             // label3
             // 
@@ -197,6 +197,19 @@
             this.txtCedula.Size = new System.Drawing.Size(167, 20);
             this.txtCedula.TabIndex = 21;
             // 
+            // button2
+            // 
+            this.button2.Image = global::Proyecto.Properties.Resources.buscar;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(383, 42);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 32);
+            this.button2.TabIndex = 61;
+            this.button2.Text = "Buscar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(173, 33);
@@ -228,19 +241,6 @@
             this.radioButton1.Text = "Nombre";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // button2
-            // 
-            this.button2.Image = global::Proyecto.Properties.Resources.buscar;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(383, 42);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 32);
-            this.button2.TabIndex = 61;
-            this.button2.Text = "Buscar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -276,15 +276,15 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox correoAgrCliente;
-        private System.Windows.Forms.TextBox RUCAgrCliente;
-        private System.Windows.Forms.TextBox dirAgrCliente;
+        private System.Windows.Forms.TextBox correoConCliente;
+        private System.Windows.Forms.TextBox RUCConCliente;
+        private System.Windows.Forms.TextBox dirConCliente;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox telAgrCliente;
-        private System.Windows.Forms.TextBox cedAgrCliente;
-        private System.Windows.Forms.TextBox nomAgrCliente;
+        private System.Windows.Forms.TextBox telConCliente;
+        private System.Windows.Forms.TextBox cedConCliente;
+        private System.Windows.Forms.TextBox nomConCliente;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

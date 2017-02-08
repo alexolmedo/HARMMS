@@ -98,21 +98,28 @@ namespace Proyecto.Cliente
             try
             {
             String CI = txtCedula.Text;
-            SqlDataReader myReader = null;
 
-            string sql = "Select NombreCliente from cliente where CI_Cliente = " + CI +"";
-            conexion.command = new SqlCommand(sql, conexion.connection);
-            
-            //Ejecutar el comando SQL
-            myReader = conexion.command.ExecuteReader();
+            string strquery3 = "Select * from cliente where CI_Cliente = " + CI + "";
+            conexion.command = new SqlCommand(strquery3, conexion.connection);
 
-            //Imprimir un encabezado para mostrar una tabla de resultados
-            Console.WriteLine("ID\tNombre\tCi");
-            Console.WriteLine("---------------------------------------------------------");
+            da = new SqlDataAdapter();
+            //fetching query in the database.
+            da.SelectCommand = conexion.command;
+            //inicializar nueva datatable
+            dt = new DataTable();
+            //refresca las filas segun el rango especificado en el datasource. 
+            da.Fill(dt);
 
-            //Mostrar los datos de la tabla
-            
-            Console.WriteLine(myReader["NombreCliente"].ToString());
+            foreach (DataRow r in dt.Rows)
+            {
+                //obtiene todas las filas de una columna
+                var rw = r.Field<string>("nombrecliente");
+                nomConCliente.Text = rw;
+                var ced = r.Field<string>("CI_Cliente");
+      
+
+              
+            }
 
             }
             catch (Exception ex)
