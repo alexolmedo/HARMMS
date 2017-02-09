@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -246,28 +247,22 @@ namespace Proyecto.Cliente
 
         }
 
-        private void correoActCliente_KeyPress(object sender, KeyPressEventArgs e)
+        private void correoActCliente_Leave(object sender, EventArgs e)
         {
-            if (Char.IsLetterOrDigit(e.KeyChar))
+            if (correoActCliente.Text != "")
             {
-                e.Handled = false;
+                try
+                {
+                    MailAddress m = new MailAddress(correoActCliente.Text);
+
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("El correo no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    correoActCliente.Text = "";
+                }
             }
-            else if (e.KeyChar == '-' || e.KeyChar == '.' || e.KeyChar == '@' || e.KeyChar == '_')
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
+
         }
     }
 }

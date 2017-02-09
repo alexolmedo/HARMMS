@@ -74,6 +74,7 @@
             this.txtCorreoAgrCliente.Name = "txtCorreoAgrCliente";
             this.txtCorreoAgrCliente.Size = new System.Drawing.Size(187, 20);
             this.txtCorreoAgrCliente.TabIndex = 36;
+            this.txtCorreoAgrCliente.Leave += new System.EventHandler(this.txtCorreoAgrCliente_Leave);
             // 
             // txtRUCAgrCliente
             // 
