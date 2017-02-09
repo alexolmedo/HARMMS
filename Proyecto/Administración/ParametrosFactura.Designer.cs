@@ -103,7 +103,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Numero inicio";
+            this.label4.Text = "Número inicio";
             // 
             // label3
             // 
@@ -112,7 +112,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Numero Final";
+            this.label3.Text = "Número Final";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2

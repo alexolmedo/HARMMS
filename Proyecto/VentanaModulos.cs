@@ -121,6 +121,7 @@ namespace Proyecto
 
         private void parámetrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            new Administración.ParametrosFactura().ShowDialog();
 
         }
 
@@ -132,6 +133,11 @@ namespace Proyecto
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void parámetrosOrdenDeTrabajoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Administración.ParametrosOrden().ShowDialog();
         }
     }
 }
