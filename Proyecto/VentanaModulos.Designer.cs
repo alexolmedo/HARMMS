@@ -73,21 +73,21 @@
             // insertarClienteToolStripMenuItem
             // 
             this.insertarClienteToolStripMenuItem.Name = "insertarClienteToolStripMenuItem";
-            this.insertarClienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.insertarClienteToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.insertarClienteToolStripMenuItem.Text = "Ingresar";
             this.insertarClienteToolStripMenuItem.Click += new System.EventHandler(this.insertarClienteToolStripMenuItem_Click);
             // 
             // actualizarClienteToolStripMenuItem
             // 
             this.actualizarClienteToolStripMenuItem.Name = "actualizarClienteToolStripMenuItem";
-            this.actualizarClienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.actualizarClienteToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.actualizarClienteToolStripMenuItem.Text = "Modificar";
             this.actualizarClienteToolStripMenuItem.Click += new System.EventHandler(this.actualizarClienteToolStripMenuItem_Click);
             // 
             // consultarClienteToolStripMenuItem
             // 
             this.consultarClienteToolStripMenuItem.Name = "consultarClienteToolStripMenuItem";
-            this.consultarClienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.consultarClienteToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.consultarClienteToolStripMenuItem.Text = "Consultar";
             this.consultarClienteToolStripMenuItem.Click += new System.EventHandler(this.consultarClienteToolStripMenuItem_Click);
             // 
@@ -295,7 +295,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Proyecto.Properties.Resources.fondo;
+            this.BackgroundImage = global::Proyecto.Properties.Resources.HARMMS;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(774, 561);
             this.Controls.Add(this.menuStrip1);
