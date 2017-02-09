@@ -221,9 +221,53 @@ namespace Proyecto.Cliente
             this.Close();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void dirActCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (Char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (e.KeyChar=='-'|| e.KeyChar == '.'|| e.KeyChar == ',')
+            {
+                 e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
 
+        }
+
+        private void correoActCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (e.KeyChar == '-' || e.KeyChar == '.' || e.KeyChar == '@' || e.KeyChar == '_')
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

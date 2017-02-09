@@ -83,8 +83,8 @@
             // 
             this.comboBoxEstC.FormattingEnabled = true;
             this.comboBoxEstC.Items.AddRange(new object[] {
-            "H",
-            "D"});
+            "Habilitado",
+            "Deshabilitado"});
             this.comboBoxEstC.Location = new System.Drawing.Point(350, 100);
             this.comboBoxEstC.Name = "comboBoxEstC";
             this.comboBoxEstC.Size = new System.Drawing.Size(121, 21);
@@ -105,6 +105,7 @@
             this.correoActCliente.Name = "correoActCliente";
             this.correoActCliente.Size = new System.Drawing.Size(121, 20);
             this.correoActCliente.TabIndex = 60;
+            this.correoActCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.correoActCliente_KeyPress);
             // 
             // RUCActCliente
             // 
@@ -120,6 +121,7 @@
             this.dirActCliente.Name = "dirActCliente";
             this.dirActCliente.Size = new System.Drawing.Size(377, 20);
             this.dirActCliente.TabIndex = 58;
+            this.dirActCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dirActCliente_KeyPress);
             // 
             // label6
             // 
@@ -147,7 +149,6 @@
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 55;
             this.label4.Text = "Dirección";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // telActCliente
             // 
