@@ -23,14 +23,20 @@ namespace Proyecto
             // Data Source=localhost;Initial Catalog=ProyPropietarios;User ID=sa;Password=qwerty
             // en la carpeta Proyecto\
 
-            System.IO.StreamReader file = new System.IO.StreamReader("../../../loginbase.txt");
-            connectionString = file.ReadLine();
+            try
+            {
+                System.IO.StreamReader file = new System.IO.StreamReader("../../../loginbase.txt");
+                connectionString = file.ReadLine();
+                connection = new SqlConnection(connectionString);
+            }
+            catch (System.IO.FileNotFoundException e)
+            {
+                MessageBox.Show("No se encontró el archivo 'loginbase.txt'.");
+            }
 
             string sql = null;
-
             sql = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES";
-
-            connection = new SqlConnection(connectionString);
+                        
             try
             {
                 connection.Open();
@@ -42,7 +48,7 @@ namespace Proyecto
             }
             catch (Exception ex)
             {
-                MessageBox.Show("¡No se puede conectar! ");
+                MessageBox.Show("¡La base de datos no se puede conectar! ");
                 Console.WriteLine(ex.Message);
             }
         }
