@@ -63,11 +63,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cliente\ActualizarCliente.cs">
+    <Compile Include="Cliente\ModificarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cliente\ActualizarCliente.Designer.cs">
-      <DependentUpon>ActualizarCliente.cs</DependentUpon>
+    <Compile Include="Cliente\ModificarCliente.Designer.cs">
+      <DependentUpon>ModificarCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Cliente\AgregarCliente.cs">
       <SubType>Form</SubType>
@@ -227,8 +227,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Cliente\ActualizarCliente.resx">
-      <DependentUpon>ActualizarCliente.cs</DependentUpon>
+    <EmbeddedResource Include="Cliente\ModificarCliente.resx">
+      <DependentUpon>ModificarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente\AgregarCliente.resx">
       <DependentUpon>AgregarCliente.cs</DependentUpon>

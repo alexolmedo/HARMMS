@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace Proyecto.Cliente
 {
-    public partial class ActualizarCliente : Form
+    public partial class ModificarCliente : Form
     {
         Conexion conexion = new Conexion();
         SqlDataAdapter da;
         DataTable dt;
-        public ActualizarCliente()
+        public ModificarCliente()
         {
             InitializeComponent();
             this.CenterToScreen();
@@ -74,7 +74,7 @@ namespace Proyecto.Cliente
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("¿Confirma actualización?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
+            DialogResult dr = MessageBox.Show("¿Confirma modificación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
                 
             if (dr == DialogResult.Yes)
             {

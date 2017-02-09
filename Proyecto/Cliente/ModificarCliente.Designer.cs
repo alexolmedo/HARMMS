@@ -1,6 +1,6 @@
 ﻿namespace Proyecto.Cliente
 {
-    partial class ActualizarCliente
+    partial class ModificarCliente
     {
         /// <summary>
         /// Required designer variable.

@@ -36,7 +36,7 @@ namespace Proyecto
 
         private void actualizarClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Cliente.ActualizarCliente().ShowDialog();
+            new Cliente.ModificarCliente().ShowDialog();
         }
 
         private void generarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
