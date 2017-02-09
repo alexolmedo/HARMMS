@@ -5,7 +5,9 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -239,6 +241,20 @@ namespace Proyecto.Cliente
                     MessageBox.Show("La cedula ya se encuentra registrada", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     txtCedAgrCliente.Text = "";
                 }
+            }
+        }
+
+        private void txtCorreoAgrCliente_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(txtCorreoAgrCliente.Text);
+
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("El correo no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                txtCorreoAgrCliente.Text = "";
             }
         }
     }
