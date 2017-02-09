@@ -24,16 +24,16 @@ namespace Proyecto.Cliente
         private void button1_Click_1(object sender, EventArgs e)
         {
             txtNomAgrCliente.Text = "";
-            txtCedAgrCliente.Text="";
+            txtCedAgrCliente.Text = "";
             txtTelAgrCliente.Text = "";
-            txtDirecAgrCliente .Text = "";
+            txtDirecAgrCliente.Text = "";
             txtRUCAgrCliente.Text = "";
             txtCorreoAgrCliente.Text = "";
         }
 
         private void btnCerrarAgrCliente_Click(object sender, EventArgs e)
         {
-           this.Close();
+            this.Close();
         }
 
         private void txtCedAgrCliente_KeyPress(object sender, KeyPressEventArgs e)
@@ -55,20 +55,23 @@ namespace Proyecto.Cliente
             {
                 e.Handled = true;
             }
-              
+
         }
 
         private void btnAgregarAgrCliente_Click(object sender, EventArgs e)
         {
-            if (txtNomAgrCliente.Text.Equals("") || txtCedAgrCliente.Text.Equals("") || txtDirecAgrCliente.Text.Equals("") || txtTelAgrCliente.Text.Equals("") || txtCorreoAgrCliente.Text.Equals("")) {
+            if (txtNomAgrCliente.Text.Equals("") || txtCedAgrCliente.Text.Equals("") || txtDirecAgrCliente.Text.Equals("") || txtTelAgrCliente.Text.Equals("") || txtCorreoAgrCliente.Text.Equals(""))
+            {
 
                 MessageBox.Show("Datos Incompletos, los campos con * son obligatorios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
             }
-            else if (!txtNomAgrCliente.Text.Equals("") || !txtCedAgrCliente.Text.Equals("") || !txtDirecAgrCliente.Text.Equals("") || !txtTelAgrCliente.Text.Equals("") || !txtCorreoAgrCliente.Text.Equals("")) {
+            else if (!txtNomAgrCliente.Text.Equals("") || !txtCedAgrCliente.Text.Equals("") || !txtDirecAgrCliente.Text.Equals("") || !txtTelAgrCliente.Text.Equals("") || !txtCorreoAgrCliente.Text.Equals(""))
+            {
 
-                if (!System.Text.RegularExpressions.Regex.IsMatch(txtCedAgrCliente.Text, "^[0-9]{10}$"))
+                if (!validadorDeCedula(txtCedAgrCliente.Text))
                 {
+                    Console.WriteLine(validadorDeCedula(txtCedAgrCliente.Text));
                     MessageBox.Show("La cedula NO es valida", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
                 else
@@ -165,6 +168,56 @@ namespace Proyecto.Cliente
             {
                 e.Handled = true;
             }
+        }
+
+        private Boolean validadorDeCedula(String cedula) {
+            Boolean cedulaCorrecta = false;
+ 
+        try {
+ 
+            if (cedula.Length == 10) // ConstantesApp.LongitudCedula
+            {
+            int tercerDigito =  Int32.Parse(cedula.Substring(2, 3));
+            if (tercerDigito < 6) {
+            // Coeficientes de validación cédula
+            // El decimo digito se lo considera dígito verificador
+             int[] coefValCedula = { 2, 1, 2, 1, 2, 1, 2, 1, 2 };
+             int verificador = Convert.ToInt32(cedula.Substring(9,10));
+             int suma = 0;
+             int digito = 0;
+            for (int i = 0; i < (cedula.Length- 1); i++) {
+             digito = Convert.ToInt32(cedula.Substring(i, i + 1))* coefValCedula[i];
+             suma += ((digito % 10) + (digito / 10));
+            }
+ 
+            if ((suma % 10 == 0) && (suma % 10 == verificador)) {
+             cedulaCorrecta = true;
+            }
+            else if ((10 - (suma % 10)) == verificador) {
+             cedulaCorrecta = true;
+            } else {
+             cedulaCorrecta = false;
+            }
+            } else {
+            cedulaCorrecta = false;
+            }
+            } else {
+            cedulaCorrecta = false;
+            }
+            } catch (FormatException nfe) {
+            cedulaCorrecta = false;
+        } catch (Exception err) {
+        
+            Console.WriteLine("Una excepcion ocurrio en el proceso de validadcion" + err);
+            cedulaCorrecta = false;
+        }
+ 
+        if (!cedulaCorrecta) {
+              Console.WriteLine(cedulaCorrecta);
+              Console.WriteLine("La Cédula ingresada es Incorrecta");
+        }
+
+        return cedulaCorrecta;
         }
     }
 }
