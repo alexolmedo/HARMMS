@@ -165,6 +165,7 @@
             this.cedActCliente.Size = new System.Drawing.Size(126, 20);
             this.cedActCliente.TabIndex = 41;
             this.cedActCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cedAgrCliente_KeyPress);
+            this.cedActCliente.Leave += new System.EventHandler(this.cedActCliente_Leave);
             // 
             // nomActCliente
             // 

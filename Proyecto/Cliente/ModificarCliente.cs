@@ -264,5 +264,57 @@ namespace Proyecto.Cliente
             }
 
         }
+
+        private bool validadorDeCedula(string cedula)
+        {
+
+            int isNumeric;
+            var total = 0;
+            const int tamanoLongitudCedula = 10;
+            int[] coeficientes = { 2, 1, 2, 1, 2, 1, 2, 1, 2 };
+            const int numeroProvincias = 24;
+            const int tercerDigito = 6;
+            bool res = false;
+
+            if (int.TryParse(cedula, out isNumeric) && cedula.Length == tamanoLongitudCedula)
+            {
+                var provincia = Convert.ToInt32(string.Concat(cedula[0], cedula[1], string.Empty));
+                var digitoTres = Convert.ToInt32(cedula[2] + string.Empty);
+                if ((provincia > 0 && provincia <= numeroProvincias) && digitoTres < tercerDigito)
+                {
+
+
+                    var digitoVerificadorRecibido = Convert.ToInt32(cedula[9] + string.Empty);
+                    for (var k = 0; k < coeficientes.Length; k++)
+                    {
+                        var valor = Convert.ToInt32(coeficientes[k] + string.Empty) *
+                                    Convert.ToInt32(cedula[k] + string.Empty);
+                        total = valor >= 10 ? total + (valor - 9) : total + valor;
+                    }
+                    var digitoVerificadorObtenido = total >= 10 ? (total % 10) != 0 ?
+                        10 - (total % 10) : (total % 10) : total;
+
+                    res = (digitoVerificadorObtenido == digitoVerificadorRecibido);
+
+                }
+                else
+                {
+                    res = false;
+
+                }
+
+            }
+
+            return res;
+        }
+
+        private void cedActCliente_Leave(object sender, EventArgs e)
+        {
+            if (!validadorDeCedula(cedActCliente.Text))
+            {
+                MessageBox.Show("La cedula NO es valida", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                cedActCliente.Text = "";
+            }
+        }
     }
 }
