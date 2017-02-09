@@ -121,5 +121,50 @@ namespace Proyecto.Cliente
                 e.Handled = true;
             }
         }
+
+        private void txtNomAgrCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNomAgrCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDirecAgrCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
