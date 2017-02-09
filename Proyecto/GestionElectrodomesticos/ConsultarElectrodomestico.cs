@@ -38,5 +38,22 @@ namespace Proyecto.GestionElectrodomesticos
         {
 
         }
+
+        private void btnCerrarAgrCliente_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void radioButModelo_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPorNumSer.ReadOnly = true;
+            txtPorModelo.ReadOnly = false;
+        }
+
+        private void radioButNumSerie_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPorModelo.ReadOnly = true;
+            txtPorNumSer.ReadOnly = false;
+        }
     }
 }
