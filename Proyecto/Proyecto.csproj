@@ -63,6 +63,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administración\ParametrosOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administración\ParametrosOrden.Designer.cs">
+      <DependentUpon>ParametrosOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administración\ParametrosFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administración\ParametrosFactura.Designer.cs">
+      <DependentUpon>ParametrosFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cliente\ModificarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +251,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Administración\ParametrosOrden.resx">
+      <DependentUpon>ParametrosOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administración\ParametrosFactura.resx">
+      <DependentUpon>ParametrosFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cliente\ModificarCliente.resx">
       <DependentUpon>ModificarCliente.cs</DependentUpon>
     </EmbeddedResource>
