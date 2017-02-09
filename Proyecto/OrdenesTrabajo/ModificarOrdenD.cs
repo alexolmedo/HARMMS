@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Proyecto.OrdenesTrabajo
 {
-    public partial class ModificarOrden : Form
+    public partial class ModificarOrdenD : Form
     {
-        public ModificarOrden()
+        public ModificarOrdenD()
         {
             InitializeComponent();
             this.CenterToScreen();
@@ -21,6 +21,16 @@ namespace Proyecto.OrdenesTrabajo
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void groupBoxDD_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -148,11 +148,11 @@
     <Compile Include="GestionElectrodomesticos\ModificarCompra.Designer.cs">
       <DependentUpon>ModificarCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrdenesTrabajo\ConsultarOrden.cs">
+    <Compile Include="OrdenesTrabajo\ConsultarOrdenD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrdenesTrabajo\ConsultarOrden.Designer.cs">
-      <DependentUpon>ConsultarOrden.cs</DependentUpon>
+    <Compile Include="OrdenesTrabajo\ConsultarOrdenD.Designer.cs">
+      <DependentUpon>ConsultarOrdenD.cs</DependentUpon>
     </Compile>
     <Compile Include="OrdenesTrabajo\DeshabilitarOrden.cs">
       <SubType>Form</SubType>
@@ -160,11 +160,29 @@
     <Compile Include="OrdenesTrabajo\DeshabilitarOrden.Designer.cs">
       <DependentUpon>DeshabilitarOrden.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrdenesTrabajo\BuscarOrden.cs">
+    <Compile Include="OrdenesTrabajo\BuscarOrdenC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrdenesTrabajo\BuscarOrden.Designer.cs">
-      <DependentUpon>BuscarOrden.cs</DependentUpon>
+    <Compile Include="OrdenesTrabajo\BuscarOrdenC.Designer.cs">
+      <DependentUpon>BuscarOrdenC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdenesTrabajo\BuscarOrdenM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdenesTrabajo\BuscarOrdenM.Designer.cs">
+      <DependentUpon>BuscarOrdenM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdenesTrabajo\ConsultarOrdenL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdenesTrabajo\ConsultarOrdenL.Designer.cs">
+      <DependentUpon>ConsultarOrdenL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdenesTrabajo\ModificarOrdenL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdenesTrabajo\ModificarOrdenL.Designer.cs">
+      <DependentUpon>ModificarOrdenL.cs</DependentUpon>
     </Compile>
     <Compile Include="OrdenesTrabajo\IngresarOrden.cs">
       <SubType>Form</SubType>
@@ -172,11 +190,11 @@
     <Compile Include="OrdenesTrabajo\IngresarOrden.Designer.cs">
       <DependentUpon>IngresarOrden.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrdenesTrabajo\ModificarOrden.cs">
+    <Compile Include="OrdenesTrabajo\ModificarOrdenD.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrdenesTrabajo\ModificarOrden.Designer.cs">
-      <DependentUpon>ModificarOrden.cs</DependentUpon>
+    <Compile Include="OrdenesTrabajo\ModificarOrdenD.Designer.cs">
+      <DependentUpon>ModificarOrdenD.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -272,20 +290,29 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrdenesTrabajo\ConsultarOrden.resx">
-      <DependentUpon>ConsultarOrden.cs</DependentUpon>
+    <EmbeddedResource Include="OrdenesTrabajo\ConsultarOrdenD.resx">
+      <DependentUpon>ConsultarOrdenD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrdenesTrabajo\DeshabilitarOrden.resx">
       <DependentUpon>DeshabilitarOrden.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrdenesTrabajo\BuscarOrden.resx">
-      <DependentUpon>BuscarOrden.cs</DependentUpon>
+    <EmbeddedResource Include="OrdenesTrabajo\BuscarOrdenC.resx">
+      <DependentUpon>BuscarOrdenC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdenesTrabajo\BuscarOrdenM.resx">
+      <DependentUpon>BuscarOrdenM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdenesTrabajo\ConsultarOrdenL.resx">
+      <DependentUpon>ConsultarOrdenL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdenesTrabajo\ModificarOrdenL.resx">
+      <DependentUpon>ModificarOrdenL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrdenesTrabajo\IngresarOrden.resx">
       <DependentUpon>IngresarOrden.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrdenesTrabajo\ModificarOrden.resx">
-      <DependentUpon>ModificarOrden.cs</DependentUpon>
+    <EmbeddedResource Include="OrdenesTrabajo\ModificarOrdenD.resx">
+      <DependentUpon>ModificarOrdenD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Repuestos\ConsultarRepuesto.resx">
       <DependentUpon>ConsultarRepuesto.cs</DependentUpon>
@@ -388,6 +415,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HARMMS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selec.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

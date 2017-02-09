@@ -81,12 +81,12 @@ namespace Proyecto
 
         private void consultarOrdenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new OrdenesTrabajo.ModificarOrden().ShowDialog();
+            new OrdenesTrabajo.BuscarOrdenM().ShowDialog();
         }
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new OrdenesTrabajo.ConsultarOrden().ShowDialog();
+            new OrdenesTrabajo.BuscarOrdenC().ShowDialog();
         }
 
         private void deshabilitarToolStripMenuItem_Click(object sender, EventArgs e)

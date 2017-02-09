@@ -10,21 +10,22 @@ using System.Windows.Forms;
 
 namespace Proyecto.OrdenesTrabajo
 {
-    public partial class BuscarOrden : Form
+    public partial class ConsultarOrdenD : Form
     {
-        public BuscarOrden()
+        public ConsultarOrdenD()
         {
             InitializeComponent();
+            this.CenterToScreen();
+        }
+
+        private void ConsultarOrden_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

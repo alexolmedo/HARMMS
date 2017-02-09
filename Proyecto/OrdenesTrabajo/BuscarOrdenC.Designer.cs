@@ -1,6 +1,6 @@
 ﻿namespace Proyecto.OrdenesTrabajo
 {
-    partial class BuscarOrden
+    partial class BuscarOrdenC
     {
         /// <summary>
         /// Required designer variable.
@@ -35,12 +35,13 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.textBoxCI = new System.Windows.Forms.TextBox();
+            this.textBoxNumOT = new System.Windows.Forms.TextBox();
+            this.radioButCI = new System.Windows.Forms.RadioButton();
+            this.radioButNumOT = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -49,7 +50,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 130);
+            this.groupBox2.Location = new System.Drawing.Point(12, 119);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(599, 183);
             this.groupBox2.TabIndex = 37;
@@ -96,16 +97,82 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.textBoxCI);
+            this.groupBox1.Controls.Add(this.textBoxNumOT);
+            this.groupBox1.Controls.Add(this.radioButCI);
+            this.groupBox1.Controls.Add(this.radioButNumOT);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(599, 101);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda";
+            // 
+            // textBoxCI
+            // 
+            this.textBoxCI.Location = new System.Drawing.Point(246, 58);
+            this.textBoxCI.Name = "textBoxCI";
+            this.textBoxCI.ReadOnly = true;
+            this.textBoxCI.Size = new System.Drawing.Size(151, 20);
+            this.textBoxCI.TabIndex = 4;
+            // 
+            // textBoxNumOT
+            // 
+            this.textBoxNumOT.Location = new System.Drawing.Point(246, 28);
+            this.textBoxNumOT.Name = "textBoxNumOT";
+            this.textBoxNumOT.ReadOnly = true;
+            this.textBoxNumOT.Size = new System.Drawing.Size(151, 20);
+            this.textBoxNumOT.TabIndex = 3;
+            // 
+            // radioButCI
+            // 
+            this.radioButCI.AutoSize = true;
+            this.radioButCI.Location = new System.Drawing.Point(73, 61);
+            this.radioButCI.Name = "radioButCI";
+            this.radioButCI.Size = new System.Drawing.Size(70, 17);
+            this.radioButCI.TabIndex = 1;
+            this.radioButCI.TabStop = true;
+            this.radioButCI.Text = "CI Cliente";
+            this.radioButCI.UseVisualStyleBackColor = true;
+            this.radioButCI.CheckedChanged += new System.EventHandler(this.radioButCI_CheckedChanged);
+            // 
+            // radioButNumOT
+            // 
+            this.radioButNumOT.AutoSize = true;
+            this.radioButNumOT.Location = new System.Drawing.Point(73, 28);
+            this.radioButNumOT.Name = "radioButNumOT";
+            this.radioButNumOT.Size = new System.Drawing.Size(131, 17);
+            this.radioButNumOT.TabIndex = 0;
+            this.radioButNumOT.TabStop = true;
+            this.radioButNumOT.Text = " Nro Orden de Trabajo";
+            this.radioButNumOT.UseVisualStyleBackColor = true;
+            this.radioButNumOT.CheckedChanged += new System.EventHandler(this.radioButNumOT_CheckedChanged);
+            // 
+            // button1
+            // 
+            this.button1.Image = global::Proyecto.Properties.Resources.selec;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(446, 312);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 29);
+            this.button1.TabIndex = 55;
+            this.button1.Text = "Seleccionar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button7
+            // 
+            this.button7.Image = global::Proyecto.Properties.Resources.cancel1;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(544, 312);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(67, 29);
+            this.button7.TabIndex = 54;
+            this.button7.Text = "Cerrar";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button4
             // 
@@ -119,67 +186,17 @@
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(246, 58);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(151, 20);
-            this.textBox2.TabIndex = 4;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(246, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(151, 20);
-            this.textBox1.TabIndex = 3;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(73, 61);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(70, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "CI Cliente";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(73, 28);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(131, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = " Nro Orden de Trabajo";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Image = global::Proyecto.Properties.Resources.cancel1;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(544, 321);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(67, 29);
-            this.button7.TabIndex = 54;
-            this.button7.Text = "Cerrar";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // BuscarOrden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 362);
+            this.ClientSize = new System.Drawing.Size(623, 350);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "BuscarOrden";
-            this.Text = "Form1";
+            this.Text = "Buscar Orden de Trabajo";
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -194,14 +211,15 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.TextBox textBoxCI;
+        private System.Windows.Forms.TextBox textBoxNumOT;
+        private System.Windows.Forms.RadioButton radioButCI;
+        private System.Windows.Forms.RadioButton radioButNumOT;
         private System.Windows.Forms.DataGridViewTextBoxColumn NroOrden;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoServicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button1;
     }
 }

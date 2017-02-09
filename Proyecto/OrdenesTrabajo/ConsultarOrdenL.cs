@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace Proyecto.OrdenesTrabajo
 {
-    public partial class ConsultarOrden : Form
+    public partial class ConsultarOrdenL : Form
     {
-        public ConsultarOrden()
+        public ConsultarOrdenL()
         {
             InitializeComponent();
-            this.CenterToScreen();
         }
 
-        private void ConsultarOrden_Load(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
