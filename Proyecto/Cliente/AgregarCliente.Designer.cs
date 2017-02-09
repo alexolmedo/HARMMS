@@ -91,6 +91,7 @@
             this.txtDirecAgrCliente.Size = new System.Drawing.Size(187, 20);
             this.txtDirecAgrCliente.TabIndex = 34;
             this.txtDirecAgrCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDirecAgrCliente_KeyPress);
+            this.txtDirecAgrCliente.Leave += new System.EventHandler(this.txtDirecAgrCliente_Leave);
             // 
             // label6
             // 
