@@ -126,6 +126,7 @@
             this.txtTelAgrCliente.Size = new System.Drawing.Size(187, 20);
             this.txtTelAgrCliente.TabIndex = 30;
             this.txtTelAgrCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelAgrCliente_KeyPress);
+            this.txtTelAgrCliente.Leave += new System.EventHandler(this.txtTelAgrCliente_Leave);
             // 
             // txtCedAgrCliente
             // 

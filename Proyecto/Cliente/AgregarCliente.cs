@@ -260,5 +260,14 @@ namespace Proyecto.Cliente
                 }
             }
         }
+
+        private void txtTelAgrCliente_Leave(object sender, EventArgs e)
+        {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtTelAgrCliente.Text, "^[0-9]{7,10}$"))
+            {
+                MessageBox.Show("El telefono no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                txtTelAgrCliente.Text = "";
+            }
+        }
     }
 }

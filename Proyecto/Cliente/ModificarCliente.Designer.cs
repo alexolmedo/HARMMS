@@ -157,6 +157,7 @@
             this.telActCliente.Size = new System.Drawing.Size(126, 20);
             this.telActCliente.TabIndex = 42;
             this.telActCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telAgrCliente_KeyPress);
+            this.telActCliente.Leave += new System.EventHandler(this.telActCliente_Leave);
             // 
             // cedActCliente
             // 
