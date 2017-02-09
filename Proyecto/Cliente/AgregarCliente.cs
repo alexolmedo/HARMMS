@@ -50,6 +50,7 @@ namespace Proyecto.Cliente
             else if (Char.IsSeparator(e.KeyChar))
             {
                 e.Handled = false;
+
             }
             else
             {
