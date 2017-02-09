@@ -22,5 +22,17 @@ namespace Proyecto.Repuestos
         {
             this.Close();
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            textBoxNumSerie.ReadOnly = true;
+            textBoxModelo.ReadOnly = false;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            textBoxModelo.ReadOnly = true;
+            textBoxNumSerie.ReadOnly = false;
+        }
     }
 }

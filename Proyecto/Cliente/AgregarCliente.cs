@@ -70,9 +70,6 @@ namespace Proyecto.Cliente
             else if (!txtNomAgrCliente.Text.Equals("") || !txtCedAgrCliente.Text.Equals("") || !txtDirecAgrCliente.Text.Equals("") || !txtTelAgrCliente.Text.Equals("") || !txtCorreoAgrCliente.Text.Equals(""))
             {
 
-                //if ( txtCedAgrCliente.Text.Length == 10 )
-                //{
-                    Console.WriteLine("If 10");
                     if (!validadorDeCedula(txtCedAgrCliente.Text))
                     {
                         
@@ -90,10 +87,7 @@ namespace Proyecto.Cliente
                         conexion.command.Dispose();
                         MessageBox.Show("El cliente se agregó correctamente", "Cliente Agregado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     }
-                        
-                //}
-                    
-                
+                            
             }
         }
 
