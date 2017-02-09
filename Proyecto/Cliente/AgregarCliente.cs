@@ -14,6 +14,8 @@ namespace Proyecto.Cliente
     public partial class AgregarCliente : Form
     {
         Conexion conexion = new Conexion();
+        SqlDataAdapter da;
+        DataTable dt;
 
         public AgregarCliente()
         {
@@ -215,6 +217,29 @@ namespace Proyecto.Cliente
             }
 
             return res;
-	    }        
+	    }
+
+        private void txtCedAgrCliente_Leave(object sender, EventArgs e)
+        {
+            string strquery1 = "Select ci_cliente from cliente";
+            conexion.command = new SqlCommand(strquery1, conexion.connection);
+
+            da = new SqlDataAdapter();
+            //fetching query in the database.
+            da.SelectCommand = conexion.command;
+            //inicializar nueva datatable
+            dt = new DataTable();
+            //refresca las filas segun el rango especificado en el datasource. 
+            da.Fill(dt);
+
+            foreach (DataRow r in dt.Rows)
+            {
+                if (r[0].ToString().Equals(txtCedAgrCliente.Text))
+                {
+                    MessageBox.Show("La cedula ya se encuentra registrada", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    txtCedAgrCliente.Text = "";
+                }
+            }
+        }
     }
 }
