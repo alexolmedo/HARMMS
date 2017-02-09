@@ -91,6 +91,7 @@
             this.txtDirecAgrCliente.Size = new System.Drawing.Size(187, 20);
             this.txtDirecAgrCliente.TabIndex = 34;
             this.txtDirecAgrCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDirecAgrCliente_KeyPress);
+            this.txtDirecAgrCliente.Leave += new System.EventHandler(this.txtDirecAgrCliente_Leave);
             // 
             // label6
             // 
@@ -126,6 +127,7 @@
             this.txtTelAgrCliente.Size = new System.Drawing.Size(187, 20);
             this.txtTelAgrCliente.TabIndex = 30;
             this.txtTelAgrCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelAgrCliente_KeyPress);
+            this.txtTelAgrCliente.Leave += new System.EventHandler(this.txtTelAgrCliente_Leave);
             // 
             // txtCedAgrCliente
             // 

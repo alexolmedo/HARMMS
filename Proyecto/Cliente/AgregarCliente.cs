@@ -260,5 +260,26 @@ namespace Proyecto.Cliente
                 }
             }
         }
+
+        private void txtTelAgrCliente_Leave(object sender, EventArgs e)
+        {
+            if (txtTelAgrCliente.Text != "")
+            {
+                if (!System.Text.RegularExpressions.Regex.IsMatch(txtTelAgrCliente.Text, "^[0-9]{7,10}$"))
+                {
+                    MessageBox.Show("El telefono no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    txtTelAgrCliente.Text = "";
+                }
+            }
+        }
+
+        private void txtDirecAgrCliente_Leave(object sender, EventArgs e)
+        {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtDirecAgrCliente.Text, "^[a-zA-Z0-9.,\040-]{0,150}$"))
+            {
+                MessageBox.Show("La dirección no es válida", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                txtDirecAgrCliente.Text = "";
+            }
+        }
     }
 }
