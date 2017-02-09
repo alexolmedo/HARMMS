@@ -32,6 +32,7 @@ namespace Proyecto
             catch (System.IO.FileNotFoundException e)
             {
                 MessageBox.Show("No se encontró el archivo 'loginbase.txt'.");
+                MessageBox.Show(e.ToString());
             }
 
             string sql = null;

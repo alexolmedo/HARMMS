@@ -70,19 +70,30 @@ namespace Proyecto.Cliente
             else if (!txtNomAgrCliente.Text.Equals("") || !txtCedAgrCliente.Text.Equals("") || !txtDirecAgrCliente.Text.Equals("") || !txtTelAgrCliente.Text.Equals("") || !txtCorreoAgrCliente.Text.Equals(""))
             {
 
-                if (!validadorDeCedula(txtCedAgrCliente.Text))
-                {
-                    Console.WriteLine(validadorDeCedula(txtCedAgrCliente.Text));
-                    MessageBox.Show("La cedula NO es valida", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                }
-                else
-                {
-                    string sql = "INSERT INTO cliente VALUES ('" + txtCedAgrCliente.Text + "','" + txtNomAgrCliente.Text + "','" + txtTelAgrCliente.Text + "','" + txtDirecAgrCliente.Text + "','" + txtRUCAgrCliente.Text + "','" + txtCorreoAgrCliente.Text + "','H')";
-                    conexion.command = new SqlCommand(sql, conexion.connection);
-                    conexion.command.ExecuteNonQuery();
-                    conexion.command.Dispose();
-                    MessageBox.Show("El cliente se agregó correctamente", "Cliente Agregado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                }
+                //if ( txtCedAgrCliente.Text.Length == 10 )
+                //{
+                    Console.WriteLine("If 10");
+                    if (!validadorDeCedula(txtCedAgrCliente.Text))
+                    {
+                        
+                        Console.WriteLine(validadorDeCedula(txtCedAgrCliente.Text));
+
+                        MessageBox.Show("La cedula NO es valida", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); //DAMOS UN MENSAJE DE ERROR
+                    }
+
+                    else
+                    {
+                        Console.WriteLine(validadorDeCedula(txtCedAgrCliente.Text));
+                        string sql = "INSERT INTO cliente VALUES ('" + txtCedAgrCliente.Text + "','" + txtNomAgrCliente.Text + "','" + txtTelAgrCliente.Text + "','" + txtDirecAgrCliente.Text + "','" + txtRUCAgrCliente.Text + "','" + txtCorreoAgrCliente.Text + "','H')";
+                        conexion.command = new SqlCommand(sql, conexion.connection);
+                        conexion.command.ExecuteNonQuery();
+                        conexion.command.Dispose();
+                        MessageBox.Show("El cliente se agregó correctamente", "Cliente Agregado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                        
+                //}
+                    
+                
             }
         }
 
@@ -171,54 +182,45 @@ namespace Proyecto.Cliente
             }
         }
 
-        private Boolean validadorDeCedula(String cedula) {
-            Boolean cedulaCorrecta = false;
- 
-        try {
- 
-            if (cedula.Length == 10) // ConstantesApp.LongitudCedula
-            {
-            int tercerDigito =  Int32.Parse(cedula.Substring(2, 3));
-            if (tercerDigito < 6) {
-            // Coeficientes de validación cédula
-            // El decimo digito se lo considera dígito verificador
-             int[] coefValCedula = { 2, 1, 2, 1, 2, 1, 2, 1, 2 };
-             int verificador = Convert.ToInt32(cedula.Substring(9,10));
-             int suma = 0;
-             int digito = 0;
-            for (int i = 0; i < (cedula.Length- 1); i++) {
-             digito = Convert.ToInt32(cedula.Substring(i, i + 1))* coefValCedula[i];
-             suma += ((digito % 10) + (digito / 10));
-            }
- 
-            if ((suma % 10 == 0) && (suma % 10 == verificador)) {
-             cedulaCorrecta = true;
-            }
-            else if ((10 - (suma % 10)) == verificador) {
-             cedulaCorrecta = true;
-            } else {
-             cedulaCorrecta = false;
-            }
-            } else {
-            cedulaCorrecta = false;
-            }
-            } else {
-            cedulaCorrecta = false;
-            }
-            } catch (FormatException nfe) {
-            cedulaCorrecta = false;
-        } catch (Exception err) {
-        
-            Console.WriteLine("Una excepcion ocurrio en el proceso de validadcion" + err);
-            cedulaCorrecta = false;
-        }
- 
-        if (!cedulaCorrecta) {
-              Console.WriteLine(cedulaCorrecta);
-              Console.WriteLine("La Cédula ingresada es Incorrecta");
-        }
+        private bool validadorDeCedula(string cedula) {
 
-        return cedulaCorrecta;
-        }
+            int isNumeric;
+            var total = 0;
+            const int tamanoLongitudCedula = 10;
+            int[] coeficientes = { 2, 1, 2, 1, 2, 1, 2, 1, 2 };
+            const int numeroProvincias = 24;
+            const int tercerDigito = 6;
+            bool res = false;
+
+            if (int.TryParse(cedula, out isNumeric) && cedula.Length == tamanoLongitudCedula)
+            {
+                var provincia = Convert.ToInt32(string.Concat(cedula[0], cedula[1], string.Empty));
+                var digitoTres = Convert.ToInt32(cedula[2] + string.Empty);
+                if ((provincia > 0 && provincia <= numeroProvincias) && digitoTres <tercerDigito) {
+
+                
+                    var digitoVerificadorRecibido = Convert.ToInt32(cedula[9] + string.Empty);
+                    for (var k = 0; k < coeficientes.Length; k++)
+                    {
+                        var valor = Convert.ToInt32(coeficientes[k] + string.Empty) *
+                                    Convert.ToInt32(cedula[k] + string.Empty);
+                        total = valor >= 10 ? total + (valor - 9) : total + valor;
+                    }
+                    var digitoVerificadorObtenido = total >= 10 ? (total % 10) != 0 ?
+                        10 - (total % 10) : (total % 10) : total;
+
+                    res = (digitoVerificadorObtenido == digitoVerificadorRecibido);
+                    
+                }
+                else
+                {
+                    res = false;
+                    
+                }
+                
+            }
+
+            return res;
+	    }        
     }
 }
