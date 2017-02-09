@@ -18,11 +18,6 @@ namespace Proyecto.Facturacion
             this.CenterToScreen();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -56,6 +51,11 @@ namespace Proyecto.Facturacion
         private void btnCerrarAgrCliente_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new Facturacion.ConsultarFactura().ShowDialog();
         }
     }
 }

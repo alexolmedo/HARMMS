@@ -58,6 +58,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -343,11 +344,20 @@
             this.textBox14.Size = new System.Drawing.Size(153, 20);
             this.textBox14.TabIndex = 0;
             // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(8, 401);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(106, 20);
+            this.textBox6.TabIndex = 61;
+            // 
             // ConsultarFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 429);
+            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.btnCerrarAgrCliente);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -362,6 +372,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -397,5 +408,6 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }
