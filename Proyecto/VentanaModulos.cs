@@ -124,11 +124,6 @@ namespace Proyecto
 
         }
 
-        private void darDeBajaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new Cliente.DeshabilitarCliente().ShowDialog();
-        }
-
         private void VentanaModulos_Load(object sender, EventArgs e)
         {
 
