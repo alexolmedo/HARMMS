@@ -162,7 +162,11 @@ namespace Proyecto.Cliente
 
         private void txtDirecAgrCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsLetter(e.KeyChar))
+            if (Char.IsLetterOrDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (e.KeyChar == '-' || e.KeyChar == '.' || e.KeyChar == ',')
             {
                 e.Handled = false;
             }
