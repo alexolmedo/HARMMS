@@ -286,7 +286,7 @@ namespace Proyecto.Cliente
 
         private void txtDirecAgrCliente_Leave(object sender, EventArgs e)
         {
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtDirecAgrCliente.Text, "^[a-zA-Z0-9.,\040-]{0,150}$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtDirecAgrCliente.Text, "^[a-zA-Z0-9., -]{0,150}$"))
             {
                 MessageBox.Show("La dirección no es válida", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 txtDirecAgrCliente.Text = "";

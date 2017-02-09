@@ -122,6 +122,7 @@
             this.dirActCliente.Size = new System.Drawing.Size(377, 20);
             this.dirActCliente.TabIndex = 58;
             this.dirActCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dirActCliente_KeyPress);
+            this.dirActCliente.Leave += new System.EventHandler(this.dirActCliente_Leave);
             // 
             // label6
             // 

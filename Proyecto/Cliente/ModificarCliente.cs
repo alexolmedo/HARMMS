@@ -325,5 +325,14 @@ namespace Proyecto.Cliente
                 telActCliente.Text = "";
             }
         }
+
+        private void dirActCliente_Leave(object sender, EventArgs e)
+        {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(dirActCliente.Text, "^[a-zA-Z0-9., -]{0,150}$"))
+            {
+                MessageBox.Show("La dirección no es válida", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                dirActCliente.Text = "";
+            }
+        }
     }
 }
