@@ -246,15 +246,18 @@ namespace Proyecto.Cliente
 
         private void txtCorreoAgrCliente_Leave(object sender, EventArgs e)
         {
-            try
+            if (txtCorreoAgrCliente.Text != "")
             {
-                MailAddress m = new MailAddress(txtCorreoAgrCliente.Text);
+                try
+                {
+                    MailAddress m = new MailAddress(txtCorreoAgrCliente.Text);
 
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("El correo no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                txtCorreoAgrCliente.Text = "";
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("El correo no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    txtCorreoAgrCliente.Text = "";
+                }
             }
         }
     }

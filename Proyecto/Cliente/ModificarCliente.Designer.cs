@@ -105,7 +105,7 @@
             this.correoActCliente.Name = "correoActCliente";
             this.correoActCliente.Size = new System.Drawing.Size(121, 20);
             this.correoActCliente.TabIndex = 60;
-            this.correoActCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.correoActCliente_KeyPress);
+            this.correoActCliente.Leave += new System.EventHandler(this.correoActCliente_Leave);
             // 
             // RUCActCliente
             // 
@@ -293,7 +293,7 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // ActualizarCliente
+            // ModificarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -302,7 +302,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button1);
-            this.Name = "ActualizarCliente";
+            this.Name = "ModificarCliente";
             this.Text = "Modificar Cliente";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
