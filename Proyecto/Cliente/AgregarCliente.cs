@@ -223,6 +223,15 @@ namespace Proyecto.Cliente
 
         private void txtCedAgrCliente_Leave(object sender, EventArgs e)
         {
+            if (!txtCedAgrCliente.Text.Equals(""))
+            {
+                if(!validadorDeCedula(txtCedAgrCliente.Text))
+                {
+                    MessageBox.Show("La cedula NO es valida", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    txtCedAgrCliente.Text = "";
+                }
+            }
+
             string strquery1 = "Select ci_cliente from cliente";
             conexion.command = new SqlCommand(strquery1, conexion.connection);
 
@@ -242,6 +251,8 @@ namespace Proyecto.Cliente
                     txtCedAgrCliente.Text = "";
                 }
             }
+
+
         }
 
         private void txtCorreoAgrCliente_Leave(object sender, EventArgs e)
