@@ -53,8 +53,8 @@
             this.parámetrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.parámetrosOrdenDeTrabajoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarAyudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,21 +133,21 @@
             // ingresarToolStripMenuItem
             // 
             this.ingresarToolStripMenuItem.Name = "ingresarToolStripMenuItem";
-            this.ingresarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.ingresarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ingresarToolStripMenuItem.Text = "Ingresar";
             this.ingresarToolStripMenuItem.Click += new System.EventHandler(this.ingresarToolStripMenuItem_Click);
             // 
             // modificarToolStripMenuItem
             // 
             this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.modificarToolStripMenuItem.Text = "Modificar";
             this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
             // 
             // consultarToolStripMenuItem1
             // 
             this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
-            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.consultarToolStripMenuItem1.Text = "Consultar";
             this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
             // 
@@ -236,8 +236,8 @@
             this.parámetrosToolStripMenuItem,
             this.parámetrosOrdenDeTrabajoToolStripMenuItem});
             this.administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
-            this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
-            this.administraciónToolStripMenuItem.Text = "Administración";
+            this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(163, 20);
+            this.administraciónToolStripMenuItem.Text = "Administración del Sistema";
             // 
             // parámetrosToolStripMenuItem
             // 
@@ -261,18 +261,18 @@
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
+            // consultarAyudaToolStripMenuItem
+            // 
+            this.consultarAyudaToolStripMenuItem.Name = "consultarAyudaToolStripMenuItem";
+            this.consultarAyudaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.consultarAyudaToolStripMenuItem.Text = "Consultar Ayuda";
+            // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
-            // consultarAyudaToolStripMenuItem
-            // 
-            this.consultarAyudaToolStripMenuItem.Name = "consultarAyudaToolStripMenuItem";
-            this.consultarAyudaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.consultarAyudaToolStripMenuItem.Text = "Consultar Ayuda";
             // 
             // VentanaModulos
             // 

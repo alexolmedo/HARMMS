@@ -135,6 +135,7 @@
             this.txtCedAgrCliente.Name = "txtCedAgrCliente";
             this.txtCedAgrCliente.Size = new System.Drawing.Size(187, 20);
             this.txtCedAgrCliente.TabIndex = 29;
+            this.txtCedAgrCliente.TextChanged += new System.EventHandler(this.txtCedAgrCliente_TextChanged);
             this.txtCedAgrCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedAgrCliente_KeyPress);
             this.txtCedAgrCliente.Leave += new System.EventHandler(this.txtCedAgrCliente_Leave);
             // 

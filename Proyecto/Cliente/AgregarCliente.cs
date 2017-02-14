@@ -296,5 +296,10 @@ namespace Proyecto.Cliente
                 txtDirecAgrCliente.Text = "";
             }
         }
+
+        private void txtCedAgrCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
