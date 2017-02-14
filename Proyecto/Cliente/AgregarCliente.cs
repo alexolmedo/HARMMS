@@ -299,10 +299,14 @@ namespace Proyecto.Cliente
 
         private void txtRUCAgrCliente_Leave(object sender, EventArgs e)
         {
-            if(!System.Text.RegularExpressions.Regex.IsMatch(txtRUCAgrCliente.Text, "^[0-9]{13}$")){
-                MessageBox.Show("El RUC no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                txtRUCAgrCliente.Text = "";
+            if(txtRUCAgrCliente.Text != ""){
+                if (!System.Text.RegularExpressions.Regex.IsMatch(txtRUCAgrCliente.Text, "^[0-9]{13}$"))
+                {
+                    MessageBox.Show("El RUC no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    txtRUCAgrCliente.Text = "";
+                }
             }
+           
         }
     }
 }
