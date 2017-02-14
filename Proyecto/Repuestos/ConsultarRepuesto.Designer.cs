@@ -30,11 +30,15 @@
         {
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textPrVenta = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textEstado = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textPrCompra = new System.Windows.Forms.TextBox();
+            this.textBoxNSer = new System.Windows.Forms.TextBox();
+            this.textBoxMod = new System.Windows.Forms.TextBox();
+            this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,11 +49,7 @@
             this.textBoxModelo = new System.Windows.Forms.TextBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -65,18 +65,19 @@
             this.button2.Text = "Buscar";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox9);
+            this.groupBox2.Controls.Add(this.textPrVenta);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBox8);
+            this.groupBox2.Controls.Add(this.textEstado);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.textPrCompra);
+            this.groupBox2.Controls.Add(this.textBoxNSer);
+            this.groupBox2.Controls.Add(this.textBoxMod);
+            this.groupBox2.Controls.Add(this.textBoxNombre);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
@@ -89,6 +90,40 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Resultado";
             // 
+            // textPrVenta
+            // 
+            this.textPrVenta.Location = new System.Drawing.Point(116, 132);
+            this.textPrVenta.Name = "textPrVenta";
+            this.textPrVenta.ReadOnly = true;
+            this.textPrVenta.Size = new System.Drawing.Size(137, 20);
+            this.textPrVenta.TabIndex = 23;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 135);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(83, 13);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Precio de Venta";
+            // 
+            // textEstado
+            // 
+            this.textEstado.Location = new System.Drawing.Point(389, 132);
+            this.textEstado.Name = "textEstado";
+            this.textEstado.ReadOnly = true;
+            this.textEstado.Size = new System.Drawing.Size(137, 20);
+            this.textEstado.TabIndex = 21;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(328, 135);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Estado";
+            // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(389, 95);
@@ -97,37 +132,37 @@
             this.textBox5.Size = new System.Drawing.Size(137, 20);
             this.textBox5.TabIndex = 19;
             // 
-            // textBox4
+            // textPrCompra
             // 
-            this.textBox4.Location = new System.Drawing.Point(116, 98);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(137, 20);
-            this.textBox4.TabIndex = 18;
+            this.textPrCompra.Location = new System.Drawing.Point(116, 98);
+            this.textPrCompra.Name = "textPrCompra";
+            this.textPrCompra.ReadOnly = true;
+            this.textPrCompra.Size = new System.Drawing.Size(137, 20);
+            this.textPrCompra.TabIndex = 18;
             // 
-            // textBox3
+            // textBoxNSer
             // 
-            this.textBox3.Location = new System.Drawing.Point(389, 31);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(137, 20);
-            this.textBox3.TabIndex = 17;
+            this.textBoxNSer.Location = new System.Drawing.Point(389, 31);
+            this.textBoxNSer.Name = "textBoxNSer";
+            this.textBoxNSer.ReadOnly = true;
+            this.textBoxNSer.Size = new System.Drawing.Size(137, 20);
+            this.textBoxNSer.TabIndex = 17;
             // 
-            // textBox6
+            // textBoxMod
             // 
-            this.textBox6.Location = new System.Drawing.Point(116, 65);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(410, 20);
-            this.textBox6.TabIndex = 16;
+            this.textBoxMod.Location = new System.Drawing.Point(116, 65);
+            this.textBoxMod.Name = "textBoxMod";
+            this.textBoxMod.ReadOnly = true;
+            this.textBoxMod.Size = new System.Drawing.Size(410, 20);
+            this.textBoxMod.TabIndex = 16;
             // 
-            // textBox7
+            // textBoxNombre
             // 
-            this.textBox7.Location = new System.Drawing.Point(116, 31);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(137, 20);
-            this.textBox7.TabIndex = 15;
+            this.textBoxNombre.Location = new System.Drawing.Point(116, 31);
+            this.textBoxNombre.Name = "textBoxNombre";
+            this.textBoxNombre.ReadOnly = true;
+            this.textBoxNombre.Size = new System.Drawing.Size(137, 20);
+            this.textBoxNombre.TabIndex = 15;
             // 
             // label5
             // 
@@ -228,23 +263,6 @@
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(328, 135);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Estado";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(389, 132);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(137, 20);
-            this.textBox8.TabIndex = 21;
-            // 
             // button1
             // 
             this.button1.Image = global::Proyecto.Properties.Resources.cancel1;
@@ -257,23 +275,6 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(116, 132);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(137, 20);
-            this.textBox9.TabIndex = 23;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 135);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 13);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Precio de Venta";
             // 
             // ConsultarRepuesto
             // 
@@ -298,10 +299,10 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textPrCompra;
+        private System.Windows.Forms.TextBox textBoxNSer;
+        private System.Windows.Forms.TextBox textBoxMod;
+        private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -312,10 +313,10 @@
         private System.Windows.Forms.TextBox textBoxModelo;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textEstado;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textPrVenta;
         private System.Windows.Forms.Label label7;
 
     }

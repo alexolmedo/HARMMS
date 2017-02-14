@@ -84,7 +84,7 @@ namespace Proyecto.Cliente
 
                     else
                     {
-                        Console.WriteLine(validadorDeCedula(txtCedAgrCliente.Text));
+                        //Console.WriteLine(validadorDeCedula(txtCedAgrCliente.Text));
                         string sql = "INSERT INTO cliente VALUES ('" + txtCedAgrCliente.Text + "','" + txtNomAgrCliente.Text + "','" + txtTelAgrCliente.Text + "','" + txtDirecAgrCliente.Text + "','" + txtRUCAgrCliente.Text + "','" + txtCorreoAgrCliente.Text + "','Habilitado')";
                         conexion.command = new SqlCommand(sql, conexion.connection);
                         conexion.command.ExecuteNonQuery();

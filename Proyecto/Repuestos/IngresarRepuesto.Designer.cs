@@ -33,17 +33,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxNombre = new System.Windows.Forms.TextBox();
+            this.textBoxModelo = new System.Windows.Forms.TextBox();
+            this.textBoxNumSerie = new System.Windows.Forms.TextBox();
+            this.textBoxPrVenta = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxCantidad = new System.Windows.Forms.TextBox();
+            this.textBoxPrCompra = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.Agregar = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,53 +96,53 @@
             this.label5.Text = "Cantidad";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // textBox1
+            // textBoxNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(138, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 20);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
+            this.textBoxNombre.Location = new System.Drawing.Point(138, 28);
+            this.textBoxNombre.Name = "textBoxNombre";
+            this.textBoxNombre.Size = new System.Drawing.Size(196, 20);
+            this.textBoxNombre.TabIndex = 5;
+            this.textBoxNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBoxNombre.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
-            // textBox2
+            // textBoxModelo
             // 
-            this.textBox2.Location = new System.Drawing.Point(138, 69);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(196, 20);
-            this.textBox2.TabIndex = 6;
+            this.textBoxModelo.Location = new System.Drawing.Point(138, 69);
+            this.textBoxModelo.Name = "textBoxModelo";
+            this.textBoxModelo.Size = new System.Drawing.Size(196, 20);
+            this.textBoxModelo.TabIndex = 6;
             // 
-            // textBox3
+            // textBoxNumSerie
             // 
-            this.textBox3.Location = new System.Drawing.Point(138, 106);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(196, 20);
-            this.textBox3.TabIndex = 7;
-            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
-            this.textBox3.Leave += new System.EventHandler(this.textBox3_Leave);
+            this.textBoxNumSerie.Location = new System.Drawing.Point(138, 106);
+            this.textBoxNumSerie.Name = "textBoxNumSerie";
+            this.textBoxNumSerie.Size = new System.Drawing.Size(196, 20);
+            this.textBoxNumSerie.TabIndex = 7;
+            this.textBoxNumSerie.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
+            this.textBoxNumSerie.Leave += new System.EventHandler(this.textBox3_Leave);
             // 
-            // textBox5
+            // textBoxPrVenta
             // 
-            this.textBox5.Location = new System.Drawing.Point(138, 179);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(196, 20);
-            this.textBox5.TabIndex = 9;
-            this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
-            this.textBox5.Leave += new System.EventHandler(this.textBox5_Leave);
+            this.textBoxPrVenta.Location = new System.Drawing.Point(138, 179);
+            this.textBoxPrVenta.Name = "textBoxPrVenta";
+            this.textBoxPrVenta.Size = new System.Drawing.Size(196, 20);
+            this.textBoxPrVenta.TabIndex = 9;
+            this.textBoxPrVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
+            this.textBoxPrVenta.Leave += new System.EventHandler(this.textBox5_Leave);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBoxCantidad);
+            this.groupBox1.Controls.Add(this.textBoxNombre);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textBoxPrVenta);
+            this.groupBox1.Controls.Add(this.textBoxModelo);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.textBoxPrCompra);
+            this.groupBox1.Controls.Add(this.textBoxNumSerie);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -161,13 +161,23 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Precio de Venta";
             // 
-            // textBox6
+            // textBoxCantidad
             // 
-            this.textBox6.Location = new System.Drawing.Point(138, 211);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(196, 20);
-            this.textBox6.TabIndex = 11;
-            this.textBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);
+            this.textBoxCantidad.Location = new System.Drawing.Point(138, 211);
+            this.textBoxCantidad.Name = "textBoxCantidad";
+            this.textBoxCantidad.Size = new System.Drawing.Size(196, 20);
+            this.textBoxCantidad.TabIndex = 11;
+            this.textBoxCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox6_KeyPress);
+            // 
+            // textBoxPrCompra
+            // 
+            this.textBoxPrCompra.Location = new System.Drawing.Point(138, 142);
+            this.textBoxPrCompra.Name = "textBoxPrCompra";
+            this.textBoxPrCompra.Size = new System.Drawing.Size(196, 20);
+            this.textBoxPrCompra.TabIndex = 8;
+            this.textBoxPrCompra.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textBoxPrCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
+            this.textBoxPrCompra.Leave += new System.EventHandler(this.textBox4_Leave);
             // 
             // button2
             // 
@@ -205,15 +215,7 @@
             this.Agregar.Text = "Agregar";
             this.Agregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Agregar.UseVisualStyleBackColor = true;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(138, 142);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(196, 20);
-            this.textBox4.TabIndex = 8;
-            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
-            this.textBox4.Leave += new System.EventHandler(this.textBox4_Leave);
+            this.Agregar.Click += new System.EventHandler(this.Agregar_Click);
             // 
             // IngresarRepuesto
             // 
@@ -239,16 +241,16 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxNombre;
+        private System.Windows.Forms.TextBox textBoxModelo;
+        private System.Windows.Forms.TextBox textBoxNumSerie;
+        private System.Windows.Forms.TextBox textBoxPrVenta;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Agregar;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxCantidad;
+        private System.Windows.Forms.TextBox textBoxPrCompra;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.SqlClient;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -12,6 +13,10 @@ namespace Proyecto.Repuestos
 {
     public partial class IngresarRepuesto : Form
     {
+        Conexion conexion = new Conexion();
+        //SqlDataAdapter da;
+        //DataTable dt;
+
         public IngresarRepuesto()
         {
             InitializeComponent();
@@ -65,10 +70,10 @@ namespace Proyecto.Repuestos
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
-            if (textBox1.Text.Length > 20)
+            if (textBoxNombre.Text.Length > 20)
             {
                 MessageBox.Show("La nombre del repuesto es muy extenso", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                textBox1.Text = "";
+                textBoxNombre.Text = "";
             }
         }
 
@@ -94,10 +99,10 @@ namespace Proyecto.Repuestos
 
         private void textBox3_Leave(object sender, EventArgs e)
         {
-            if (textBox3.Text.Length > 15)
+            if (textBoxNumSerie.Text.Length > 15)
             {
                 MessageBox.Show("La número de serie es muy extenso", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                textBox3.Text = "";
+                textBoxNumSerie.Text = "";
             }
         }
 
@@ -165,25 +170,50 @@ namespace Proyecto.Repuestos
 
         private void textBox4_Leave(object sender, EventArgs e)
         {
-            if (textBox4.Text != "")
+            if (textBoxPrCompra.Text != "")
             {
-                if (!System.Text.RegularExpressions.Regex.IsMatch(textBox4.Text, "^[0-9]*([.][0-9]{1,2})?$"))
+                if (!System.Text.RegularExpressions.Regex.IsMatch(textBoxPrCompra.Text, "^[0-9]{1,4}([.][0-9]{1,2})?$"))
                 {
                     MessageBox.Show("El precio de compra no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    textBox4.Text = "";
+                    textBoxPrCompra.Text = "";
                 }
             }
         }
 
         private void textBox5_Leave(object sender, EventArgs e)
         {
-            if (textBox5.Text != "")
+            if (textBoxPrVenta.Text != "")
             {
-                if (!System.Text.RegularExpressions.Regex.IsMatch(textBox5.Text, "^[0-9]*([.][0-9]{1,2})?$"))
+                if (!System.Text.RegularExpressions.Regex.IsMatch(textBoxPrVenta.Text, "^[0-9]{1,4}([.][0-9]{1,2})?$"))
                 {
                     MessageBox.Show("El precio de venta no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    textBox5.Text = "";
+                    textBoxPrVenta.Text = "";
                 }
+            }
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void Agregar_Click(object sender, EventArgs e)
+        {
+            if (textBoxNombre.Text.Equals("") || textBoxModelo.Text.Equals("") || textBoxNumSerie.Text.Equals("") || textBoxPrCompra.Text.Equals("") || textBoxPrVenta.Text.Equals("") || textBoxCantidad.Text.Equals(""))
+            {
+                MessageBox.Show("Todos los campos son obligatorios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+
+            else if (!textBoxNombre.Text.Equals("") || !textBoxModelo.Text.Equals("") || !textBoxNumSerie.Text.Equals("") || !textBoxPrCompra.Text.Equals("") || !textBoxPrVenta.Text.Equals("") || !textBoxCantidad.Text.Equals(""))
+            {
+
+                Console.WriteLine("rshtrh");
+                string sql = "insert into producto values('" + textBoxNombre.Text + "','" + textBoxModelo.Text + "',null,'"
+                    + textBoxNumSerie.Text + "', " + textBoxPrCompra.Text + "," + textBoxPrVenta.Text + ",null,null,null,"
+                    + textBoxCantidad.Text + ")";
+                conexion.command = new SqlCommand(sql, conexion.connection);
+                conexion.command.ExecuteNonQuery();
+                conexion.command.Dispose();
+                MessageBox.Show("El repuesto se agregó correctamente", "Repuesto Agregado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
     }
