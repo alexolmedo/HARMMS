@@ -83,6 +83,7 @@
             this.txtRUCAgrCliente.Size = new System.Drawing.Size(187, 20);
             this.txtRUCAgrCliente.TabIndex = 35;
             this.txtRUCAgrCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRUCAgrCliente_KeyPress);
+            this.txtRUCAgrCliente.Leave += new System.EventHandler(this.txtRUCAgrCliente_Leave);
             // 
             // txtDirecAgrCliente
             // 
@@ -123,6 +124,7 @@
             // txtTelAgrCliente
             // 
             this.txtTelAgrCliente.Location = new System.Drawing.Point(168, 95);
+            this.txtTelAgrCliente.MaxLength = 10;
             this.txtTelAgrCliente.Name = "txtTelAgrCliente";
             this.txtTelAgrCliente.Size = new System.Drawing.Size(187, 20);
             this.txtTelAgrCliente.TabIndex = 30;
@@ -135,7 +137,6 @@
             this.txtCedAgrCliente.Name = "txtCedAgrCliente";
             this.txtCedAgrCliente.Size = new System.Drawing.Size(187, 20);
             this.txtCedAgrCliente.TabIndex = 29;
-            this.txtCedAgrCliente.TextChanged += new System.EventHandler(this.txtCedAgrCliente_TextChanged);
             this.txtCedAgrCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedAgrCliente_KeyPress);
             this.txtCedAgrCliente.Leave += new System.EventHandler(this.txtCedAgrCliente_Leave);
             // 

@@ -280,7 +280,7 @@ namespace Proyecto.Cliente
         {
             if (txtTelAgrCliente.Text != "")
             {
-                if (!System.Text.RegularExpressions.Regex.IsMatch(txtTelAgrCliente.Text, "^[0-9]{7,10}$"))
+                if (txtTelAgrCliente.Text.Length == 8 || txtTelAgrCliente.Text.Length < 7 || txtTelAgrCliente.Text.Length > 10|| !System.Text.RegularExpressions.Regex.IsMatch(txtTelAgrCliente.Text, "^[0-9]{7,10}$"))
                 {
                     MessageBox.Show("El telefono no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     txtTelAgrCliente.Text = "";
@@ -297,9 +297,12 @@ namespace Proyecto.Cliente
             }
         }
 
-        private void txtCedAgrCliente_TextChanged(object sender, EventArgs e)
+        private void txtRUCAgrCliente_Leave(object sender, EventArgs e)
         {
-
+            if(!System.Text.RegularExpressions.Regex.IsMatch(txtRUCAgrCliente.Text, "^[0-9]{13}$")){
+                MessageBox.Show("El RUC no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                txtRUCAgrCliente.Text = "";
+            }
         }
     }
 }
