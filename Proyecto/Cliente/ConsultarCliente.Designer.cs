@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.estadoConCliente = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.correoConCliente = new System.Windows.Forms.TextBox();
             this.RUCConCliente = new System.Windows.Forms.TextBox();
             this.dirConCliente = new System.Windows.Forms.TextBox();
@@ -48,8 +50,6 @@
             this.radioButCed = new System.Windows.Forms.RadioButton();
             this.radioButNombre = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.estadoConCliente = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +77,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Consulta";
             // 
+            // estadoConCliente
+            // 
+            this.estadoConCliente.Location = new System.Drawing.Point(337, 107);
+            this.estadoConCliente.Name = "estadoConCliente";
+            this.estadoConCliente.ReadOnly = true;
+            this.estadoConCliente.Size = new System.Drawing.Size(121, 20);
+            this.estadoConCliente.TabIndex = 64;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(262, 115);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.TabIndex = 63;
+            this.label7.Text = "Estado";
+            // 
             // correoConCliente
             // 
             this.correoConCliente.Location = new System.Drawing.Point(337, 71);
@@ -84,7 +101,6 @@
             this.correoConCliente.ReadOnly = true;
             this.correoConCliente.Size = new System.Drawing.Size(121, 20);
             this.correoConCliente.TabIndex = 60;
-            this.correoConCliente.TextChanged += new System.EventHandler(this.correoConCliente_TextChanged);
             // 
             // RUCConCliente
             // 
@@ -201,6 +217,7 @@
             this.txtCedula.ReadOnly = true;
             this.txtCedula.Size = new System.Drawing.Size(167, 20);
             this.txtCedula.TabIndex = 21;
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             // 
             // button2
             // 
@@ -222,6 +239,7 @@
             this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(167, 20);
             this.txtNombre.TabIndex = 20;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // radioButCed
             // 
@@ -259,24 +277,6 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(262, 115);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
-            this.label7.TabIndex = 63;
-            this.label7.Text = "Estado";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // estadoConCliente
-            // 
-            this.estadoConCliente.Location = new System.Drawing.Point(337, 107);
-            this.estadoConCliente.Name = "estadoConCliente";
-            this.estadoConCliente.ReadOnly = true;
-            this.estadoConCliente.Size = new System.Drawing.Size(121, 20);
-            this.estadoConCliente.TabIndex = 64;
             // 
             // ConsultarCliente
             // 

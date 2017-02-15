@@ -79,15 +79,18 @@
             // txtRUCAgrCliente
             // 
             this.txtRUCAgrCliente.Location = new System.Drawing.Point(168, 175);
+            this.txtRUCAgrCliente.MaxLength = 13;
             this.txtRUCAgrCliente.Name = "txtRUCAgrCliente";
             this.txtRUCAgrCliente.Size = new System.Drawing.Size(187, 20);
             this.txtRUCAgrCliente.TabIndex = 35;
+            this.txtRUCAgrCliente.TextChanged += new System.EventHandler(this.txtRUCAgrCliente_TextChanged);
             this.txtRUCAgrCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRUCAgrCliente_KeyPress);
             this.txtRUCAgrCliente.Leave += new System.EventHandler(this.txtRUCAgrCliente_Leave);
             // 
             // txtDirecAgrCliente
             // 
             this.txtDirecAgrCliente.Location = new System.Drawing.Point(168, 135);
+            this.txtDirecAgrCliente.MaxLength = 150;
             this.txtDirecAgrCliente.Name = "txtDirecAgrCliente";
             this.txtDirecAgrCliente.Size = new System.Drawing.Size(187, 20);
             this.txtDirecAgrCliente.TabIndex = 34;
@@ -134,6 +137,7 @@
             // txtCedAgrCliente
             // 
             this.txtCedAgrCliente.Location = new System.Drawing.Point(168, 58);
+            this.txtCedAgrCliente.MaxLength = 10;
             this.txtCedAgrCliente.Name = "txtCedAgrCliente";
             this.txtCedAgrCliente.Size = new System.Drawing.Size(187, 20);
             this.txtCedAgrCliente.TabIndex = 29;
@@ -146,7 +150,6 @@
             this.txtNomAgrCliente.Name = "txtNomAgrCliente";
             this.txtNomAgrCliente.Size = new System.Drawing.Size(187, 20);
             this.txtNomAgrCliente.TabIndex = 28;
-            this.txtNomAgrCliente.TextChanged += new System.EventHandler(this.txtNomAgrCliente_TextChanged);
             this.txtNomAgrCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomAgrCliente_KeyPress);
             // 
             // label3

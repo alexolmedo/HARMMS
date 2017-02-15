@@ -224,6 +224,7 @@
             this.txtCedula.ReadOnly = true;
             this.txtCedula.Size = new System.Drawing.Size(167, 20);
             this.txtCedula.TabIndex = 21;
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             // 
             // txtNombre
             // 
@@ -232,6 +233,7 @@
             this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(167, 20);
             this.txtNombre.TabIndex = 20;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // button2
             // 

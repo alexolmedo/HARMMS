@@ -135,11 +135,6 @@ namespace Proyecto.Cliente
             }
         }
 
-        private void txtNomAgrCliente_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtNomAgrCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsLetter(e.KeyChar))
@@ -307,6 +302,11 @@ namespace Proyecto.Cliente
                 }
             }
            
+        }
+
+        private void txtRUCAgrCliente_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
