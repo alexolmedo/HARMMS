@@ -222,7 +222,13 @@ namespace Proyecto.Cliente
 
         private void txtCedAgrCliente_Leave(object sender, EventArgs e)
         {
-            if (!txtCedAgrCliente.Text.Equals(""))
+            if (txtCedAgrCliente.Text.Length > 10 || txtCedAgrCliente.Text.Length < 10)
+            {
+                MessageBox.Show("La cedula debe tener 10 digitos", "Cedula Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                txtCedAgrCliente.Text = "";
+            }
+
+            else if ( txtCedAgrCliente.Text.Length == 10)
             {
                 if(!validadorDeCedula(txtCedAgrCliente.Text))
                 {

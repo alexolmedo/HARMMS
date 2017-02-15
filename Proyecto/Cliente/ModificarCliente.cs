@@ -175,6 +175,11 @@ namespace Proyecto.Cliente
         {
             try
             {
+                /*if (txtCedula.Text.Equals("") || txtNombre.Text.Equals(""))
+                {
+                    MessageBox.Show("No se puede realizar la busqueda\nLlene los campos de busqueda", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }*/
+
                 string strquery3 = "";
 
                 if (radioButNombre.Checked)
