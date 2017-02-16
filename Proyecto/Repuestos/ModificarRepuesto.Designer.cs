@@ -33,24 +33,24 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxNumSerie = new System.Windows.Forms.TextBox();
             this.textBoxModelo = new System.Windows.Forms.TextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButNumSerie = new System.Windows.Forms.RadioButton();
+            this.radioButModelo = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.cBEstado = new System.Windows.Forms.ComboBox();
+            this.textPrVenta = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textCant = new System.Windows.Forms.TextBox();
+            this.textPrCompra = new System.Windows.Forms.TextBox();
+            this.textNumSer = new System.Windows.Forms.TextBox();
+            this.textModelo = new System.Windows.Forms.TextBox();
+            this.textNombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -73,8 +73,8 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.textBoxNumSerie);
             this.groupBox1.Controls.Add(this.textBoxModelo);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radioButNumSerie);
+            this.groupBox1.Controls.Add(this.radioButModelo);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(542, 86);
@@ -93,6 +93,7 @@
             this.button1.Text = "Buscar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBoxNumSerie
             // 
@@ -110,41 +111,41 @@
             this.textBoxModelo.Size = new System.Drawing.Size(187, 20);
             this.textBoxModelo.TabIndex = 2;
             // 
-            // radioButton2
+            // radioButNumSerie
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(36, 53);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(104, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Número de Serie";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.radioButNumSerie.AutoSize = true;
+            this.radioButNumSerie.Location = new System.Drawing.Point(36, 53);
+            this.radioButNumSerie.Name = "radioButNumSerie";
+            this.radioButNumSerie.Size = new System.Drawing.Size(104, 17);
+            this.radioButNumSerie.TabIndex = 1;
+            this.radioButNumSerie.TabStop = true;
+            this.radioButNumSerie.Text = "Número de Serie";
+            this.radioButNumSerie.UseVisualStyleBackColor = true;
+            this.radioButNumSerie.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // radioButton1
+            // radioButModelo
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(36, 26);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(60, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Modelo";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButModelo.AutoSize = true;
+            this.radioButModelo.Location = new System.Drawing.Point(36, 26);
+            this.radioButModelo.Name = "radioButModelo";
+            this.radioButModelo.Size = new System.Drawing.Size(60, 17);
+            this.radioButModelo.TabIndex = 0;
+            this.radioButModelo.TabStop = true;
+            this.radioButModelo.Text = "Modelo";
+            this.radioButModelo.UseVisualStyleBackColor = true;
+            this.radioButModelo.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.textBox9);
+            this.groupBox2.Controls.Add(this.cBEstado);
+            this.groupBox2.Controls.Add(this.textPrVenta);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.textCant);
+            this.groupBox2.Controls.Add(this.textPrCompra);
+            this.groupBox2.Controls.Add(this.textNumSer);
+            this.groupBox2.Controls.Add(this.textModelo);
+            this.groupBox2.Controls.Add(this.textNombre);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
@@ -157,12 +158,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Resultado";
             // 
-            // textBox9
+            // cBEstado
             // 
-            this.textBox9.Location = new System.Drawing.Point(116, 132);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(137, 20);
-            this.textBox9.TabIndex = 23;
+            this.cBEstado.FormattingEnabled = true;
+            this.cBEstado.Items.AddRange(new object[] {
+            "Agotado",
+            "Disponible"});
+            this.cBEstado.Location = new System.Drawing.Point(389, 132);
+            this.cBEstado.Name = "cBEstado";
+            this.cBEstado.Size = new System.Drawing.Size(137, 21);
+            this.cBEstado.Sorted = true;
+            this.cBEstado.TabIndex = 24;
+            // 
+            // textPrVenta
+            // 
+            this.textPrVenta.Location = new System.Drawing.Point(116, 132);
+            this.textPrVenta.Name = "textPrVenta";
+            this.textPrVenta.Size = new System.Drawing.Size(137, 20);
+            this.textPrVenta.TabIndex = 23;
             // 
             // label7
             // 
@@ -182,40 +195,40 @@
             this.label6.TabIndex = 20;
             this.label6.Text = "Estado";
             // 
-            // textBox5
+            // textCant
             // 
-            this.textBox5.Location = new System.Drawing.Point(389, 95);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(137, 20);
-            this.textBox5.TabIndex = 19;
+            this.textCant.Location = new System.Drawing.Point(389, 95);
+            this.textCant.Name = "textCant";
+            this.textCant.Size = new System.Drawing.Size(137, 20);
+            this.textCant.TabIndex = 19;
             // 
-            // textBox4
+            // textPrCompra
             // 
-            this.textBox4.Location = new System.Drawing.Point(116, 98);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(137, 20);
-            this.textBox4.TabIndex = 18;
+            this.textPrCompra.Location = new System.Drawing.Point(116, 98);
+            this.textPrCompra.Name = "textPrCompra";
+            this.textPrCompra.Size = new System.Drawing.Size(137, 20);
+            this.textPrCompra.TabIndex = 18;
             // 
-            // textBox3
+            // textNumSer
             // 
-            this.textBox3.Location = new System.Drawing.Point(389, 31);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(137, 20);
-            this.textBox3.TabIndex = 17;
+            this.textNumSer.Location = new System.Drawing.Point(389, 31);
+            this.textNumSer.Name = "textNumSer";
+            this.textNumSer.Size = new System.Drawing.Size(137, 20);
+            this.textNumSer.TabIndex = 17;
             // 
-            // textBox6
+            // textModelo
             // 
-            this.textBox6.Location = new System.Drawing.Point(116, 65);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(410, 20);
-            this.textBox6.TabIndex = 16;
+            this.textModelo.Location = new System.Drawing.Point(116, 65);
+            this.textModelo.Name = "textModelo";
+            this.textModelo.Size = new System.Drawing.Size(410, 20);
+            this.textModelo.TabIndex = 16;
             // 
-            // textBox7
+            // textNombre
             // 
-            this.textBox7.Location = new System.Drawing.Point(116, 31);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(137, 20);
-            this.textBox7.TabIndex = 15;
+            this.textNombre.Location = new System.Drawing.Point(116, 31);
+            this.textNombre.Name = "textNombre";
+            this.textNombre.Size = new System.Drawing.Size(137, 20);
+            this.textNombre.TabIndex = 15;
             // 
             // label5
             // 
@@ -273,17 +286,7 @@
             this.button2.Text = "Modificar";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Habilitado",
-            "Deshabilitado"});
-            this.comboBox1.Location = new System.Drawing.Point(389, 132);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(137, 21);
-            this.comboBox1.TabIndex = 24;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ModificarRepuesto
             // 
@@ -311,23 +314,23 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxNumSerie;
         private System.Windows.Forms.TextBox textBoxModelo;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButNumSerie;
+        private System.Windows.Forms.RadioButton radioButModelo;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textPrVenta;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textCant;
+        private System.Windows.Forms.TextBox textPrCompra;
+        private System.Windows.Forms.TextBox textNumSer;
+        private System.Windows.Forms.TextBox textModelo;
+        private System.Windows.Forms.TextBox textNombre;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cBEstado;
     }
 }

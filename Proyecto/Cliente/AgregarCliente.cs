@@ -222,10 +222,11 @@ namespace Proyecto.Cliente
 
         private void txtCedAgrCliente_Leave(object sender, EventArgs e)
         {
-            if (txtCedAgrCliente.Text.Length > 10 || txtCedAgrCliente.Text.Length < 10)
+            if (txtCedAgrCliente.Text.Length < 10 && txtCedAgrCliente.Text.Length > 1)
             {
                 MessageBox.Show("La cedula debe tener 10 digitos", "Cedula Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 txtCedAgrCliente.Text = "";
+                txtCedAgrCliente.Clear();
             }
 
             else if ( txtCedAgrCliente.Text.Length == 10)
@@ -266,13 +267,19 @@ namespace Proyecto.Cliente
             {
                 try
                 {
-                    MailAddress m = new MailAddress(txtCorreoAgrCliente.Text);
+                    //MailAddress m = new MailAddress(txtCorreoAgrCliente.Text);
+                    if (!System.Text.RegularExpressions.Regex.IsMatch(txtCorreoAgrCliente.Text, "^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$"))
+                    {
+                        MessageBox.Show("El correo no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        txtCorreoAgrCliente.Text = "";
+                    }
+
 
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("El correo no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    txtCorreoAgrCliente.Text = "";
+                    //MessageBox.Show("El correo no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    //txtCorreoAgrCliente.Text = "";
                 }
             }
         }

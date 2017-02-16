@@ -258,13 +258,17 @@ namespace Proyecto.Cliente
             {
                 try
                 {
-                    MailAddress m = new MailAddress(correoActCliente.Text);
+                    if (!System.Text.RegularExpressions.Regex.IsMatch(correoActCliente.Text, "^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$"))
+                    {
+                        MessageBox.Show("El correo no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        correoActCliente.Text = "";
+                    }
 
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("El correo no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    correoActCliente.Text = "";
+                    //MessageBox.Show("El correo no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    //correoActCliente.Text = "";
                 }
             }
 

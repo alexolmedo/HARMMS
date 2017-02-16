@@ -92,6 +92,51 @@ namespace Proyecto.Repuestos
 
         private void button2_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string strquery3 = "";
+
+                if (radioButModelo.Checked)
+                {
+                    strquery3 = "Select * from producto where modelo = '" + textBoxModelo.Text + "'";
+                }
+
+                if (radioButNumSerie.Checked)
+                {
+                    strquery3 = "Select * from producto where numSerie = " + textBoxNumSerie.Text + "";
+                }
+
+                conexion.command = new SqlCommand(strquery3, conexion.connection);
+
+                da = new SqlDataAdapter();
+                //fetching query in the database.
+                da.SelectCommand = conexion.command;
+                //inicializar nueva datatable
+                dt = new DataTable();
+                //refresca las filas segun el rango especificado en el datasource. 
+                da.Fill(dt);
+
+                foreach (DataRow r in dt.Rows)
+                {
+                    //obtiene todas las filas de una columna
+                    textNombre.Text = r[1].ToString();
+                    textModelo.Text = r[2].ToString();
+                    textPrCompra.Text = r[5].ToString();
+                    textPrVenta.Text = r[6].ToString();
+                    textNumSer.Text = r[4].ToString();
+                    textCant.Text = r[10].ToString();
+                    textEstado.Text = r[7].ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        private void textBoxNombre_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

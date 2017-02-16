@@ -164,6 +164,7 @@
             // 
             this.cedActCliente.Location = new System.Drawing.Point(94, 63);
             this.cedActCliente.Name = "cedActCliente";
+            this.cedActCliente.ReadOnly = true;
             this.cedActCliente.Size = new System.Drawing.Size(126, 20);
             this.cedActCliente.TabIndex = 41;
             this.cedActCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cedAgrCliente_KeyPress);

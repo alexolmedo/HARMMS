@@ -34,11 +34,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textEstado = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textCant = new System.Windows.Forms.TextBox();
             this.textPrCompra = new System.Windows.Forms.TextBox();
-            this.textBoxNSer = new System.Windows.Forms.TextBox();
-            this.textBoxMod = new System.Windows.Forms.TextBox();
-            this.textBoxNombre = new System.Windows.Forms.TextBox();
+            this.textNumSer = new System.Windows.Forms.TextBox();
+            this.textModelo = new System.Windows.Forms.TextBox();
+            this.textNombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,8 +47,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBoxNumSerie = new System.Windows.Forms.TextBox();
             this.textBoxModelo = new System.Windows.Forms.TextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButNumSerie = new System.Windows.Forms.RadioButton();
+            this.radioButModelo = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -73,11 +73,11 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.textEstado);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.textCant);
             this.groupBox2.Controls.Add(this.textPrCompra);
-            this.groupBox2.Controls.Add(this.textBoxNSer);
-            this.groupBox2.Controls.Add(this.textBoxMod);
-            this.groupBox2.Controls.Add(this.textBoxNombre);
+            this.groupBox2.Controls.Add(this.textNumSer);
+            this.groupBox2.Controls.Add(this.textModelo);
+            this.groupBox2.Controls.Add(this.textNombre);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
@@ -124,13 +124,13 @@
             this.label6.TabIndex = 20;
             this.label6.Text = "Estado";
             // 
-            // textBox5
+            // textCant
             // 
-            this.textBox5.Location = new System.Drawing.Point(389, 95);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(137, 20);
-            this.textBox5.TabIndex = 19;
+            this.textCant.Location = new System.Drawing.Point(389, 95);
+            this.textCant.Name = "textCant";
+            this.textCant.ReadOnly = true;
+            this.textCant.Size = new System.Drawing.Size(137, 20);
+            this.textCant.TabIndex = 19;
             // 
             // textPrCompra
             // 
@@ -140,29 +140,30 @@
             this.textPrCompra.Size = new System.Drawing.Size(137, 20);
             this.textPrCompra.TabIndex = 18;
             // 
-            // textBoxNSer
+            // textNumSer
             // 
-            this.textBoxNSer.Location = new System.Drawing.Point(389, 31);
-            this.textBoxNSer.Name = "textBoxNSer";
-            this.textBoxNSer.ReadOnly = true;
-            this.textBoxNSer.Size = new System.Drawing.Size(137, 20);
-            this.textBoxNSer.TabIndex = 17;
+            this.textNumSer.Location = new System.Drawing.Point(389, 31);
+            this.textNumSer.Name = "textNumSer";
+            this.textNumSer.ReadOnly = true;
+            this.textNumSer.Size = new System.Drawing.Size(137, 20);
+            this.textNumSer.TabIndex = 17;
             // 
-            // textBoxMod
+            // textModelo
             // 
-            this.textBoxMod.Location = new System.Drawing.Point(116, 65);
-            this.textBoxMod.Name = "textBoxMod";
-            this.textBoxMod.ReadOnly = true;
-            this.textBoxMod.Size = new System.Drawing.Size(410, 20);
-            this.textBoxMod.TabIndex = 16;
+            this.textModelo.Location = new System.Drawing.Point(116, 65);
+            this.textModelo.Name = "textModelo";
+            this.textModelo.ReadOnly = true;
+            this.textModelo.Size = new System.Drawing.Size(410, 20);
+            this.textModelo.TabIndex = 16;
             // 
-            // textBoxNombre
+            // textNombre
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(116, 31);
-            this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.ReadOnly = true;
-            this.textBoxNombre.Size = new System.Drawing.Size(137, 20);
-            this.textBoxNombre.TabIndex = 15;
+            this.textNombre.Location = new System.Drawing.Point(116, 31);
+            this.textNombre.Name = "textNombre";
+            this.textNombre.ReadOnly = true;
+            this.textNombre.Size = new System.Drawing.Size(137, 20);
+            this.textNombre.TabIndex = 15;
+            this.textNombre.TextChanged += new System.EventHandler(this.textBoxNombre_TextChanged);
             // 
             // label5
             // 
@@ -214,8 +215,8 @@
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.textBoxNumSerie);
             this.groupBox1.Controls.Add(this.textBoxModelo);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radioButNumSerie);
+            this.groupBox1.Controls.Add(this.radioButModelo);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(542, 86);
@@ -239,29 +240,27 @@
             this.textBoxModelo.Size = new System.Drawing.Size(187, 20);
             this.textBoxModelo.TabIndex = 2;
             // 
-            // radioButton2
+            // radioButNumSerie
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(36, 53);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(104, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Número de Serie";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.radioButNumSerie.AutoSize = true;
+            this.radioButNumSerie.Location = new System.Drawing.Point(36, 53);
+            this.radioButNumSerie.Name = "radioButNumSerie";
+            this.radioButNumSerie.Size = new System.Drawing.Size(104, 17);
+            this.radioButNumSerie.TabIndex = 1;
+            this.radioButNumSerie.Text = "Número de Serie";
+            this.radioButNumSerie.UseVisualStyleBackColor = true;
+            this.radioButNumSerie.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // radioButton1
+            // radioButModelo
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(36, 26);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(60, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Modelo";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButModelo.AutoSize = true;
+            this.radioButModelo.Location = new System.Drawing.Point(36, 26);
+            this.radioButModelo.Name = "radioButModelo";
+            this.radioButModelo.Size = new System.Drawing.Size(60, 17);
+            this.radioButModelo.TabIndex = 0;
+            this.radioButModelo.Text = "Modelo";
+            this.radioButModelo.UseVisualStyleBackColor = true;
+            this.radioButModelo.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // button1
             // 
@@ -298,11 +297,11 @@
 
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textCant;
         private System.Windows.Forms.TextBox textPrCompra;
-        private System.Windows.Forms.TextBox textBoxNSer;
-        private System.Windows.Forms.TextBox textBoxMod;
-        private System.Windows.Forms.TextBox textBoxNombre;
+        private System.Windows.Forms.TextBox textNumSer;
+        private System.Windows.Forms.TextBox textModelo;
+        private System.Windows.Forms.TextBox textNombre;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -311,8 +310,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBoxNumSerie;
         private System.Windows.Forms.TextBox textBoxModelo;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButNumSerie;
+        private System.Windows.Forms.RadioButton radioButModelo;
         private System.Windows.Forms.TextBox textEstado;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
