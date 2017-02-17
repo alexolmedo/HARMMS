@@ -121,8 +121,9 @@ namespace Proyecto.Repuestos
                     //obtiene todas las filas de una columna
                     textNombre.Text = r[1].ToString();
                     textModelo.Text = r[2].ToString();
-                    textPrCompra.Text = r[5].ToString();
-                    textPrVenta.Text = r[6].ToString();
+
+                    textPrCompra.Text = cambiarComaPorPunto(r[5].ToString());
+                    textPrVenta.Text = cambiarComaPorPunto(r[6].ToString());
                     textNumSer.Text = r[4].ToString();
                     textCant.Text = r[10].ToString();
                     cBEstado.SelectedItem = r [7].ToString();
@@ -141,20 +142,33 @@ namespace Proyecto.Repuestos
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("¿Confirma modificación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
-
-            if (dr == DialogResult.Yes)
+            try
             {
-                string sql = "Update producto set nombre = '" + textNombre.Text + "', modelo ='" + textModelo.Text + "', precioCompra='" + textPrCompra.Text +
-                    "',precioVenta='" + textPrVenta.Text + "',RUCCliente='" + RUCActCliente.Text + "',correoCliente='" + correoActCliente.Text + 
-                    "',EstadoCliente ='" + comboBoxEstC.SelectedItem + "' where CI_Cliente = '" + cedActCliente.Text + "'";
-                Console.WriteLine(sql);
+                DialogResult dr = MessageBox.Show("¿Confirma modificación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
 
-                conexion.command = new SqlCommand(sql, conexion.connection);
-                conexion.command.ExecuteNonQuery();
-                conexion.command.Dispose();
-                MessageBox.Show("El cliente se modificó correctamente", "Cliente Modificado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                if (dr == DialogResult.Yes)
+                {
+                    string sql = "Update producto set nombre = '" + textNombre.Text + "', modelo ='" + textModelo.Text + "', precioCompra=" + textPrCompra.Text +
+                        ",precioVenta=" + textPrVenta.Text + ",numserie='" + Double.Parse(textNumSer.Text) + "', cantidad =" + textCant.Text + ", estadoprod ='" + cBEstado.SelectedItem
+                        + "' where numSerie = '" + textNumSer.Text + "'";
+                    Console.WriteLine(sql);
+
+                    conexion.command = new SqlCommand(sql, conexion.connection);
+                    conexion.command.ExecuteNonQuery();
+                    conexion.command.Dispose();
+                    MessageBox.Show("El repuesto se modificó correctamente", "Repuesto Modificado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public String cambiarComaPorPunto(String numero) 
+        {
+            return numero.Replace(',', '.');
+            
         }
     }
 }
