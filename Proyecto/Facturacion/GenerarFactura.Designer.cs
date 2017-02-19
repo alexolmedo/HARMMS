@@ -45,13 +45,13 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textDescuento = new System.Windows.Forms.TextBox();
+            this.textTotal = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textIVA = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textSubtotal = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -228,13 +228,13 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.textDescuento);
+            this.groupBox2.Controls.Add(this.textTotal);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.textIVA);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.textSubtotal);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.button3);
@@ -247,20 +247,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle Factura";
             // 
-            // textBox3
+            // textDescuento
             // 
-            this.textBox3.Location = new System.Drawing.Point(437, 190);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(132, 20);
-            this.textBox3.TabIndex = 29;
+            this.textDescuento.Location = new System.Drawing.Point(437, 190);
+            this.textDescuento.Name = "textDescuento";
+            this.textDescuento.Size = new System.Drawing.Size(132, 20);
+            this.textDescuento.TabIndex = 29;
             // 
-            // textBox5
+            // textTotal
             // 
-            this.textBox5.Location = new System.Drawing.Point(437, 212);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(132, 20);
-            this.textBox5.TabIndex = 27;
+            this.textTotal.Location = new System.Drawing.Point(437, 212);
+            this.textTotal.Name = "textTotal";
+            this.textTotal.ReadOnly = true;
+            this.textTotal.Size = new System.Drawing.Size(132, 20);
+            this.textTotal.TabIndex = 27;
             // 
             // label6
             // 
@@ -271,13 +271,13 @@
             this.label6.TabIndex = 28;
             this.label6.Text = "TOTAL";
             // 
-            // textBox4
+            // textIVA
             // 
-            this.textBox4.Location = new System.Drawing.Point(437, 168);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(132, 20);
-            this.textBox4.TabIndex = 25;
+            this.textIVA.Location = new System.Drawing.Point(437, 168);
+            this.textIVA.Name = "textIVA";
+            this.textIVA.ReadOnly = true;
+            this.textIVA.Size = new System.Drawing.Size(132, 20);
+            this.textIVA.TabIndex = 25;
             // 
             // label5
             // 
@@ -297,13 +297,13 @@
             this.label4.TabIndex = 24;
             this.label4.Text = "DESCUENTO";
             // 
-            // textBox2
+            // textSubtotal
             // 
-            this.textBox2.Location = new System.Drawing.Point(437, 146);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(132, 20);
-            this.textBox2.TabIndex = 22;
+            this.textSubtotal.Location = new System.Drawing.Point(437, 146);
+            this.textSubtotal.Name = "textSubtotal";
+            this.textSubtotal.ReadOnly = true;
+            this.textSubtotal.Size = new System.Drawing.Size(132, 20);
+            this.textSubtotal.TabIndex = 22;
             // 
             // label3
             // 
@@ -355,10 +355,8 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(563, 125);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
-            this.dataGridView1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellLeave);
             // 
             // id_Prod_OT
             // 
@@ -480,14 +478,14 @@
         private System.Windows.Forms.Button btnCerrarAgrCliente;
         private System.Windows.Forms.Button btnNuevoAgrCliente;
         private System.Windows.Forms.Button btnAgregarAgrCliente;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textTotal;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textIVA;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textSubtotal;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textDescuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Prod_OT;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;

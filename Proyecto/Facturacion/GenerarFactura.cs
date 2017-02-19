@@ -132,16 +132,7 @@ namespace Proyecto.Facturacion
             new Cliente.AgregarCliente().ShowDialog();
         }
 
-        private void dataGridView1_CellLeave(object sender, DataGridViewCellEventArgs e)
-        {
-
-            
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+      
 
         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -166,9 +157,20 @@ namespace Proyecto.Facturacion
                     //obtiene todas las filas de una columna
                     dataGridView1.Rows[e.RowIndex].Cells[1].Value = r[1] + " - " + r[2];
                     dataGridView1.Rows[e.RowIndex].Cells[3].Value = r[6];
-                    dataGridView1.Rows[e.RowIndex].Cells[4].Value = Convert.ToInt32(r[6]) * Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
-
+                    dataGridView1.Rows[e.RowIndex].Cells[4].Value = Convert.ToDouble(r[6]) * Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[2].Value);    
                 }
+
+                double subtotal = 0;
+                double iva = 0;
+                for (int i = 0; i < e.RowIndex; i++)
+                {
+                     subtotal += Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value);
+                     iva = subtotal * 0.14;
+                }
+                textSubtotal.Text = subtotal.ToString();
+                textIVA.Text = iva.ToString();
+                textTotal.Text = (subtotal + iva).ToString();
+
             }
             catch (Exception ex)
             {
