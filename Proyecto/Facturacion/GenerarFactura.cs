@@ -126,5 +126,54 @@ namespace Proyecto.Facturacion
                 Console.WriteLine(ex.Message);
             }
         }
+
+        private void butNuevo_Click(object sender, EventArgs e)
+        {
+            new Cliente.AgregarCliente().ShowDialog();
+        }
+
+        private void dataGridView1_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+
+            
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string strquery3 = "Select * from producto where numSerie = '" + Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[0].Value) + "'";
+
+                Console.WriteLine(Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[0].Value));
+
+                conexion.command = new SqlCommand(strquery3, conexion.connection);
+
+                da = new SqlDataAdapter();
+                //fetching query in the database.
+                da.SelectCommand = conexion.command;
+                //inicializar nueva datatable
+                dt = new DataTable();
+                //refresca las filas segun el rango especificado en el datasource. 
+                da.Fill(dt);
+
+                foreach (DataRow r in dt.Rows)
+                {
+                    //obtiene todas las filas de una columna
+                    dataGridView1.Rows[e.RowIndex].Cells[1].Value = r[1] + " - " + r[2];
+                    dataGridView1.Rows[e.RowIndex].Cells[3].Value = r[6];
+                    dataGridView1.Rows[e.RowIndex].Cells[4].Value = Convert.ToInt32(r[6]) * Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }

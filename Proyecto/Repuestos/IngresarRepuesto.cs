@@ -23,26 +23,6 @@ namespace Proyecto.Repuestos
             this.CenterToScreen();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -99,10 +79,10 @@ namespace Proyecto.Repuestos
 
         private void textBox3_Leave(object sender, EventArgs e)
         {
-            if (textBoxNumSerie.Text.Length > 15)
+            if (textBoxCodigo.Text.Length > 15)
             {
                 MessageBox.Show("La número de serie es muy extenso", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                textBoxNumSerie.Text = "";
+                textBoxCodigo.Text = "";
             }
         }
 
@@ -140,11 +120,6 @@ namespace Proyecto.Repuestos
             {
                 e.Handled = true;
             }
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
@@ -192,28 +167,33 @@ namespace Proyecto.Repuestos
             }
         }
 
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         private void Agregar_Click(object sender, EventArgs e)
         {
-            if (textBoxNombre.Text.Equals("") || textBoxModelo.Text.Equals("") || textBoxNumSerie.Text.Equals("") || textBoxPrCompra.Text.Equals("") || textBoxPrVenta.Text.Equals("") || textBoxCantidad.Text.Equals(""))
+            if (textBoxNombre.Text.Equals("") || textBoxModelo.Text.Equals("") || textBoxCodigo.Text.Equals("") || textBoxPrCompra.Text.Equals("") || textBoxPrVenta.Text.Equals("") || textBoxCantidad.Text.Equals(""))
             {
                 MessageBox.Show("Todos los campos son obligatorios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
 
-            else if (!textBoxNombre.Text.Equals("") || !textBoxModelo.Text.Equals("") || !textBoxNumSerie.Text.Equals("") || !textBoxPrCompra.Text.Equals("") || !textBoxPrVenta.Text.Equals("") || !textBoxCantidad.Text.Equals(""))
+            else if (!textBoxNombre.Text.Equals("") || !textBoxModelo.Text.Equals("") || !textBoxCodigo.Text.Equals("") || !textBoxPrCompra.Text.Equals("") || !textBoxPrVenta.Text.Equals("") || !textBoxCantidad.Text.Equals(""))
             {
 
                 Console.WriteLine("rshtrh");
                 string sql = "insert into producto values('" + textBoxNombre.Text + "','" + textBoxModelo.Text + "',null,'"
-                    + textBoxNumSerie.Text + "', " + textBoxPrCompra.Text + "," + textBoxPrVenta.Text + ",null,null,null,"
+                    + textBoxCodigo.Text + "', " + textBoxPrCompra.Text + "," + textBoxPrVenta.Text + ",null,null,null,"
                     + textBoxCantidad.Text + ")";
                 conexion.command = new SqlCommand(sql, conexion.connection);
                 conexion.command.ExecuteNonQuery();
                 conexion.command.Dispose();
                 MessageBox.Show("El repuesto se agregó correctamente", "Repuesto Agregado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+        }
+
+        private void textBoxCodigo_Leave(object sender, EventArgs e)
+        {
+            if (textBoxCodigo.Text.Length > 15)
+            {
+                MessageBox.Show("La número de serie es muy extenso", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                textBoxCodigo.Text = "";
             }
         }
     }

@@ -35,7 +35,7 @@
             this.textTelfC = new System.Windows.Forms.TextBox();
             this.textNombreC = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.butNuevo = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.textCedula = new System.Windows.Forms.TextBox();
@@ -79,7 +79,7 @@
             this.groupBox4.Controls.Add(this.textTelfC);
             this.groupBox4.Controls.Add(this.textNombreC);
             this.groupBox4.Controls.Add(this.label24);
-            this.groupBox4.Controls.Add(this.button2);
+            this.groupBox4.Controls.Add(this.butNuevo);
             this.groupBox4.Controls.Add(this.button6);
             this.groupBox4.Controls.Add(this.label25);
             this.groupBox4.Controls.Add(this.textCedula);
@@ -141,14 +141,15 @@
             this.label24.TabIndex = 5;
             this.label24.Text = "Nombre";
             // 
-            // button2
+            // butNuevo
             // 
-            this.button2.Location = new System.Drawing.Point(494, 47);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Nuevo";
-            this.button2.UseVisualStyleBackColor = true;
+            this.butNuevo.Location = new System.Drawing.Point(494, 47);
+            this.butNuevo.Name = "butNuevo";
+            this.butNuevo.Size = new System.Drawing.Size(75, 23);
+            this.butNuevo.TabIndex = 4;
+            this.butNuevo.Text = "Nuevo";
+            this.butNuevo.UseVisualStyleBackColor = true;
+            this.butNuevo.Click += new System.EventHandler(this.butNuevo_Click);
             // 
             // button6
             // 
@@ -354,7 +355,10 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(563, 125);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
+            this.dataGridView1.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellLeave);
             // 
             // id_Prod_OT
             // 
@@ -366,6 +370,7 @@
             // 
             this.Descripcion.HeaderText = "Descripción";
             this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
             this.Descripcion.Width = 230;
             // 
             // Cantidad
@@ -378,12 +383,14 @@
             // 
             this.PrecioUnit.HeaderText = "Precio Unitario";
             this.PrecioUnit.Name = "PrecioUnit";
+            this.PrecioUnit.ReadOnly = true;
             this.PrecioUnit.Width = 99;
             // 
             // PrecioTotal
             // 
             this.PrecioTotal.HeaderText = "Precio Total";
             this.PrecioTotal.Name = "PrecioTotal";
+            this.PrecioTotal.ReadOnly = true;
             this.PrecioTotal.Width = 90;
             // 
             // btnCerrarAgrCliente
@@ -456,7 +463,7 @@
         private System.Windows.Forms.TextBox textTelfC;
         private System.Windows.Forms.TextBox textNombreC;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button butNuevo;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox textCedula;
@@ -467,11 +474,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_Prod_OT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioTotal;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
@@ -486,6 +488,11 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_Prod_OT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioTotal;
 
 
     }

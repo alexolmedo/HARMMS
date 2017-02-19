@@ -116,10 +116,10 @@
             this.radioButNumSerie.AutoSize = true;
             this.radioButNumSerie.Location = new System.Drawing.Point(36, 53);
             this.radioButNumSerie.Name = "radioButNumSerie";
-            this.radioButNumSerie.Size = new System.Drawing.Size(104, 17);
+            this.radioButNumSerie.Size = new System.Drawing.Size(58, 17);
             this.radioButNumSerie.TabIndex = 1;
             this.radioButNumSerie.TabStop = true;
-            this.radioButNumSerie.Text = "Número de Serie";
+            this.radioButNumSerie.Text = "Código";
             this.radioButNumSerie.UseVisualStyleBackColor = true;
             this.radioButNumSerie.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
@@ -251,11 +251,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(282, 34);
+            this.label3.Location = new System.Drawing.Point(328, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 13);
+            this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 12;
-            this.label3.Text = "Número de Serie";
+            this.label3.Text = "Código";
             // 
             // label2
             // 

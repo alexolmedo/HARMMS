@@ -136,7 +136,7 @@
             // 
             // txtCedAgrCliente
             // 
-            this.txtCedAgrCliente.Location = new System.Drawing.Point(168, 58);
+            this.txtCedAgrCliente.Location = new System.Drawing.Point(168, 19);
             this.txtCedAgrCliente.MaxLength = 10;
             this.txtCedAgrCliente.Name = "txtCedAgrCliente";
             this.txtCedAgrCliente.Size = new System.Drawing.Size(187, 20);
@@ -146,7 +146,7 @@
             // 
             // txtNomAgrCliente
             // 
-            this.txtNomAgrCliente.Location = new System.Drawing.Point(168, 22);
+            this.txtNomAgrCliente.Location = new System.Drawing.Point(168, 56);
             this.txtNomAgrCliente.Name = "txtNomAgrCliente";
             this.txtNomAgrCliente.Size = new System.Drawing.Size(187, 20);
             this.txtNomAgrCliente.TabIndex = 28;
@@ -164,7 +164,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 61);
+            this.label2.Location = new System.Drawing.Point(66, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 26;
@@ -173,7 +173,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(63, 25);
+            this.label1.Location = new System.Drawing.Point(62, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 25;
