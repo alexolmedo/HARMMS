@@ -40,9 +40,9 @@
             this.label25 = new System.Windows.Forms.Label();
             this.textCedula = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateEmision = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textNumFac = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textDescuento = new System.Windows.Forms.TextBox();
@@ -64,7 +64,7 @@
             this.PrecioTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCerrarAgrCliente = new System.Windows.Forms.Button();
             this.btnNuevoAgrCliente = new System.Windows.Forms.Button();
-            this.btnAgregarAgrCliente = new System.Windows.Forms.Button();
+            this.btnAgregarFactura = new System.Windows.Forms.Button();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -175,14 +175,13 @@
             this.textCedula.Name = "textCedula";
             this.textCedula.Size = new System.Drawing.Size(153, 20);
             this.textCedula.TabIndex = 0;
-            this.textCedula.Enter += new System.EventHandler(this.textBox14_Enter);
             this.textCedula.Leave += new System.EventHandler(this.textCedula_Leave);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dateEmision);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textNumFac);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 6);
             this.groupBox1.Name = "groupBox1";
@@ -191,12 +190,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de Factura";
             // 
-            // dateTimePicker1
+            // dateEmision
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(369, 16);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 21;
+            this.dateEmision.Location = new System.Drawing.Point(369, 16);
+            this.dateEmision.Name = "dateEmision";
+            this.dateEmision.Size = new System.Drawing.Size(200, 20);
+            this.dateEmision.TabIndex = 21;
             // 
             // label1
             // 
@@ -206,15 +205,14 @@
             this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Fecha Emisión";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // textNumFac
             // 
-            this.textBox1.Location = new System.Drawing.Point(85, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(106, 20);
-            this.textBox1.TabIndex = 20;
+            this.textNumFac.Location = new System.Drawing.Point(85, 16);
+            this.textNumFac.Name = "textNumFac";
+            this.textNumFac.ReadOnly = true;
+            this.textNumFac.Size = new System.Drawing.Size(106, 20);
+            this.textNumFac.TabIndex = 20;
             // 
             // label2
             // 
@@ -224,7 +222,6 @@
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Número";
-            this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // groupBox2
             // 
@@ -313,7 +310,6 @@
             this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 22;
             this.label3.Text = "SUBTOTAL";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // button4
             // 
@@ -355,7 +351,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(563, 125);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
             // 
             // id_Prod_OT
@@ -416,17 +411,17 @@
             this.btnNuevoAgrCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevoAgrCliente.UseVisualStyleBackColor = true;
             // 
-            // btnAgregarAgrCliente
+            // btnAgregarFactura
             // 
-            this.btnAgregarAgrCliente.Image = global::Proyecto.Properties.Resources.new2;
-            this.btnAgregarAgrCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarAgrCliente.Location = new System.Drawing.Point(364, 395);
-            this.btnAgregarAgrCliente.Name = "btnAgregarAgrCliente";
-            this.btnAgregarAgrCliente.Size = new System.Drawing.Size(68, 29);
-            this.btnAgregarAgrCliente.TabIndex = 52;
-            this.btnAgregarAgrCliente.Text = "Agregar";
-            this.btnAgregarAgrCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregarAgrCliente.UseVisualStyleBackColor = true;
+            this.btnAgregarFactura.Image = global::Proyecto.Properties.Resources.new2;
+            this.btnAgregarFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarFactura.Location = new System.Drawing.Point(364, 395);
+            this.btnAgregarFactura.Name = "btnAgregarFactura";
+            this.btnAgregarFactura.Size = new System.Drawing.Size(68, 29);
+            this.btnAgregarFactura.TabIndex = 52;
+            this.btnAgregarFactura.Text = "Agregar";
+            this.btnAgregarFactura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregarFactura.UseVisualStyleBackColor = true;
             // 
             // GenerarFactura
             // 
@@ -435,7 +430,7 @@
             this.ClientSize = new System.Drawing.Size(596, 431);
             this.Controls.Add(this.btnCerrarAgrCliente);
             this.Controls.Add(this.btnNuevoAgrCliente);
-            this.Controls.Add(this.btnAgregarAgrCliente);
+            this.Controls.Add(this.btnAgregarFactura);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
@@ -468,8 +463,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox textNumFac;
+        private System.Windows.Forms.DateTimePicker dateEmision;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button4;
@@ -477,7 +472,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnCerrarAgrCliente;
         private System.Windows.Forms.Button btnNuevoAgrCliente;
-        private System.Windows.Forms.Button btnAgregarAgrCliente;
+        private System.Windows.Forms.Button btnAgregarFactura;
         private System.Windows.Forms.TextBox textTotal;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textIVA;
