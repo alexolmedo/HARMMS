@@ -66,7 +66,54 @@ namespace Proyecto.GestionElectrodomesticos
 
         private void button2_Click(object sender, EventArgs e)
         {
+            try
+            {
+                /*if (txtCedula.Text.Equals("") || txtNombre.Text.Equals(""))
+                {
+                    MessageBox.Show("No se puede realizar la busqueda\nLlene los campos de busqueda", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }*/
 
+                string strquery3 = "";
+
+                if (radioButModelo.Checked)
+                {
+                    strquery3 = "Select * from producto where modelo = '" + txtPorModelo.Text + "' and cantidad is null";
+                }
+
+                if (radioButNumSerie.Checked)
+                {
+                    strquery3 = "Select * from producto where numSerie = " + txtPorNumSer.Text + " and cantidad is null";
+                }
+
+                conexion.command = new SqlCommand(strquery3, conexion.connection);
+
+                da = new SqlDataAdapter();
+                //fetching query in the database.
+                da.SelectCommand = conexion.command;
+                //inicializar nueva datatable
+                dt = new DataTable();
+                //refresca las filas segun el rango especificado en el datasource. 
+                da.Fill(dt);
+
+                foreach (DataRow r in dt.Rows)
+                {
+                    //obtiene todas las filas de una columna
+                    txtNombre.Text = r[0].ToString();
+                    txtModelo.Text = r[1].ToString();
+                    textTiempoUso.Text = r[2].ToString();
+                    txtNumSer.Text = r[3].ToString();
+                    txtPrCompra.Text = r[4].ToString();
+                    textPrVenta.Text = r[5].ToString();
+                    textEstado.Text = r[6].ToString();
+                    txtPropAnterior.Text = r[7].ToString();
+                    textContacto.Text = r[8].ToString();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
 
         private void autoCompletarModelo()
