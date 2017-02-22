@@ -30,32 +30,32 @@
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtPorNumSer = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.butBuscar = new System.Windows.Forms.Button();
             this.txtPorModelo = new System.Windows.Forms.TextBox();
             this.radioButNumSerie = new System.Windows.Forms.RadioButton();
             this.radioButModelo = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cbEstado = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textContacto = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textPrVenta = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.cbMesesIngElectV = new System.Windows.Forms.ComboBox();
-            this.cbAñosIngElectV = new System.Windows.Forms.ComboBox();
+            this.cbMeses = new System.Windows.Forms.ComboBox();
+            this.cbAños = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtDueñoAntIngElectV = new System.Windows.Forms.TextBox();
-            this.txtPrecioIngElectV = new System.Windows.Forms.TextBox();
-            this.txtNumSerIngElectV = new System.Windows.Forms.TextBox();
-            this.txtModeloIngElectV = new System.Windows.Forms.TextBox();
-            this.txtNombreIngElectV = new System.Windows.Forms.TextBox();
+            this.txtDueñoAnt = new System.Windows.Forms.TextBox();
+            this.txtPrCompra = new System.Windows.Forms.TextBox();
+            this.txtNumSer = new System.Windows.Forms.TextBox();
+            this.txtModelo = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnCerrarAgrCliente = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.butModificar = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +63,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txtPorNumSer);
-            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.butBuscar);
             this.groupBox3.Controls.Add(this.txtPorModelo);
             this.groupBox3.Controls.Add(this.radioButNumSerie);
             this.groupBox3.Controls.Add(this.radioButModelo);
@@ -82,17 +82,18 @@
             this.txtPorNumSer.Size = new System.Drawing.Size(184, 20);
             this.txtPorNumSer.TabIndex = 3;
             // 
-            // button2
+            // butBuscar
             // 
-            this.button2.Image = global::Proyecto.Properties.Resources.buscar;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(459, 38);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 32);
-            this.button2.TabIndex = 30;
-            this.button2.Text = "Buscar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
+            this.butBuscar.Image = global::Proyecto.Properties.Resources.buscar;
+            this.butBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butBuscar.Location = new System.Drawing.Point(459, 38);
+            this.butBuscar.Name = "butBuscar";
+            this.butBuscar.Size = new System.Drawing.Size(75, 32);
+            this.butBuscar.TabIndex = 30;
+            this.butBuscar.Text = "Buscar";
+            this.butBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butBuscar.UseVisualStyleBackColor = true;
+            this.butBuscar.Click += new System.EventHandler(this.butBuscar_Click);
             // 
             // txtPorModelo
             // 
@@ -128,20 +129,20 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cbEstado);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textContacto);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textPrVenta);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.cbMesesIngElectV);
-            this.groupBox1.Controls.Add(this.cbAñosIngElectV);
+            this.groupBox1.Controls.Add(this.cbMeses);
+            this.groupBox1.Controls.Add(this.cbAños);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtDueñoAntIngElectV);
-            this.groupBox1.Controls.Add(this.txtPrecioIngElectV);
-            this.groupBox1.Controls.Add(this.txtNumSerIngElectV);
-            this.groupBox1.Controls.Add(this.txtModeloIngElectV);
-            this.groupBox1.Controls.Add(this.txtNombreIngElectV);
+            this.groupBox1.Controls.Add(this.txtDueñoAnt);
+            this.groupBox1.Controls.Add(this.txtPrCompra);
+            this.groupBox1.Controls.Add(this.txtNumSer);
+            this.groupBox1.Controls.Add(this.txtModelo);
+            this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -155,12 +156,35 @@
             this.groupBox1.Text = "Datos Electrodoméstico Usado";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // textBox2
+            // cbEstado
             // 
-            this.textBox2.Location = new System.Drawing.Point(415, 116);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 20);
-            this.textBox2.TabIndex = 70;
+            this.cbEstado.AutoCompleteCustomSource.AddRange(new string[] {
+            "Disponible",
+            "Agotado"});
+            this.cbEstado.FormattingEnabled = true;
+            this.cbEstado.Items.AddRange(new object[] {
+            "Disponible",
+            "Agotado"});
+            this.cbEstado.Location = new System.Drawing.Point(415, 143);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(140, 21);
+            this.cbEstado.TabIndex = 72;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(353, 150);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(40, 13);
+            this.label9.TabIndex = 71;
+            this.label9.Text = "Estado";
+            // 
+            // textContacto
+            // 
+            this.textContacto.Location = new System.Drawing.Point(415, 116);
+            this.textContacto.Name = "textContacto";
+            this.textContacto.Size = new System.Drawing.Size(140, 20);
+            this.textContacto.TabIndex = 70;
             // 
             // label8
             // 
@@ -171,12 +195,12 @@
             this.label8.TabIndex = 69;
             this.label8.Text = "Contacto:";
             // 
-            // textBox1
+            // textPrVenta
             // 
-            this.textBox1.Location = new System.Drawing.Point(121, 143);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 20);
-            this.textBox1.TabIndex = 68;
+            this.textPrVenta.Location = new System.Drawing.Point(121, 143);
+            this.textPrVenta.Name = "textPrVenta";
+            this.textPrVenta.Size = new System.Drawing.Size(140, 20);
+            this.textPrVenta.TabIndex = 68;
             // 
             // label7
             // 
@@ -187,10 +211,11 @@
             this.label7.TabIndex = 67;
             this.label7.Text = "Precio de Venta";
             // 
-            // cbMesesIngElectV
+            // cbMeses
             // 
-            this.cbMesesIngElectV.FormattingEnabled = true;
-            this.cbMesesIngElectV.Items.AddRange(new object[] {
+            this.cbMeses.FormattingEnabled = true;
+            this.cbMeses.Items.AddRange(new object[] {
+            "-",
             "1 mes",
             "2 meses",
             "3 meses",
@@ -203,24 +228,25 @@
             "10 meses",
             "11 meses",
             "12 meses"});
-            this.cbMesesIngElectV.Location = new System.Drawing.Point(480, 32);
-            this.cbMesesIngElectV.Name = "cbMesesIngElectV";
-            this.cbMesesIngElectV.Size = new System.Drawing.Size(75, 21);
-            this.cbMesesIngElectV.TabIndex = 66;
+            this.cbMeses.Location = new System.Drawing.Point(480, 32);
+            this.cbMeses.Name = "cbMeses";
+            this.cbMeses.Size = new System.Drawing.Size(75, 21);
+            this.cbMeses.TabIndex = 66;
             // 
-            // cbAñosIngElectV
+            // cbAños
             // 
-            this.cbAñosIngElectV.FormattingEnabled = true;
-            this.cbAñosIngElectV.Items.AddRange(new object[] {
+            this.cbAños.FormattingEnabled = true;
+            this.cbAños.Items.AddRange(new object[] {
+            "-",
             "1 Año",
             "2 Años",
             "3 Años",
             "4 Años",
             "5 Años"});
-            this.cbAñosIngElectV.Location = new System.Drawing.Point(415, 32);
-            this.cbAñosIngElectV.Name = "cbAñosIngElectV";
-            this.cbAñosIngElectV.Size = new System.Drawing.Size(59, 21);
-            this.cbAñosIngElectV.TabIndex = 65;
+            this.cbAños.Location = new System.Drawing.Point(415, 32);
+            this.cbAños.Name = "cbAños";
+            this.cbAños.Size = new System.Drawing.Size(59, 21);
+            this.cbAños.TabIndex = 65;
             // 
             // label1
             // 
@@ -231,40 +257,40 @@
             this.label1.TabIndex = 64;
             this.label1.Text = "Tiempo de uso";
             // 
-            // txtDueñoAntIngElectV
+            // txtDueñoAnt
             // 
-            this.txtDueñoAntIngElectV.Location = new System.Drawing.Point(415, 88);
-            this.txtDueñoAntIngElectV.Name = "txtDueñoAntIngElectV";
-            this.txtDueñoAntIngElectV.Size = new System.Drawing.Size(140, 20);
-            this.txtDueñoAntIngElectV.TabIndex = 63;
+            this.txtDueñoAnt.Location = new System.Drawing.Point(415, 88);
+            this.txtDueñoAnt.Name = "txtDueñoAnt";
+            this.txtDueñoAnt.Size = new System.Drawing.Size(140, 20);
+            this.txtDueñoAnt.TabIndex = 63;
             // 
-            // txtPrecioIngElectV
+            // txtPrCompra
             // 
-            this.txtPrecioIngElectV.Location = new System.Drawing.Point(121, 116);
-            this.txtPrecioIngElectV.Name = "txtPrecioIngElectV";
-            this.txtPrecioIngElectV.Size = new System.Drawing.Size(140, 20);
-            this.txtPrecioIngElectV.TabIndex = 62;
+            this.txtPrCompra.Location = new System.Drawing.Point(121, 116);
+            this.txtPrCompra.Name = "txtPrCompra";
+            this.txtPrCompra.Size = new System.Drawing.Size(140, 20);
+            this.txtPrCompra.TabIndex = 62;
             // 
-            // txtNumSerIngElectV
+            // txtNumSer
             // 
-            this.txtNumSerIngElectV.Location = new System.Drawing.Point(121, 88);
-            this.txtNumSerIngElectV.Name = "txtNumSerIngElectV";
-            this.txtNumSerIngElectV.Size = new System.Drawing.Size(140, 20);
-            this.txtNumSerIngElectV.TabIndex = 61;
+            this.txtNumSer.Location = new System.Drawing.Point(121, 88);
+            this.txtNumSer.Name = "txtNumSer";
+            this.txtNumSer.Size = new System.Drawing.Size(140, 20);
+            this.txtNumSer.TabIndex = 61;
             // 
-            // txtModeloIngElectV
+            // txtModelo
             // 
-            this.txtModeloIngElectV.Location = new System.Drawing.Point(121, 62);
-            this.txtModeloIngElectV.Name = "txtModeloIngElectV";
-            this.txtModeloIngElectV.Size = new System.Drawing.Size(434, 20);
-            this.txtModeloIngElectV.TabIndex = 60;
+            this.txtModelo.Location = new System.Drawing.Point(121, 62);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(434, 20);
+            this.txtModelo.TabIndex = 60;
             // 
-            // txtNombreIngElectV
+            // txtNombre
             // 
-            this.txtNombreIngElectV.Location = new System.Drawing.Point(121, 33);
-            this.txtNombreIngElectV.Name = "txtNombreIngElectV";
-            this.txtNombreIngElectV.Size = new System.Drawing.Size(140, 20);
-            this.txtNombreIngElectV.TabIndex = 59;
+            this.txtNombre.Location = new System.Drawing.Point(121, 33);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(140, 20);
+            this.txtNombre.TabIndex = 59;
             // 
             // label5
             // 
@@ -311,58 +337,38 @@
             this.label6.TabIndex = 54;
             this.label6.Text = "Nombre";
             // 
-            // btnCerrarAgrCliente
+            // btnCerrar
             // 
-            this.btnCerrarAgrCliente.Image = global::Proyecto.Properties.Resources.cancel1;
-            this.btnCerrarAgrCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarAgrCliente.Location = new System.Drawing.Point(519, 298);
-            this.btnCerrarAgrCliente.Name = "btnCerrarAgrCliente";
-            this.btnCerrarAgrCliente.Size = new System.Drawing.Size(67, 32);
-            this.btnCerrarAgrCliente.TabIndex = 43;
-            this.btnCerrarAgrCliente.Text = "Cerrar";
-            this.btnCerrarAgrCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCerrarAgrCliente.UseVisualStyleBackColor = true;
-            this.btnCerrarAgrCliente.Click += new System.EventHandler(this.btnCerrarAgrCliente_Click);
+            this.btnCerrar.Image = global::Proyecto.Properties.Resources.cancel1;
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrar.Location = new System.Drawing.Point(519, 298);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(67, 32);
+            this.btnCerrar.TabIndex = 43;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrarAgrCliente_Click);
             // 
-            // button1
+            // butModificar
             // 
-            this.button1.Image = global::Proyecto.Properties.Resources.Notepad;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(438, 298);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 32);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "Modificar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(353, 150);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 13);
-            this.label9.TabIndex = 71;
-            this.label9.Text = "Estado";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Habilitado",
-            "Deshabilitado"});
-            this.comboBox1.Location = new System.Drawing.Point(415, 143);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(140, 21);
-            this.comboBox1.TabIndex = 72;
+            this.butModificar.Image = global::Proyecto.Properties.Resources.Notepad;
+            this.butModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.butModificar.Location = new System.Drawing.Point(438, 298);
+            this.butModificar.Name = "butModificar";
+            this.butModificar.Size = new System.Drawing.Size(75, 32);
+            this.butModificar.TabIndex = 42;
+            this.butModificar.Text = "Modificar";
+            this.butModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.butModificar.UseVisualStyleBackColor = true;
             // 
             // ModificarCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(598, 340);
-            this.Controls.Add(this.btnCerrarAgrCliente);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.butModificar);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "ModificarCompra";
@@ -379,31 +385,31 @@
 
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtPorNumSer;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button butBuscar;
         private System.Windows.Forms.TextBox txtPorModelo;
         private System.Windows.Forms.RadioButton radioButNumSerie;
         private System.Windows.Forms.RadioButton radioButModelo;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textContacto;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textPrVenta;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cbMesesIngElectV;
-        private System.Windows.Forms.ComboBox cbAñosIngElectV;
+        private System.Windows.Forms.ComboBox cbMeses;
+        private System.Windows.Forms.ComboBox cbAños;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtDueñoAntIngElectV;
-        private System.Windows.Forms.TextBox txtPrecioIngElectV;
-        private System.Windows.Forms.TextBox txtNumSerIngElectV;
-        private System.Windows.Forms.TextBox txtModeloIngElectV;
-        private System.Windows.Forms.TextBox txtNombreIngElectV;
+        private System.Windows.Forms.TextBox txtDueñoAnt;
+        private System.Windows.Forms.TextBox txtPrCompra;
+        private System.Windows.Forms.TextBox txtNumSer;
+        private System.Windows.Forms.TextBox txtModelo;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnCerrarAgrCliente;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button butModificar;
+        private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label label9;
 
 

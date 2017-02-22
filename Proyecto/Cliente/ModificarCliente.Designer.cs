@@ -83,12 +83,13 @@
             // 
             this.comboBoxEstC.FormattingEnabled = true;
             this.comboBoxEstC.Items.AddRange(new object[] {
-            "Habilitado",
-            "Deshabilitado"});
+            "Disponible",
+            "Agotado"});
             this.comboBoxEstC.Location = new System.Drawing.Point(350, 100);
             this.comboBoxEstC.Name = "comboBoxEstC";
             this.comboBoxEstC.Size = new System.Drawing.Size(121, 21);
             this.comboBoxEstC.TabIndex = 62;
+            this.comboBoxEstC.SelectedIndexChanged += new System.EventHandler(this.comboBoxEstC_SelectedIndexChanged);
             // 
             // label7
             // 

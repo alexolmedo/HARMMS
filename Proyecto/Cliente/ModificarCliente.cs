@@ -384,5 +384,10 @@ namespace Proyecto.Cliente
                 e.Handled = true;
             }
         }
+
+        private void comboBoxEstC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
