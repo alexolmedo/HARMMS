@@ -95,7 +95,7 @@ namespace Proyecto.Repuestos
         private void autocompletarModelo()
         {
             //Llenar los datos para autocompletar la búsqueda por nombre
-            string strquery2 = "Select modelo from producto where cantidad is null";
+            string strquery2 = "Select modelo from producto where tiempousoelec is null";
             conexion.command = new SqlCommand(strquery2, conexion.connection);
 
             da = new SqlDataAdapter();
@@ -123,7 +123,7 @@ namespace Proyecto.Repuestos
         private void autocompletarNumSerie()
         {
             //Llenar los datos para autocompletar la búsqueda por cedula
-            string strquery1 = "Select numserie from producto where cantidad is null";
+            string strquery1 = "Select numserie from producto where tiempousoelec is null";
             conexion.command = new SqlCommand(strquery1, conexion.connection);
 
             da = new SqlDataAdapter();
