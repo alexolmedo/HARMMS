@@ -21,56 +21,8 @@ namespace Proyecto.Repuestos
         {
             InitializeComponent();
             this.CenterToScreen();
-
-            //Llenar los datos para autocompletar la búsqueda por cedula
-            string strquery1 = "Select numserie from producto";
-            conexion.command = new SqlCommand(strquery1, conexion.connection);
-
-            da = new SqlDataAdapter();
-            //fetching query in the database.
-            da.SelectCommand = conexion.command;
-            //inicializar nueva datatable
-            dt = new DataTable();
-            //refresca las filas segun el rango especificado en el datasource. 
-            da.Fill(dt);
-
-            textBoxNumSerie.AutoCompleteCustomSource.Clear();
-            foreach (DataRow r in dt.Rows)
-            {
-                //obtiene todas las filas de una columna
-                var rw = r.Field<string>("numserie");
-
-                //Set the properties of a textbox to make it auto suggest and append.
-                textBoxNumSerie.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                textBoxNumSerie.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                //adding all rows into the textbox
-                textBoxNumSerie.AutoCompleteCustomSource.Add(rw);
-            }
-
-            //Llenar los datos para autocompletar la búsqueda por nombre
-            string strquery2 = "Select modelo from producto";
-            conexion.command = new SqlCommand(strquery2, conexion.connection);
-
-            da = new SqlDataAdapter();
-            //fetching query in the database.
-            da.SelectCommand = conexion.command;
-            //inicializar nueva datatable
-            dt = new DataTable();
-            //refresca las filas segun el rango especificado en el datasource. 
-            da.Fill(dt);
-
-            textBoxModelo.AutoCompleteCustomSource.Clear();
-            foreach (DataRow r in dt.Rows)
-            {
-                //obtiene todas las filas de una columna
-                var rw = r.Field<string>("modelo");
-
-                //Set the properties of a textbox to make it auto suggest and append.
-                textBoxModelo.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                textBoxModelo.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                //adding all rows into the textbox
-                textBoxModelo.AutoCompleteCustomSource.Add(rw);
-            }
+            autocompletarModelo();
+            autocompletarNumSerie();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -98,12 +50,12 @@ namespace Proyecto.Repuestos
 
                 if (radioButModelo.Checked)
                 {
-                    strquery3 = "Select * from producto where modelo = '" + textBoxModelo.Text + "'";
+                    strquery3 = "Select * from producto where modelo = '" + textBoxModelo.Text + "' and tiempousoelec is null";
                 }
 
                 if (radioButNumSerie.Checked)
                 {
-                    strquery3 = "Select * from producto where numSerie = " + textBoxNumSerie.Text + "";
+                    strquery3 = "Select * from producto where numSerie = " + textBoxNumSerie.Text + " and tiempousoelec is null";
                 }
 
                 conexion.command = new SqlCommand(strquery3, conexion.connection);
@@ -119,13 +71,13 @@ namespace Proyecto.Repuestos
                 foreach (DataRow r in dt.Rows)
                 {
                     //obtiene todas las filas de una columna
-                    textNombre.Text = r[1].ToString();
-                    textModelo.Text = r[2].ToString();
-                    textPrCompra.Text = r[5].ToString();
-                    textPrVenta.Text = r[6].ToString();
-                    textNumSer.Text = r[4].ToString();
-                    textCant.Text = r[10].ToString();
-                    textEstado.Text = r[7].ToString();
+                    textNombre.Text = r[0].ToString();
+                    textModelo.Text = r[1].ToString();
+                    textPrCompra.Text = r[4].ToString();
+                    textPrVenta.Text = r[5].ToString();
+                    textNumSer.Text = r[3].ToString();
+                    textCant.Text = r[9].ToString();
+                    textEstado.Text = r[6].ToString();
                 }
 
             }
@@ -138,6 +90,62 @@ namespace Proyecto.Repuestos
         private void textBoxNombre_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void autocompletarModelo()
+        {
+            //Llenar los datos para autocompletar la búsqueda por nombre
+            string strquery2 = "Select modelo from producto where cantidad is null";
+            conexion.command = new SqlCommand(strquery2, conexion.connection);
+
+            da = new SqlDataAdapter();
+            //fetching query in the database.
+            da.SelectCommand = conexion.command;
+            //inicializar nueva datatable
+            dt = new DataTable();
+            //refresca las filas segun el rango especificado en el datasource. 
+            da.Fill(dt);
+
+            textBoxModelo.AutoCompleteCustomSource.Clear();
+            foreach (DataRow r in dt.Rows)
+            {
+                //obtiene todas las filas de una columna
+                var rw = r.Field<string>("modelo");
+
+                //Set the properties of a textbox to make it auto suggest and append.
+                textBoxModelo.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                textBoxModelo.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                //adding all rows into the textbox
+                textBoxModelo.AutoCompleteCustomSource.Add(rw);
+            }
+        }
+
+        private void autocompletarNumSerie()
+        {
+            //Llenar los datos para autocompletar la búsqueda por cedula
+            string strquery1 = "Select numserie from producto where cantidad is null";
+            conexion.command = new SqlCommand(strquery1, conexion.connection);
+
+            da = new SqlDataAdapter();
+            //fetching query in the database.
+            da.SelectCommand = conexion.command;
+            //inicializar nueva datatable
+            dt = new DataTable();
+            //refresca las filas segun el rango especificado en el datasource. 
+            da.Fill(dt);
+
+            textBoxNumSerie.AutoCompleteCustomSource.Clear();
+            foreach (DataRow r in dt.Rows)
+            {
+                //obtiene todas las filas de una columna
+                var rw = r.Field<string>("numserie");
+
+                //Set the properties of a textbox to make it auto suggest and append.
+                textBoxNumSerie.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                textBoxNumSerie.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                //adding all rows into the textbox
+                textBoxNumSerie.AutoCompleteCustomSource.Add(rw);
+            }
         }
     }
 }
