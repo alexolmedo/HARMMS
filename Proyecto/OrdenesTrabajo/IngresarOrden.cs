@@ -123,7 +123,92 @@ namespace Proyecto.OrdenesTrabajo
 
         private void button4_Click(object sender, EventArgs e)
         {
+            txtCedulaLocal.Text = "";
+            txtCostoLocal.Text = "";
+            txtDescripcionLocal.Text = "";
+            txtNombreLocal.Text = "";
+            txtTelefonoLocal.Text = "";
+            txtDireccionLocal.Text = "";
+        }
 
+        private void txtCedulaDomicilio_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string strquery3 = "Select * from cliente where CI_Cliente = '" + txtCedulaDomicilio.Text + "'";
+
+                conexion.command = new SqlCommand(strquery3, conexion.connection);
+
+                da = new SqlDataAdapter();
+                //fetching query in the database.
+                da.SelectCommand = conexion.command;
+                //inicializar nueva datatable
+                dt = new DataTable();
+                //refresca las filas segun el rango especificado en el datasource. 
+                da.Fill(dt);
+
+                foreach (DataRow r in dt.Rows)
+                {
+                    //obtiene todas las filas de una columna
+                    txtNombreDomicilio.Text = r[1].ToString();
+                    txtDireccionDomicilio.Text = r[2].ToString();
+                    txtTelefonoDomicilio.Text = r[3].ToString();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void txtCedulaLocal_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                string strquery3 = "Select * from cliente where CI_Cliente = '" + txtCedulaLocal.Text + "'";
+
+                conexion.command = new SqlCommand(strquery3, conexion.connection);
+
+                da = new SqlDataAdapter();
+                //fetching query in the database.
+                da.SelectCommand = conexion.command;
+                //inicializar nueva datatable
+                dt = new DataTable();
+                //refresca las filas segun el rango especificado en el datasource. 
+                da.Fill(dt);
+
+                foreach (DataRow r in dt.Rows)
+                {
+                    //obtiene todas las filas de una columna
+                    txtNombreLocal.Text = r[1].ToString();
+                    txtDireccionLocal.Text = r[2].ToString();
+                    txtTelefonoLocal.Text = r[3].ToString();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            txtNombreDomicilio.Text = "";
+            txtTelefonoDomicilio.Text = "";
+            txtDireccionDomicilio.Text = "";
+            txtTelefonoDomicilio.Text = "";
+            txtDescripcionDomicilio.Text = "";
+            txtCostoDomicilio.Text = "";
+            txtCedulaDomicilio.Text = "";
+        }
+
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            button8.PerformClick();
+            button4.PerformClick();
         }
     }
 }
