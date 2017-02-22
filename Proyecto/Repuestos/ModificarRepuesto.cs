@@ -23,7 +23,7 @@ namespace Proyecto.Repuestos
             this.CenterToScreen();
 
             //Llenar los datos para autocompletar la búsqueda por cedula
-            string strquery1 = "Select numserie from producto";
+            string strquery1 = "Select numserie from producto where tiempousoelec is null";
             conexion.command = new SqlCommand(strquery1, conexion.connection);
 
             da = new SqlDataAdapter();
@@ -48,7 +48,7 @@ namespace Proyecto.Repuestos
             }
 
             //Llenar los datos para autocompletar la búsqueda por nombre
-            string strquery2 = "Select modelo from producto";
+            string strquery2 = "Select modelo from producto where tiempousoelec is null";
             conexion.command = new SqlCommand(strquery2, conexion.connection);
 
             da = new SqlDataAdapter();
@@ -98,12 +98,12 @@ namespace Proyecto.Repuestos
 
                 if (radioButModelo.Checked)
                 {
-                    strquery3 = "Select * from producto where modelo = '" + textBoxModelo.Text + "'";
+                    strquery3 = "Select * from producto where modelo = '" + textBoxModelo.Text + "' and tiempousoelec is null";
                 }
 
                 if (radioButNumSerie.Checked)
                 {
-                    strquery3 = "Select * from producto where numSerie = " + textBoxNumSerie.Text + "";
+                    strquery3 = "Select * from producto where numSerie = " + textBoxNumSerie.Text + "and tiempousoelec is null";
                 }
 
                 conexion.command = new SqlCommand(strquery3, conexion.connection);
@@ -119,14 +119,14 @@ namespace Proyecto.Repuestos
                 foreach (DataRow r in dt.Rows)
                 {
                     //obtiene todas las filas de una columna
-                    textNombre.Text = r[1].ToString();
-                    textModelo.Text = r[2].ToString();
+                    textNombre.Text = r[0].ToString();
+                    textModelo.Text = r[1].ToString();
 
-                    textPrCompra.Text = cambiarComaPorPunto(r[5].ToString());
-                    textPrVenta.Text = cambiarComaPorPunto(r[6].ToString());
-                    textNumSer.Text = r[4].ToString();
-                    textCant.Text = r[10].ToString();
-                    cBEstado.SelectedItem = r [7].ToString();
+                    textPrCompra.Text = cambiarComaPorPunto(r[4].ToString());
+                    textPrVenta.Text = cambiarComaPorPunto(r[5].ToString());
+                    textNumSer.Text = r[3].ToString();
+                    textCant.Text = r[9].ToString();
+                    cBEstado.SelectedItem = r [6].ToString();
                 }
 
             }
