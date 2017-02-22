@@ -149,7 +149,7 @@ namespace Proyecto.Repuestos
             {
                 if (!System.Text.RegularExpressions.Regex.IsMatch(textBoxPrCompra.Text, "^[0-9]{1,4}([.][0-9]{1,2})?$"))
                 {
-                    MessageBox.Show("El precio de compra no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("El precio de compra no es válido\nSe puede ingresar hasta 4 números enteros y 2 decimales", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     textBoxPrCompra.Text = "";
                 }
             }
@@ -161,7 +161,7 @@ namespace Proyecto.Repuestos
             {
                 if (!System.Text.RegularExpressions.Regex.IsMatch(textBoxPrVenta.Text, "^[0-9]{1,4}([.][0-9]{1,2})?$"))
                 {
-                    MessageBox.Show("El precio de venta no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("El precio de venta no es válido\nSe puede ingresar hasta 4 números enteros y 2 decimales", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     textBoxPrVenta.Text = "";
                 }
             }
