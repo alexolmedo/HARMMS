@@ -331,11 +331,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(59, 36);
+            this.label6.Location = new System.Drawing.Point(75, 36);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.Size = new System.Drawing.Size(28, 13);
             this.label6.TabIndex = 54;
-            this.label6.Text = "Nombre";
+            this.label6.Text = "Tipo";
             // 
             // btnCerrar
             // 
@@ -361,6 +361,7 @@
             this.butModificar.Text = "Modificar";
             this.butModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.butModificar.UseVisualStyleBackColor = true;
+            this.butModificar.Click += new System.EventHandler(this.butModificar_Click);
             // 
             // ModificarCompra
             // 

@@ -177,8 +177,8 @@ namespace Proyecto.GestionElectrodomesticos
                     cbAños.SelectedItem = ponertimpoUsoCBAños(Convert.ToInt32(r[2])).ToString();
                     cbMeses.SelectedItem = ponertiempoUsoCBMese(Convert.ToInt32(r[2])).ToString();
                     txtNumSer.Text = r[3].ToString();
-                    txtPrCompra.Text = r[4].ToString();
-                    textPrVenta.Text = r[5].ToString();
+                    txtPrCompra.Text = r[4].ToString().Replace(",",".");
+                    textPrVenta.Text = r[5].ToString().Replace(",", ".");
                     cbEstado.SelectedItem = r[6].ToString();
                     txtDueñoAnt.Text = r[7].ToString();
                     textContacto.Text = r[8].ToString();
@@ -227,6 +227,77 @@ namespace Proyecto.GestionElectrodomesticos
             }
 
             return res;
+        }
+
+        private void butModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult dr = MessageBox.Show("¿Confirma modificación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
+
+                if (dr == DialogResult.Yes)
+                {
+                    string sql = "Update producto set nombre = '" + txtNombre.Text + "', modelo ='" + txtModelo.Text + "', tiempousoelec = " + 
+                        pasCBs_Meses(cbAños.SelectedItem.ToString(), cbMeses.SelectedItem.ToString()) + ", numserie='" +
+                         txtNumSer.Text + "',precioCompra = " + txtPrCompra.Text + ", precioVenta=" + textPrVenta.Text + 
+                         ",estadoProd = '" + cbEstado.SelectedItem + "', propanterior = '" + txtDueñoAnt.Text + "', telefpropanterior ='" + textContacto.Text +
+                         "' where numSerie = '" + txtNumSer.Text + "'";
+                    
+                    Console.WriteLine(sql);
+
+                    conexion.command = new SqlCommand(sql, conexion.connection);
+                    conexion.command.ExecuteNonQuery();
+                    conexion.command.Dispose();
+                    MessageBox.Show("El electrodoméstico se modificó correctamente", "Electrodoméstico Modificado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public int pasCBs_Meses(String años, String meses)
+        {
+
+            int mes = 0;
+
+            if (años == "-")
+            {
+
+                mes = 0;
+            }
+
+            else if (años == "1 Año")
+            {
+                mes = 12;
+            }
+            else if (años.Length == 6)
+            {
+                mes = 12 * Convert.ToInt32(años.Substring(0, 1));
+            }
+            else if (años == "10 Años")
+            {
+                mes = 12 * Convert.ToInt32(años.Substring(0, 2));
+            }
+
+            if (meses == "1 mes")
+            {
+
+                mes += 1;
+            }
+
+            else if (meses.Length == 7)
+            {
+                mes += Convert.ToInt32(meses.Substring(0, 1));
+            }
+
+            else if (meses.Length == 8)
+            {
+
+                mes += Convert.ToInt32(meses.Substring(0, 2));
+            }
+            return mes;
         }
 
     }
