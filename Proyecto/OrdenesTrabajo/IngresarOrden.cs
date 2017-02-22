@@ -23,6 +23,7 @@ namespace Proyecto.OrdenesTrabajo
             this.CenterToScreen();
             autcompletarCedulaDomicilio();
             autcompletarCedulaLocal();
+            colocarNumOT();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -80,6 +81,7 @@ namespace Proyecto.OrdenesTrabajo
             da.Fill(dt);
 
             txtCedulaDomicilio.AutoCompleteCustomSource.Clear();
+            //txtCedulaLocal.AutoCompleteCustomSource.Clear();
             foreach (DataRow r in dt.Rows)
             {
                 //obtiene todas las filas de una columna
@@ -88,6 +90,8 @@ namespace Proyecto.OrdenesTrabajo
                 //Set the properties of a textbox to make it auto suggest and append.
                 txtCedulaDomicilio.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                 txtCedulaDomicilio.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                //txtCedulaLocal.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                //txtCedulaLocal.AutoCompleteSource = AutoCompleteSource.CustomSource;
                 //adding all rows into the textbox
                 txtCedulaDomicilio.AutoCompleteCustomSource.Add(rw);
             }
@@ -209,6 +213,86 @@ namespace Proyecto.OrdenesTrabajo
         {
             button8.PerformClick();
             button4.PerformClick();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private String numOTAnterior()
+        {
+
+            String num = "";
+            try
+            {
+
+                string strquery3 = "Select Max(num_ordentrabajo) from ordendetrabajo";
+
+                conexion.command = new SqlCommand(strquery3, conexion.connection);
+
+                da = new SqlDataAdapter();
+                //fetching query in the database.
+                da.SelectCommand = conexion.command;
+                //inicializar nueva datatable
+                dt = new DataTable();
+                //refresca las filas segun el rango especificado en el datasource. 
+                da.Fill(dt);
+
+                foreach (DataRow r in dt.Rows)
+                {
+                    //obtiene todas las filas de una columna
+                    num = r[0].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return num;
+        }
+
+        private void colocarNumOT()
+        {
+            try
+            {
+                // Numero OT
+                string strquery3 = "Select numinicialOT from parametros";
+                String aux ="";
+                conexion.command = new SqlCommand(strquery3, conexion.connection);
+
+                da = new SqlDataAdapter();
+                //fetching query in the database.
+                da.SelectCommand = conexion.command;
+                //inicializar nueva datatable
+                dt = new DataTable();
+                //refresca las filas segun el rango especificado en el datasource. 
+                da.Fill(dt);
+
+                foreach (DataRow r in dt.Rows)
+                {
+                    //obtiene todas las filas de una columna
+                    aux = r[0].ToString();
+                }
+
+                if (numOTAnterior() == "")
+                {
+                    txtNumDomicilio.Text = aux;
+                    txtNumLocal.Text = aux;
+                }
+
+                else
+                {
+                    txtNumDomicilio.Text = (Convert.ToInt32(numOTAnterior()) + 1).ToString();
+                    txtNumLocal.Text = (Convert.ToInt32(numOTAnterior()) + 1).ToString(); 
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

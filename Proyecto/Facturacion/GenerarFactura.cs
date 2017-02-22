@@ -233,5 +233,10 @@ namespace Proyecto.Facturacion
                 Console.WriteLine(ex.Message);
             }
         }
+
+        private void textNumFac_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

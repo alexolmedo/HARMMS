@@ -213,6 +213,7 @@
             this.textNumFac.ReadOnly = true;
             this.textNumFac.Size = new System.Drawing.Size(106, 20);
             this.textNumFac.TabIndex = 20;
+            this.textNumFac.TextChanged += new System.EventHandler(this.textNumFac_TextChanged);
             // 
             // label2
             // 

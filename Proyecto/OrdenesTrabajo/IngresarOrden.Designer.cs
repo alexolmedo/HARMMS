@@ -37,7 +37,7 @@
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.txtDescripcionDomicilio = new System.Windows.Forms.TextBox();
             this.txtCostoDomicilio = new System.Windows.Forms.TextBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cbEstado = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.txtCedulaDomicilio = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtNumDomicilio = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -77,7 +77,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtNumLocal = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -118,7 +118,7 @@
             this.tabPage1.Controls.Add(this.groupBoxDD);
             this.tabPage1.Controls.Add(this.label19);
             this.tabPage1.Controls.Add(this.groupBox4);
-            this.tabPage1.Controls.Add(this.textBox10);
+            this.tabPage1.Controls.Add(this.txtNumDomicilio);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -137,6 +137,7 @@
             this.button9.Text = "Agregar";
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button7
             // 
@@ -169,7 +170,7 @@
             this.groupBoxDD.Controls.Add(this.dateTimePicker3);
             this.groupBoxDD.Controls.Add(this.txtDescripcionDomicilio);
             this.groupBoxDD.Controls.Add(this.txtCostoDomicilio);
-            this.groupBoxDD.Controls.Add(this.comboBox4);
+            this.groupBoxDD.Controls.Add(this.cbEstado);
             this.groupBoxDD.Controls.Add(this.label13);
             this.groupBoxDD.Controls.Add(this.comboBox5);
             this.groupBoxDD.Controls.Add(this.label14);
@@ -208,16 +209,16 @@
             this.txtCostoDomicilio.Size = new System.Drawing.Size(81, 20);
             this.txtCostoDomicilio.TabIndex = 18;
             // 
-            // comboBox4
+            // cbEstado
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.cbEstado.FormattingEnabled = true;
+            this.cbEstado.Items.AddRange(new object[] {
             "Entregada",
             "No Entregada"});
-            this.comboBox4.Location = new System.Drawing.Point(144, 113);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(200, 21);
-            this.comboBox4.TabIndex = 17;
+            this.cbEstado.Location = new System.Drawing.Point(144, 113);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(200, 21);
+            this.cbEstado.TabIndex = 17;
             // 
             // label13
             // 
@@ -403,13 +404,13 @@
             this.txtCedulaDomicilio.TabIndex = 0;
             this.txtCedulaDomicilio.Leave += new System.EventHandler(this.txtCedulaDomicilio_Leave);
             // 
-            // textBox10
+            // txtNumDomicilio
             // 
-            this.textBox10.Location = new System.Drawing.Point(482, 24);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(101, 20);
-            this.textBox10.TabIndex = 5;
+            this.txtNumDomicilio.Location = new System.Drawing.Point(482, 24);
+            this.txtNumDomicilio.Name = "txtNumDomicilio";
+            this.txtNumDomicilio.ReadOnly = true;
+            this.txtNumDomicilio.Size = new System.Drawing.Size(101, 20);
+            this.txtNumDomicilio.TabIndex = 5;
             // 
             // tabPage2
             // 
@@ -419,7 +420,7 @@
             this.tabPage2.Controls.Add(this.Agregar);
             this.tabPage2.Controls.Add(this.groupBoxDL);
             this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.textBox5);
+            this.tabPage2.Controls.Add(this.txtNumLocal);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -598,13 +599,13 @@
             this.label7.TabIndex = 46;
             this.label7.Text = "Número";
             // 
-            // textBox5
+            // txtNumLocal
             // 
-            this.textBox5.Location = new System.Drawing.Point(481, 22);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(101, 20);
-            this.textBox5.TabIndex = 45;
+            this.txtNumLocal.Location = new System.Drawing.Point(481, 22);
+            this.txtNumLocal.Name = "txtNumLocal";
+            this.txtNumLocal.ReadOnly = true;
+            this.txtNumLocal.Size = new System.Drawing.Size(101, 20);
+            this.txtNumLocal.TabIndex = 45;
             // 
             // groupBox3
             // 
@@ -748,7 +749,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.TextBox txtDescripcionDomicilio;
         private System.Windows.Forms.TextBox txtCostoDomicilio;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label14;
@@ -769,7 +770,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox txtCedulaDomicilio;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtNumDomicilio;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
@@ -788,7 +789,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtNumLocal;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;

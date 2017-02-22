@@ -30,6 +30,9 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimeFinal = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeInicio = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
             this.textNumFinal = new System.Windows.Forms.TextBox();
             this.textNumInicio = new System.Windows.Forms.TextBox();
             this.textIVA = new System.Windows.Forms.TextBox();
@@ -38,9 +41,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnCerrarAgrCliente = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateTimeInicio = new System.Windows.Forms.DateTimePicker();
-            this.dateTimeFinal = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +73,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // dateTimeFinal
+            // 
+            this.dateTimeFinal.Location = new System.Drawing.Point(320, 83);
+            this.dateTimeFinal.Name = "dateTimeFinal";
+            this.dateTimeFinal.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeFinal.TabIndex = 10;
+            // 
+            // dateTimeInicio
+            // 
+            this.dateTimeInicio.Location = new System.Drawing.Point(320, 57);
+            this.dateTimeInicio.Name = "dateTimeInicio";
+            this.dateTimeInicio.Size = new System.Drawing.Size(200, 20);
+            this.dateTimeInicio.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(196, 86);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(106, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Fecha de Caducidad";
             // 
             // textNumFinal
             // 
@@ -148,29 +171,7 @@
             this.button1.Text = "Modificar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(196, 86);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Fecha de Caducidad";
-            // 
-            // dateTimeInicio
-            // 
-            this.dateTimeInicio.Location = new System.Drawing.Point(320, 57);
-            this.dateTimeInicio.Name = "dateTimeInicio";
-            this.dateTimeInicio.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeInicio.TabIndex = 9;
-            // 
-            // dateTimeFinal
-            // 
-            this.dateTimeFinal.Location = new System.Drawing.Point(320, 83);
-            this.dateTimeFinal.Name = "dateTimeFinal";
-            this.dateTimeFinal.Size = new System.Drawing.Size(200, 20);
-            this.dateTimeFinal.TabIndex = 10;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ParametrosFactura
             // 
