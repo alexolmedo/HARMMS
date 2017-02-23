@@ -77,7 +77,7 @@ namespace Proyecto.Facturacion
                 llenarDetRepuesto(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(), e);
                 double subtotal = 0;
                 double iva = 0;
-                for (int i = 0; i < e.RowIndex; i++)
+                for (int i = 0; i < e.RowIndex+1; i++)
                 {
                      subtotal += Convert.ToDouble(dataGridView1.Rows[i].Cells[4].Value);
                      iva = subtotal * 0.14;
@@ -161,7 +161,7 @@ namespace Proyecto.Facturacion
                 String fechaEmision = dateEmision.Value.Date.ToString().Substring(6, 4) +
                     dateEmision.Value.Date.ToString().Substring(3, 2) + dateEmision.Value.Date.ToString().Substring(0, 2);
                 string strquery3 = "Select * from parametros where '" + fechaEmision
-                + "' between fechainicio and fechacaducidadf";
+                + "' between fechainiciof and fechacaducidadf";
 
                 conexion.command = new SqlCommand(strquery3, conexion.connection);
 
@@ -174,19 +174,19 @@ namespace Proyecto.Facturacion
                 da.Fill(dt);
                 //int añoI, añoF, mesI, mesF, diaI, diaF
 
-                if (dt.Rows.Count == 0)
-                {
+                //if (dt.Rows.Count == 0)
+                //{
                     //MessageBox.Show("", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     
-                }
-                else
-                {
+                //}
+                //else
+                //{
 
                     foreach (DataRow r in dt.Rows)
                     {
                         //obtiene todas las filas de una columna
-                        //if (r[0].ToString() != "")
-                        //{
+                        if (r[0].ToString() != "")
+                        {
 
                             if (numFacturaAnterior(r[1].ToString().Substring(6, 4) + r[1].ToString().Substring(3, 2) + r[1].ToString().Substring(0, 2), r[2].ToString().Substring(6, 4) + r[2].ToString().Substring(3, 2) + r[2].ToString().Substring(0, 2)) == r[3].ToString())
                             {
@@ -226,6 +226,32 @@ namespace Proyecto.Facturacion
 
         private void btnAgregarFactura_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string sql = "INSERT INTO factura VALUES ('" + textNumFac.Text + "','" + dateEmision.Value.Date.ToString("yyyyMMdd") + "','" + textCedula.Text + "'," + textIVA.Text + ",'Válida'" + "," + textSubtotal.Text + "," + textTotal.Text + ")";
+                //Console.WriteLine(sql);
+                conexion.command = new SqlCommand(sql, conexion.connection);
+                conexion.command.ExecuteNonQuery();
+                conexion.command.Dispose();
+
+                //button8.PerformClick();
+
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    string sql1 = "INSERT INTO detallefactura VALUES ('" + textNumFac.Text + "','" + dataGridView1.Rows[i].Cells[0].Value.ToString() + "','null','null'," + dataGridView1.Rows[i].Cells[3].Value.ToString() + ")";
+                    //Console.WriteLine(sql);
+                    conexion.command = new SqlCommand(sql1, conexion.connection);
+                    conexion.command.ExecuteNonQuery();
+                    conexion.command.Dispose();
+                    MessageBox.Show("La factura se agregó correctamente", "Factura Agregada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    //button8.PerformClick();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
         }
 
@@ -421,7 +447,7 @@ namespace Proyecto.Facturacion
                             dataGridView1.Rows[e.RowIndex].Cells[2].Value = "1";
                             dataGridView1.Rows[e.RowIndex].Cells[2].ReadOnly = true;
                             dataGridView1.Rows[e.RowIndex].Cells[3].Value = r[5];
-                            dataGridView1.Rows[e.RowIndex].Cells[4].Value = r[6];
+                            dataGridView1.Rows[e.RowIndex].Cells[4].Value = r[5];
                         }
                     }
                 }
@@ -431,5 +457,21 @@ namespace Proyecto.Facturacion
                 Console.WriteLine(ex.Message);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new GestionElectrodomesticos.ConsultarElectrodomestico().ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new Repuestos.ConsultarRepuesto().ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new OrdenesTrabajo.BuscarOrdenC().ShowDialog();
+        }
+
     }
 }
