@@ -72,28 +72,9 @@ namespace Proyecto.Facturacion
         {
             try
             {
-                string strquery3 = "Select * from producto where numSerie = '" + Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[0].Value) + "'";
-
-                Console.WriteLine(Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[0].Value));
-
-                conexion.command = new SqlCommand(strquery3, conexion.connection);
-
-                da = new SqlDataAdapter();
-                //fetching query in the database.
-                da.SelectCommand = conexion.command;
-                //inicializar nueva datatable
-                dt = new DataTable();
-                //refresca las filas segun el rango especificado en el datasource. 
-                da.Fill(dt);
-
-                foreach (DataRow r in dt.Rows)
-                {
-                    //obtiene todas las filas de una columna
-                    dataGridView1.Rows[e.RowIndex].Cells[1].Value = r[0] + " - " + r[1];
-                    dataGridView1.Rows[e.RowIndex].Cells[3].Value = r[5];
-                    dataGridView1.Rows[e.RowIndex].Cells[4].Value = Convert.ToDouble(r[5]) * Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[2].Value);    
-                }
-
+                llenarOT(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(),e);
+                llenarDetElectrodo(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(), e);
+                llenarDetRepuesto(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(), e);
                 double subtotal = 0;
                 double iva = 0;
                 for (int i = 0; i < e.RowIndex; i++)
@@ -251,6 +232,204 @@ namespace Proyecto.Facturacion
         private void button6_Click(object sender, EventArgs e)
         {
             new Cliente.ConsultarCliente().ShowDialog();
+        }
+
+        private void validarCantidadRepuesto(int cantidadVende, String id, DataGridViewCellEventArgs e)
+        {
+
+            try
+            {
+                Console.WriteLine(cantidadVende.ToString(), id);
+                string strquery3 = "Select * from producto where numSerie = '" + id + "' and cantidad is not null";
+
+                conexion.command = new SqlCommand(strquery3, conexion.connection);
+
+                da = new SqlDataAdapter();
+                //fetching query in the database.
+                da.SelectCommand = conexion.command;
+                //inicializar nueva datatable
+                dt = new DataTable();
+                //refresca las filas segun el rango especificado en el datasource. 
+                da.Fill(dt);
+
+                foreach (DataRow r in dt.Rows)
+                {
+                    //obtiene todas las filas de una columna
+                    if (r[9].ToString() != "") { 
+                    int cantidadExistente= Convert.ToInt32(r[9].ToString());
+                    
+                        if (cantidadExistente >= cantidadVende)
+                        {
+                            /*if ((cantidadExistente - cantidadVende) == 0)
+                            {
+                                string sql = "Update producto set cantidad = " + (cantidadExistente - cantidadVende) +
+                                 ", estadoprod = 'Agotado' where numSerie = '" + id + "'";
+                                conexion.command = new SqlCommand(sql, conexion.connection);
+                                conexion.command.ExecuteNonQuery();
+                                conexion.command.Dispose();
+                                Console.WriteLine("El electrodoméstico se modificó correctamente");
+                            }
+                            else {
+                                string sql = "Update producto set cantidad = " + (cantidadExistente - cantidadVende) +
+                                " where numSerie = '" + id + "'";
+                                conexion.command = new SqlCommand(sql, conexion.connection);
+                                conexion.command.ExecuteNonQuery();
+                                conexion.command.Dispose();
+                                Console.WriteLine("El electrodoméstico se modificó correctamente");
+                            }*/
+                            
+                        }
+                        else if (cantidadExistente < cantidadVende)
+                        {
+                            if (cantidadExistente != 0)
+                            {
+                                MessageBox.Show("Tiene " + cantidadExistente+" unidades del repuesto disponibles", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                dataGridView1.Rows[e.RowIndex].Cells[2].Value = "";
+                            }
+                            else if (cantidadExistente == 0)
+                            {
+                                MessageBox.Show("El repuesto está agotado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                dataGridView1.Rows[e.RowIndex].Cells[0].Value = ""; 
+                                dataGridView1.Rows[e.RowIndex].Cells[1].Value = "";
+                                dataGridView1.Rows[e.RowIndex].Cells[2].Value = "";
+                                dataGridView1.Rows[e.RowIndex].Cells[3].Value = "";
+                            }                     
+                        }           
+                    }
+                }
+            }            
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void llenarDetRepuesto(String id, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string strquery3 = "Select * from producto where numSerie = '" + id + "' and cantidad is not null";
+
+                conexion.command = new SqlCommand(strquery3, conexion.connection);
+
+                da = new SqlDataAdapter();
+                //fetching query in the database.
+                da.SelectCommand = conexion.command;
+                //inicializar nueva datatable
+                dt = new DataTable();
+                //refresca las filas segun el rango especificado en el datasource. 
+                da.Fill(dt);
+                if (dt.Rows.Count == 0)
+                {
+                    //MessageBox.Show("No se ha encontrado ningún repuesto con ese código", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+
+                else
+                {
+                    foreach (DataRow r in dt.Rows)
+                    {
+                        //obtiene todas las filas de una columna
+                        dataGridView1.Rows[e.RowIndex].Cells[1].Value = r[0] + " - " + r[1];
+                        validarCantidadRepuesto(Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString()), dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString(), e);
+                        dataGridView1.Rows[e.RowIndex].Cells[3].Value = r[5];
+                        dataGridView1.Rows[e.RowIndex].Cells[4].Value = Convert.ToDouble(r[5]) * Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void llenarOT(String id, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string strquery3 = "Select * from ordendetrabajo where num_ordentrabajo = '" + id + "'";
+
+                conexion.command = new SqlCommand(strquery3, conexion.connection);
+
+                da = new SqlDataAdapter();
+                //fetching query in the database.
+                da.SelectCommand = conexion.command;
+                //inicializar nueva datatable
+                dt = new DataTable();
+                //refresca las filas segun el rango especificado en el datasource. 
+                da.Fill(dt);
+                if (dt.Rows.Count == 0)
+                {
+                    //MessageBox.Show("No se ha encontrado ninguna Orden de Trabajo \ncon ese número de orden de trabajo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+
+                else
+                {
+
+                    foreach (DataRow r in dt.Rows)
+                    {
+                        //obtiene todas las filas de una columna
+                        dataGridView1.Rows[e.RowIndex].Cells[1].Value = r[8] + " - " + r[2];
+                        dataGridView1.Rows[e.RowIndex].Cells[2].Value = "---";
+                        dataGridView1.Rows[e.RowIndex].Cells[3].Value = r[9];
+                        dataGridView1.Rows[e.RowIndex].Cells[4].Value = r[9];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+
+
+        }
+
+        private void llenarDetElectrodo(string id, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                string strquery3 = "Select * from producto where numSerie = '" + id + "' and cantidad is null";
+
+                conexion.command = new SqlCommand(strquery3, conexion.connection);
+
+                da = new SqlDataAdapter();
+                //fetching query in the database.
+                da.SelectCommand = conexion.command;
+                //inicializar nueva datatable
+                dt = new DataTable();
+                //refresca las filas segun el rango especificado en el datasource. 
+                da.Fill(dt);
+                if (dt.Rows.Count == 0)
+                {
+                    //MessageBox.Show("No se ha encontrado ningún electrodoméstico con ese número de serie", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    //dataGridView1.Rows[e.RowIndex].Cells[0].Value = "";
+                }
+
+                else
+                {
+                    
+                    foreach (DataRow r in dt.Rows)
+                    {
+                        if (r[6].ToString() == "Agotado")
+                        {
+                            MessageBox.Show("El electrodoméstico está agotado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            dataGridView1.Rows[e.RowIndex].Cells[0].Value = "";
+                        }
+                        else if (r[6].ToString() == "Disponible")
+                        {
+                            //obtiene todas las filas de una columna
+                            dataGridView1.Rows[e.RowIndex].Cells[1].Value = r[0] + " - " + r[1];
+                            dataGridView1.Rows[e.RowIndex].Cells[2].Value = "1";
+                            dataGridView1.Rows[e.RowIndex].Cells[2].ReadOnly = true;
+                            dataGridView1.Rows[e.RowIndex].Cells[3].Value = r[5];
+                            dataGridView1.Rows[e.RowIndex].Cells[4].Value = r[6];
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
