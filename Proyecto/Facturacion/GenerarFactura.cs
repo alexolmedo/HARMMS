@@ -237,17 +237,18 @@ namespace Proyecto.Facturacion
 
                 //button8.PerformClick();
 
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                {
-                    string sql1 = "INSERT INTO detallefactura VALUES ('" + textNumFac.Text + "','" + dataGridView1.Rows[i].Cells[0].Value.ToString() + "','null','null'," + dataGridView1.Rows[i].Cells[3].Value.ToString() + ")";
-                    Console.WriteLine(sql);
-                    //Console.WriteLine(sql);
-                    conexion.command = new SqlCommand(sql1, conexion.connection);
-                    conexion.command.ExecuteNonQuery();
-                    conexion.command.Dispose();
-                    MessageBox.Show("La factura se agregó correctamente", "Factura Agregada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                //for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                //{
+                    
+                    string sql1 = "INSERT INTO detallefactura VALUES (" + textNumFac.Text + ",'" + dataGridView1.Rows[0].Cells[0].Value + "',null,null," + dataGridView1.Rows[0].Cells[3].Value.ToString().Replace(",",".") + ")";
+                    Console.WriteLine(sql1);
+                //Console.WriteLine(sql);
+                conexion.command = new SqlCommand(sql1, conexion.connection);
+                conexion.command.ExecuteNonQuery();
+                conexion.command.Dispose();
+                MessageBox.Show("La factura se agregó correctamente", "Factura Agregada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     //button8.PerformClick();
-                }
+               // }
             }
 
             catch (Exception ex)
