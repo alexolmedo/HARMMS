@@ -231,6 +231,12 @@
     <Compile Include="Repuestos\ModificarRepuesto.Designer.cs">
       <DependentUpon>ModificarRepuesto.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanaAyuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaAyuda.Designer.cs">
+      <DependentUpon>VentanaAyuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaModulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Repuestos\ModificarRepuesto.resx">
       <DependentUpon>ModificarRepuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaAyuda.resx">
+      <DependentUpon>VentanaAyuda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaModulos.resx">
       <DependentUpon>VentanaModulos.cs</DependentUpon>

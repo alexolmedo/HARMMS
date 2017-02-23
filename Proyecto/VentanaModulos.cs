@@ -149,5 +149,11 @@ namespace Proyecto
         {
             new OrdenesTrabajo.ModificarOrdenL().ShowDialog();
         }
+
+        private void consultarAyudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new VentanaAyuda().ShowDialog();
+
+        }
     }
 }
