@@ -79,21 +79,27 @@ namespace Proyecto.Cliente
                 
             if (dr == DialogResult.Yes)
             {
-                Console.WriteLine(dirActCliente);
-                string sql = "Update cliente set CI_Cliente = '" + cedActCliente.Text + "', NombreCliente ='" + nomActCliente.Text + "', TelefonoCliente='" + telActCliente.Text + 
-                    "',DireccionCliente='" + dirActCliente.Text + "',RUCCliente='" + RUCActCliente.Text + "',correoCliente='" + correoActCliente.Text + "',EstadoCliente ='" + comboBoxEstC.SelectedItem + "' where CI_Cliente = '"+ cedActCliente.Text +"'";
-                Console.WriteLine(sql);
+                if (nomActCliente.Text.Equals("") || cedActCliente.Text.Equals("") || dirActCliente.Text.Equals("") || telActCliente.Text.Equals("") || correoActCliente.Text.Equals(""))
+                {
+
+                    MessageBox.Show("Datos Incompletos, los campos con * son obligatorios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                }
+
+                else if (!nomActCliente.Text.Equals("") || !cedActCliente.Text.Equals("") || !dirActCliente.Text.Equals("") || !telActCliente.Text.Equals("") || !correoActCliente.Text.Equals(""))
+                {
+                    //Console.WriteLine(dirActCliente);
+                    string sql = "Update cliente set CI_Cliente = '" + cedActCliente.Text + "', NombreCliente ='" + nomActCliente.Text + "', TelefonoCliente='" + telActCliente.Text + 
+                        "',DireccionCliente='" + dirActCliente.Text + "',RUCCliente='" + RUCActCliente.Text + "',correoCliente='" + correoActCliente.Text + "',EstadoCliente ='" + comboBoxEstC.SelectedItem + "' where CI_Cliente = '"+ cedActCliente.Text +"'";
+                    Console.WriteLine(sql);
                    
-                conexion.command = new SqlCommand(sql, conexion.connection);
-                conexion.command.ExecuteNonQuery();
-                conexion.command.Dispose();
-                MessageBox.Show("El cliente se modificó correctamente", "Cliente Modificado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    conexion.command = new SqlCommand(sql, conexion.connection);
+                    conexion.command.ExecuteNonQuery();
+                    conexion.command.Dispose();
+                    MessageBox.Show("El cliente se modificó correctamente", "Cliente Modificado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                
             }
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
 
         }
 
@@ -277,22 +283,13 @@ namespace Proyecto.Cliente
         {
             if (correoActCliente.Text != "")
             {
-                try
-                {
-                    if (!System.Text.RegularExpressions.Regex.IsMatch(correoActCliente.Text, "^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$"))
+                if (!System.Text.RegularExpressions.Regex.IsMatch(correoActCliente.Text, "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"))
                     {
-                        MessageBox.Show("El correo no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        correoActCliente.Text = "";
-                    }
-
-                }
-                catch (FormatException)
-                {
-                    //MessageBox.Show("El correo no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    //correoActCliente.Text = "";
+                
+                    MessageBox.Show("El correo no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    correoActCliente.Text = "";               
                 }
             }
-
         }
 
         private bool validadorDeCedula(string cedula)
@@ -349,11 +346,14 @@ namespace Proyecto.Cliente
 
         private void telActCliente_Leave(object sender, EventArgs e)
         {
-            if (!System.Text.RegularExpressions.Regex.IsMatch(telActCliente.Text, "^[0-9]{7,10}$"))
+            if (telActCliente.Text != "")
             {
-                MessageBox.Show("El telefono no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                telActCliente.Text = "";
-            }
+                if (telActCliente.Text.Length == 8 || telActCliente.Text.Length < 7 || telActCliente.Text.Length > 10 || !System.Text.RegularExpressions.Regex.IsMatch(telActCliente.Text, "^[0-9]{7,10}$"))
+                {
+                    MessageBox.Show("El teléfono no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    telActCliente.Text = "";
+                }
+            } 
         }
 
         private void dirActCliente_Leave(object sender, EventArgs e)
@@ -420,6 +420,37 @@ namespace Proyecto.Cliente
             RUCActCliente.Text = "";
             correoActCliente.Text = "";
             comboBoxEstC.SelectedItem = "";
+        }
+
+        private void nomActCliente_Leave(object sender, EventArgs e)
+        {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(nomActCliente.Text, "^[a-zA-Z0-9., -áéíóú]{0,60}$"))
+            {
+                MessageBox.Show("La nombre no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                nomActCliente.Text = "";
+            }
+        }
+
+        private void RUCActCliente_Leave(object sender, EventArgs e)
+        {
+            if (RUCActCliente.Text != "")
+            {
+                if (!System.Text.RegularExpressions.Regex.IsMatch(RUCActCliente.Text, "^[0-9]{13}$"))
+                {
+                    MessageBox.Show("El RUC no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    RUCActCliente.Text = "";
+
+                }
+                else
+                {
+                    if (RUCActCliente.Text.Substring(0, 10) != cedActCliente.Text || RUCActCliente.Text.Substring(10, 3) != "001")
+                    {
+                        MessageBox.Show("El RUC no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        RUCActCliente.Text = "";
+                    }
+                }
+
+            }
         }
     }
 }
