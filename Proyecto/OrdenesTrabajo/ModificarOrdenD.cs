@@ -72,7 +72,8 @@ namespace Proyecto.OrdenesTrabajo
                 {
                     txtCedulaDomicilio.Text = r[1].ToString();
                     //txtFechaDomicilio.Text = r[3].ToString();
-                    //txtHoraDomicilio.Text = r[5].ToString();
+                    fechaDomicilio.Value= DateTime.Parse(r[3].ToString());
+                    horaDomicilio.Value = DateTime.Parse(r[5].ToString());
                     if (r[6].ToString().Equals("H"))
                     {
                         cbHabilitadaDomicilio.SelectedItem = "Habilitada";
