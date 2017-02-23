@@ -139,7 +139,7 @@
             this.cbEstadoDomicilio.FormattingEnabled = true;
             this.cbEstadoDomicilio.Items.AddRange(new object[] {
             "Entregada",
-            "Sin Entregar"});
+            "No Entregada"});
             this.cbEstadoDomicilio.Location = new System.Drawing.Point(117, 112);
             this.cbEstadoDomicilio.Name = "cbEstadoDomicilio";
             this.cbEstadoDomicilio.Size = new System.Drawing.Size(199, 21);

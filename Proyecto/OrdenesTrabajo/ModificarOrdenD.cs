@@ -99,7 +99,12 @@ namespace Proyecto.OrdenesTrabajo
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            string sql = "UPDATE ordendetrabajo SET FECHARECEP_REV='" + fechaDomicilio.Value.Date.ToString("yyyyMMdd") + "',HORAINICIOC='" + horaDomicilio.Value.TimeOfDay.ToString(@"hh\:mm") + "',HABILITADA='"+cbHabilitadaDomicilio.SelectedItem.ToString()[0] + "',DESCRIPCIONOT='" + txtDescripcionDomicilio.Text + "',COSTOOT=" + txtCostoDomicilio.Text + ",ESTADOOT='"+cbEstadoDomicilio.SelectedItem.ToString()[0]+"' WHERE NUM_ORDENTRABAJO="+txtOrdenDomicilio.Text;
+            //Console.WriteLine(sql);
+            conexion.command = new SqlCommand(sql, conexion.connection);
+            conexion.command.ExecuteNonQuery();
+            conexion.command.Dispose();
+            MessageBox.Show("La orden se agregó correctamente", "Orden Agregada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
     }
 }
