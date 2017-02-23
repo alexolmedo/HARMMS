@@ -32,8 +32,11 @@
             this.button7 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBoxDD = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.horaDomicilio = new System.Windows.Forms.DateTimePicker();
+            this.fechaDomicilio = new System.Windows.Forms.DateTimePicker();
+            this.cbEstadoDomicilio = new System.Windows.Forms.ComboBox();
+            this.txtDescripcionDomicilio = new System.Windows.Forms.TextBox();
+            this.txtCostoDomicilio = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -51,12 +54,10 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.txtOrdenDomicilio = new System.Windows.Forms.TextBox();
+            this.cbHabilitadaDomicilio = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBoxDD.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
@@ -89,7 +90,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 21);
+            this.label1.Location = new System.Drawing.Point(345, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 62;
@@ -97,11 +98,11 @@
             // 
             // groupBoxDD
             // 
-            this.groupBoxDD.Controls.Add(this.dateTimePicker3);
-            this.groupBoxDD.Controls.Add(this.dateTimePicker4);
-            this.groupBoxDD.Controls.Add(this.comboBox2);
-            this.groupBoxDD.Controls.Add(this.textBox9);
-            this.groupBoxDD.Controls.Add(this.textBox8);
+            this.groupBoxDD.Controls.Add(this.horaDomicilio);
+            this.groupBoxDD.Controls.Add(this.fechaDomicilio);
+            this.groupBoxDD.Controls.Add(this.cbEstadoDomicilio);
+            this.groupBoxDD.Controls.Add(this.txtDescripcionDomicilio);
+            this.groupBoxDD.Controls.Add(this.txtCostoDomicilio);
             this.groupBoxDD.Controls.Add(this.label13);
             this.groupBoxDD.Controls.Add(this.comboBox5);
             this.groupBoxDD.Controls.Add(this.label14);
@@ -115,22 +116,47 @@
             this.groupBoxDD.TabIndex = 61;
             this.groupBoxDD.TabStop = false;
             this.groupBoxDD.Text = "Detalle Orden de Trabajo";
-            this.groupBoxDD.Enter += new System.EventHandler(this.groupBoxDD_Enter);
             // 
-            // textBox9
+            // horaDomicilio
             // 
-            this.textBox9.Location = new System.Drawing.Point(117, 61);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(423, 40);
-            this.textBox9.TabIndex = 19;
+            this.horaDomicilio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.horaDomicilio.Location = new System.Drawing.Point(459, 29);
+            this.horaDomicilio.Name = "horaDomicilio";
+            this.horaDomicilio.Size = new System.Drawing.Size(80, 20);
+            this.horaDomicilio.TabIndex = 68;
             // 
-            // textBox8
+            // fechaDomicilio
             // 
-            this.textBox8.Location = new System.Drawing.Point(459, 109);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(81, 20);
-            this.textBox8.TabIndex = 18;
+            this.fechaDomicilio.Location = new System.Drawing.Point(117, 29);
+            this.fechaDomicilio.Name = "fechaDomicilio";
+            this.fechaDomicilio.Size = new System.Drawing.Size(199, 20);
+            this.fechaDomicilio.TabIndex = 67;
+            // 
+            // cbEstadoDomicilio
+            // 
+            this.cbEstadoDomicilio.FormattingEnabled = true;
+            this.cbEstadoDomicilio.Items.AddRange(new object[] {
+            "Entregada",
+            "Sin Entregar"});
+            this.cbEstadoDomicilio.Location = new System.Drawing.Point(117, 112);
+            this.cbEstadoDomicilio.Name = "cbEstadoDomicilio";
+            this.cbEstadoDomicilio.Size = new System.Drawing.Size(199, 21);
+            this.cbEstadoDomicilio.TabIndex = 66;
+            // 
+            // txtDescripcionDomicilio
+            // 
+            this.txtDescripcionDomicilio.Location = new System.Drawing.Point(117, 61);
+            this.txtDescripcionDomicilio.Multiline = true;
+            this.txtDescripcionDomicilio.Name = "txtDescripcionDomicilio";
+            this.txtDescripcionDomicilio.Size = new System.Drawing.Size(423, 40);
+            this.txtDescripcionDomicilio.TabIndex = 19;
+            // 
+            // txtCostoDomicilio
+            // 
+            this.txtCostoDomicilio.Location = new System.Drawing.Point(459, 109);
+            this.txtCostoDomicilio.Name = "txtCostoDomicilio";
+            this.txtCostoDomicilio.Size = new System.Drawing.Size(81, 20);
+            this.txtCostoDomicilio.TabIndex = 18;
             // 
             // label13
             // 
@@ -197,7 +223,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(377, 21);
+            this.label19.Location = new System.Drawing.Point(30, 22);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(44, 13);
             this.label19.TabIndex = 59;
@@ -288,50 +314,23 @@
             this.textBox14.Size = new System.Drawing.Size(153, 20);
             this.textBox14.TabIndex = 0;
             // 
-            // textBox10
+            // txtOrdenDomicilio
             // 
-            this.textBox10.Location = new System.Drawing.Point(449, 18);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(101, 20);
-            this.textBox10.TabIndex = 58;
+            this.txtOrdenDomicilio.Location = new System.Drawing.Point(109, 22);
+            this.txtOrdenDomicilio.Name = "txtOrdenDomicilio";
+            this.txtOrdenDomicilio.Size = new System.Drawing.Size(101, 20);
+            this.txtOrdenDomicilio.TabIndex = 58;
             // 
-            // comboBox1
+            // cbHabilitadaDomicilio
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbHabilitadaDomicilio.FormattingEnabled = true;
+            this.cbHabilitadaDomicilio.Items.AddRange(new object[] {
             "Si",
             "No"});
-            this.comboBox1.Location = new System.Drawing.Point(95, 21);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 65;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Entregada",
-            "Sin Entregar"});
-            this.comboBox2.Location = new System.Drawing.Point(117, 112);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(199, 21);
-            this.comboBox2.TabIndex = 66;
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker3.Location = new System.Drawing.Point(459, 29);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(80, 20);
-            this.dateTimePicker3.TabIndex = 68;
-            // 
-            // dateTimePicker4
-            // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(117, 29);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(199, 20);
-            this.dateTimePicker4.TabIndex = 67;
+            this.cbHabilitadaDomicilio.Location = new System.Drawing.Point(429, 22);
+            this.cbHabilitadaDomicilio.Name = "cbHabilitadaDomicilio";
+            this.cbHabilitadaDomicilio.Size = new System.Drawing.Size(121, 21);
+            this.cbHabilitadaDomicilio.TabIndex = 65;
             // 
             // button1
             // 
@@ -345,22 +344,32 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // ModificarOrden
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(237, 20);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 67;
+            this.button2.Text = "Buscar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // ModificarOrdenD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 343);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbHabilitadaDomicilio);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBoxDD);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.txtOrdenDomicilio);
             this.Controls.Add(this.button3);
-            this.Name = "ModificarOrden";
-            this.Text = "Modificar Orden";
+            this.Name = "ModificarOrdenD";
+            this.Text = "Modificar Orden a Domicilio";
             this.groupBoxDD.ResumeLayout(false);
             this.groupBoxDD.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -376,8 +385,8 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBoxDD;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtDescripcionDomicilio;
+        private System.Windows.Forms.TextBox txtCostoDomicilio;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label14;
@@ -395,11 +404,12 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.TextBox txtOrdenDomicilio;
+        private System.Windows.Forms.ComboBox cbHabilitadaDomicilio;
+        private System.Windows.Forms.ComboBox cbEstadoDomicilio;
+        private System.Windows.Forms.DateTimePicker horaDomicilio;
+        private System.Windows.Forms.DateTimePicker fechaDomicilio;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

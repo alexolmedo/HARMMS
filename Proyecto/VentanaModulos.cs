@@ -79,16 +79,6 @@ namespace Proyecto
             new OrdenesTrabajo.IngresarOrden().ShowDialog();
         }
 
-        private void consultarOrdenToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new OrdenesTrabajo.BuscarOrdenM().ShowDialog();
-        }
-
-        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void deshabilitarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new OrdenesTrabajo.DeshabilitarOrden().ShowDialog();
@@ -148,6 +138,16 @@ namespace Proyecto
         private void ordenEnElLocalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new OrdenesTrabajo.ConsultarOrdenL().ShowDialog();
+        }
+
+        private void ordenADomicilioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new OrdenesTrabajo.ModificarOrdenD().ShowDialog();
+        }
+
+        private void ordenEnElLocalToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new OrdenesTrabajo.ModificarOrdenL().ShowDialog();
         }
     }
 }

@@ -44,6 +44,8 @@
             this.insertarOrdenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarOrdenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenADomicilioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenEnElLocalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,8 +57,8 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarAyudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ordenADomicilioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ordenEnElLocalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenADomicilioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenEnElLocalToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -172,10 +174,12 @@
             // 
             // consultarOrdenToolStripMenuItem
             // 
+            this.consultarOrdenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ordenADomicilioToolStripMenuItem1,
+            this.ordenEnElLocalToolStripMenuItem1});
             this.consultarOrdenToolStripMenuItem.Name = "consultarOrdenToolStripMenuItem";
             this.consultarOrdenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.consultarOrdenToolStripMenuItem.Text = "Modificar";
-            this.consultarOrdenToolStripMenuItem.Click += new System.EventHandler(this.consultarOrdenToolStripMenuItem_Click);
             // 
             // consultarToolStripMenuItem
             // 
@@ -185,7 +189,20 @@
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
             this.consultarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
-            this.consultarToolStripMenuItem.Click += new System.EventHandler(this.consultarToolStripMenuItem_Click);
+            // 
+            // ordenADomicilioToolStripMenuItem
+            // 
+            this.ordenADomicilioToolStripMenuItem.Name = "ordenADomicilioToolStripMenuItem";
+            this.ordenADomicilioToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.ordenADomicilioToolStripMenuItem.Text = "Orden a Domicilio";
+            this.ordenADomicilioToolStripMenuItem.Click += new System.EventHandler(this.ordenADomicilioToolStripMenuItem_Click);
+            // 
+            // ordenEnElLocalToolStripMenuItem
+            // 
+            this.ordenEnElLocalToolStripMenuItem.Name = "ordenEnElLocalToolStripMenuItem";
+            this.ordenEnElLocalToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.ordenEnElLocalToolStripMenuItem.Text = "Orden en el Local";
+            this.ordenEnElLocalToolStripMenuItem.Click += new System.EventHandler(this.ordenEnElLocalToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
@@ -279,19 +296,19 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // ordenADomicilioToolStripMenuItem
+            // ordenADomicilioToolStripMenuItem1
             // 
-            this.ordenADomicilioToolStripMenuItem.Name = "ordenADomicilioToolStripMenuItem";
-            this.ordenADomicilioToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.ordenADomicilioToolStripMenuItem.Text = "Orden a Domicilio";
-            this.ordenADomicilioToolStripMenuItem.Click += new System.EventHandler(this.ordenADomicilioToolStripMenuItem_Click);
+            this.ordenADomicilioToolStripMenuItem1.Name = "ordenADomicilioToolStripMenuItem1";
+            this.ordenADomicilioToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
+            this.ordenADomicilioToolStripMenuItem1.Text = "Orden a Domicilio";
+            this.ordenADomicilioToolStripMenuItem1.Click += new System.EventHandler(this.ordenADomicilioToolStripMenuItem1_Click);
             // 
-            // ordenEnElLocalToolStripMenuItem
+            // ordenEnElLocalToolStripMenuItem1
             // 
-            this.ordenEnElLocalToolStripMenuItem.Name = "ordenEnElLocalToolStripMenuItem";
-            this.ordenEnElLocalToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.ordenEnElLocalToolStripMenuItem.Text = "Orden en el Local";
-            this.ordenEnElLocalToolStripMenuItem.Click += new System.EventHandler(this.ordenEnElLocalToolStripMenuItem_Click);
+            this.ordenEnElLocalToolStripMenuItem1.Name = "ordenEnElLocalToolStripMenuItem1";
+            this.ordenEnElLocalToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
+            this.ordenEnElLocalToolStripMenuItem1.Text = "Orden en el Local";
+            this.ordenEnElLocalToolStripMenuItem1.Click += new System.EventHandler(this.ordenEnElLocalToolStripMenuItem1_Click);
             // 
             // VentanaModulos
             // 
@@ -347,6 +364,8 @@
         private System.Windows.Forms.ToolStripMenuItem consultarAyudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordenADomicilioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordenEnElLocalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordenADomicilioToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ordenEnElLocalToolStripMenuItem1;
     }
 }
 
