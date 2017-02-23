@@ -23,13 +23,13 @@ namespace Proyecto.Cliente
             this.CenterToScreen();
             autoCompletarPorCedula();
             autocompletarPorNombre();
-
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             txtNombre.ReadOnly = false;
             txtCedula.Text = "";
+            txtNombre.Text = "";
             txtCedula.ReadOnly = true;
         }
 
@@ -37,6 +37,7 @@ namespace Proyecto.Cliente
         {
             txtNombre.ReadOnly = true;
             txtNombre.Text = "";
+            txtCedula.Text = "";
             txtCedula.ReadOnly = false;
         }
 
@@ -56,17 +57,25 @@ namespace Proyecto.Cliente
                     if (txtNombre.Text == "") {
 
                         MessageBox.Show("No ha ingresado el nombre del cliente a buscar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
                     }
-                    strquery3 = "Select * from cliente where NombreCliente = '" + txtNombre.Text + "'";
-
+                    else
+                    {
+                        strquery3 = "Select * from cliente where NombreCliente = '" + txtNombre.Text + "'";
+                    }
                 }
 
                 if (radioButCed.Checked)
                 {
-                    strquery3 = "Select * from cliente where CI_Cliente = " + txtCedula.Text + "";
+                    if (txtCedula.Text == "")
+                    {
+                        MessageBox.Show("No ha ingresado la cédula del cliente a buscar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                    else
+                    {
+                        strquery3 = "Select * from cliente where CI_Cliente = " + txtCedula.Text + "";
+                    }
                 }
-                
+
                 conexion.command = new SqlCommand(strquery3, conexion.connection);
 
                 da = new SqlDataAdapter();
@@ -77,16 +86,26 @@ namespace Proyecto.Cliente
                 //refresca las filas segun el rango especificado en el datasource. 
                 da.Fill(dt);
 
-                foreach (DataRow r in dt.Rows)
+                if (dt.Rows.Count == 0)
                 {
-                    //obtiene todas las filas de una columna
-                    cedConCliente.Text = r[0].ToString();
-                    nomConCliente.Text = r[1].ToString();
-                    telConCliente.Text = r[2].ToString();
-                    dirConCliente.Text = r[3].ToString();
-                    RUCConCliente.Text = r[4].ToString();
-                    correoConCliente.Text = r[5].ToString();
-                    estadoConCliente.Text = r[6].ToString();
+                    MessageBox.Show("El cliente no está registrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                else
+                {
+                    foreach (DataRow r in dt.Rows)
+                    {
+
+                        Console.WriteLine(r[0].ToString() + "rdghtn");
+                        //obtiene todas las filas de una columna
+
+                        cedConCliente.Text = r[0].ToString();
+                        nomConCliente.Text = r[1].ToString();
+                        telConCliente.Text = r[2].ToString();
+                        dirConCliente.Text = r[3].ToString();
+                        RUCConCliente.Text = r[4].ToString();
+                        correoConCliente.Text = r[5].ToString();
+                        estadoConCliente.Text = r[6].ToString();
+                    }
                 }
 
             }
