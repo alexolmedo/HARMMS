@@ -133,6 +133,7 @@ namespace Proyecto.OrdenesTrabajo
             txtNombreLocal.Text = "";
             txtTelefonoLocal.Text = "";
             txtDireccionLocal.Text = "";
+            colocarNumOT();
         }
 
         private void txtCedulaDomicilio_Leave(object sender, EventArgs e)
@@ -219,11 +220,11 @@ namespace Proyecto.OrdenesTrabajo
         private void button9_Click(object sender, EventArgs e)
         {
             string sql = "INSERT INTO ordendetrabajo VALUES (" + txtNumDomicilio.Text + ",'" + txtCedulaDomicilio.Text + "','D','" + fechaCita.Value.Date.ToString("yyyyMMdd") + "',null,'" + horaCita.Value.TimeOfDay.ToString(@"hh\:mm")+ "','H','" + cbEstado.SelectedItem.ToString()[0]+"','"+txtDescripcionDomicilio.Text+"',"+txtCostoDomicilio.Text+")";
-            Console.WriteLine(sql);
+            //Console.WriteLine(sql);
             conexion.command = new SqlCommand(sql, conexion.connection);
             conexion.command.ExecuteNonQuery();
             conexion.command.Dispose();
-            MessageBox.Show("La orden se agregó correctamente", "Cliente Agregada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            MessageBox.Show("La orden se agregó correctamente", "Orden Agregada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             button8.PerformClick();
         }
 
@@ -292,6 +293,17 @@ namespace Proyecto.OrdenesTrabajo
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private void Agregar_Click(object sender, EventArgs e)
+        {
+            string sql = "INSERT INTO ordendetrabajo VALUES (" + txtNumLocal.Text + ",'" + txtCedulaLocal.Text + "','L','" + fechaRecepcion.Value.Date.ToString("yyyyMMdd") + "','"+ fechaEntrega.Value.Date.ToString("yyyyMMdd")+"',null,'H','" + cbEstadoLocal.SelectedItem.ToString()[0] + "','" + txtDescripcionLocal.Text + "'," + txtCostoLocal.Text + ")";
+            //Console.WriteLine(sql);
+            conexion.command = new SqlCommand(sql, conexion.connection);
+            conexion.command.ExecuteNonQuery();
+            conexion.command.Dispose();
+            MessageBox.Show("La orden se agregó correctamente", "Orden Agregada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            button4.PerformClick();
         }
     }
 }

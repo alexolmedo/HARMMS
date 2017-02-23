@@ -65,15 +65,15 @@
             this.Agregar = new System.Windows.Forms.Button();
             this.groupBoxDL = new System.Windows.Forms.GroupBox();
             this.txtCostoLocal = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbEstadoLocal = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDescripcionLocal = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.fechaEntrega = new System.Windows.Forms.DateTimePicker();
+            this.fechaRecepcion = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -468,19 +468,20 @@
             this.Agregar.Text = "Agregar";
             this.Agregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Agregar.UseVisualStyleBackColor = true;
+            this.Agregar.Click += new System.EventHandler(this.Agregar_Click);
             // 
             // groupBoxDL
             // 
             this.groupBoxDL.Controls.Add(this.txtCostoLocal);
-            this.groupBoxDL.Controls.Add(this.comboBox3);
+            this.groupBoxDL.Controls.Add(this.cbEstadoLocal);
             this.groupBoxDL.Controls.Add(this.label12);
             this.groupBoxDL.Controls.Add(this.comboBox1);
             this.groupBoxDL.Controls.Add(this.label8);
             this.groupBoxDL.Controls.Add(this.txtDescripcionLocal);
             this.groupBoxDL.Controls.Add(this.label6);
             this.groupBoxDL.Controls.Add(this.label5);
-            this.groupBoxDL.Controls.Add(this.dateTimePicker2);
-            this.groupBoxDL.Controls.Add(this.dateTimePicker1);
+            this.groupBoxDL.Controls.Add(this.fechaEntrega);
+            this.groupBoxDL.Controls.Add(this.fechaRecepcion);
             this.groupBoxDL.Controls.Add(this.label3);
             this.groupBoxDL.Controls.Add(this.label2);
             this.groupBoxDL.Location = new System.Drawing.Point(7, 162);
@@ -497,16 +498,16 @@
             this.txtCostoLocal.Size = new System.Drawing.Size(93, 20);
             this.txtCostoLocal.TabIndex = 18;
             // 
-            // comboBox3
+            // cbEstadoLocal
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.cbEstadoLocal.FormattingEnabled = true;
+            this.cbEstadoLocal.Items.AddRange(new object[] {
             "Entregada",
             "No Entregada"});
-            this.comboBox3.Location = new System.Drawing.Point(145, 118);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(199, 21);
-            this.comboBox3.TabIndex = 17;
+            this.cbEstadoLocal.Location = new System.Drawing.Point(145, 118);
+            this.cbEstadoLocal.Name = "cbEstadoLocal";
+            this.cbEstadoLocal.Size = new System.Drawing.Size(199, 21);
+            this.cbEstadoLocal.TabIndex = 17;
             // 
             // label12
             // 
@@ -560,19 +561,19 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Descripción";
             // 
-            // dateTimePicker2
+            // fechaEntrega
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(145, 52);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 8;
+            this.fechaEntrega.Location = new System.Drawing.Point(145, 52);
+            this.fechaEntrega.Name = "fechaEntrega";
+            this.fechaEntrega.Size = new System.Drawing.Size(200, 20);
+            this.fechaEntrega.TabIndex = 8;
             // 
-            // dateTimePicker1
+            // fechaRecepcion
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(145, 26);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.fechaRecepcion.Location = new System.Drawing.Point(145, 26);
+            this.fechaRecepcion.Name = "fechaRecepcion";
+            this.fechaRecepcion.Size = new System.Drawing.Size(200, 20);
+            this.fechaRecepcion.TabIndex = 7;
             // 
             // label3
             // 
@@ -779,15 +780,15 @@
         private System.Windows.Forms.Button Agregar;
         private System.Windows.Forms.GroupBox groupBoxDL;
         private System.Windows.Forms.TextBox txtCostoLocal;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbEstadoLocal;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDescripcionLocal;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker fechaEntrega;
+        private System.Windows.Forms.DateTimePicker fechaRecepcion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
