@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBoxDL = new System.Windows.Forms.GroupBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -39,7 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtOrdenLocal = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -49,12 +52,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBoxDL.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -79,6 +80,30 @@
             this.groupBoxDL.TabIndex = 51;
             this.groupBoxDL.TabStop = false;
             this.groupBoxDL.Text = "Detalle Orden de Trabajo";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(145, 121);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.ReadOnly = true;
+            this.textBox10.Size = new System.Drawing.Size(200, 20);
+            this.textBox10.TabIndex = 22;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(145, 55);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(200, 20);
+            this.textBox9.TabIndex = 21;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(145, 29);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.Size = new System.Drawing.Size(200, 20);
+            this.textBox8.TabIndex = 20;
             // 
             // textBox3
             // 
@@ -162,19 +187,18 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(368, 19);
+            this.label7.Location = new System.Drawing.Point(28, 16);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 13);
             this.label7.TabIndex = 50;
             this.label7.Text = "Número";
             // 
-            // textBox5
+            // txtOrdenLocal
             // 
-            this.textBox5.Location = new System.Drawing.Point(443, 16);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(101, 20);
-            this.textBox5.TabIndex = 49;
+            this.txtOrdenLocal.Location = new System.Drawing.Point(104, 16);
+            this.txtOrdenLocal.Name = "txtOrdenLocal";
+            this.txtOrdenLocal.Size = new System.Drawing.Size(101, 20);
+            this.txtOrdenLocal.TabIndex = 49;
             // 
             // groupBox3
             // 
@@ -261,33 +285,9 @@
             this.textBox2.Size = new System.Drawing.Size(153, 20);
             this.textBox2.TabIndex = 0;
             // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(145, 29);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(200, 20);
-            this.textBox8.TabIndex = 20;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(145, 55);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(200, 20);
-            this.textBox9.TabIndex = 21;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(145, 121);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(200, 20);
-            this.textBox10.TabIndex = 22;
-            // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(97, 13);
+            this.textBox11.Location = new System.Drawing.Point(443, 16);
             this.textBox11.Name = "textBox11";
             this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(101, 20);
@@ -296,7 +296,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(29, 16);
+            this.label11.Location = new System.Drawing.Point(366, 19);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(54, 13);
             this.label11.TabIndex = 57;
@@ -315,20 +315,30 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(239, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 60;
+            this.button1.Text = "Consultar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // ConsultarOrdenL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(563, 346);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.groupBoxDL);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtOrdenLocal);
             this.Controls.Add(this.groupBox3);
             this.Name = "ConsultarOrdenL";
-            this.Text = "Consultar Orden de Trabajo";
+            this.Text = "Consultar Orden en el Local";
             this.groupBoxDL.ResumeLayout(false);
             this.groupBoxDL.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -351,7 +361,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtOrdenLocal;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -367,5 +377,6 @@
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -139,5 +139,15 @@ namespace Proyecto
         {
             new Administración.ParametrosOrden().ShowDialog();
         }
+
+        private void ordenADomicilioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new OrdenesTrabajo.ConsultarOrdenD().ShowDialog();
+        }
+
+        private void ordenEnElLocalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new OrdenesTrabajo.ConsultarOrdenL().ShowDialog();
+        }
     }
 }

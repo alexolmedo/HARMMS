@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBoxDD = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -48,13 +51,11 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtOrdenDomicilio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBoxDD.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
@@ -79,6 +80,30 @@
             this.groupBoxDD.TabIndex = 53;
             this.groupBoxDD.TabStop = false;
             this.groupBoxDD.Text = "Detalle Orden de Trabajo";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(486, 29);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(81, 20);
+            this.textBox4.TabIndex = 22;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(144, 29);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(199, 20);
+            this.textBox3.TabIndex = 21;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(144, 106);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(199, 20);
+            this.textBox1.TabIndex = 20;
             // 
             // textBox9
             // 
@@ -162,7 +187,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(414, 15);
+            this.label19.Location = new System.Drawing.Point(32, 12);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(44, 13);
             this.label19.TabIndex = 51;
@@ -253,18 +278,17 @@
             this.textBox14.Size = new System.Drawing.Size(153, 20);
             this.textBox14.TabIndex = 0;
             // 
-            // textBox10
+            // txtOrdenDomicilio
             // 
-            this.textBox10.Location = new System.Drawing.Point(486, 12);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(101, 20);
-            this.textBox10.TabIndex = 50;
+            this.txtOrdenDomicilio.Location = new System.Drawing.Point(111, 12);
+            this.txtOrdenDomicilio.Name = "txtOrdenDomicilio";
+            this.txtOrdenDomicilio.Size = new System.Drawing.Size(101, 20);
+            this.txtOrdenDomicilio.TabIndex = 50;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 15);
+            this.label1.Location = new System.Drawing.Point(404, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 54;
@@ -272,35 +296,11 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(97, 15);
+            this.textBox2.Location = new System.Drawing.Point(478, 12);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(101, 20);
             this.textBox2.TabIndex = 56;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(144, 106);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(199, 20);
-            this.textBox1.TabIndex = 20;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(144, 29);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(199, 20);
-            this.textBox3.TabIndex = 21;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(486, 29);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(81, 20);
-            this.textBox4.TabIndex = 22;
             // 
             // button7
             // 
@@ -315,20 +315,30 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // ConsultarOrden
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(249, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 58;
+            this.button1.Text = "Consultar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // ConsultarOrdenD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 339);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBoxDD);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.textBox10);
-            this.Name = "ConsultarOrden";
-            this.Text = "Consultar Orden";
+            this.Controls.Add(this.txtOrdenDomicilio);
+            this.Name = "ConsultarOrdenD";
+            this.Text = "Consultar Orden a Domicilio";
             this.Load += new System.EventHandler(this.ConsultarOrden_Load);
             this.groupBoxDD.ResumeLayout(false);
             this.groupBoxDD.PerformLayout();
@@ -364,10 +374,10 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtOrdenDomicilio;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button7;
-
+        private System.Windows.Forms.Button button1;
     }
 }
