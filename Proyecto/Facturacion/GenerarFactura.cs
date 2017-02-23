@@ -228,7 +228,8 @@ namespace Proyecto.Facturacion
         {
             try
             {
-                string sql = "INSERT INTO factura VALUES ('" + textNumFac.Text + "','" + dateEmision.Value.Date.ToString("yyyyMMdd") + "','" + textCedula.Text + "'," + textIVA.Text + ",'Válida'" + "," + textSubtotal.Text + "," + textTotal.Text + ")";
+                string sql = "INSERT INTO factura VALUES (" + textNumFac.Text + ",'" + dateEmision.Value.Date.ToString("yyyyMMdd") + "','" + textCedula.Text + "'," + textIVA.Text.Replace(",",".") + ",'Válida'" + "," + textSubtotal.Text.Replace(",", ".") + "," + textTotal.Text.Replace(",", ".") + ")";
+                Console.WriteLine(sql);
                 //Console.WriteLine(sql);
                 conexion.command = new SqlCommand(sql, conexion.connection);
                 conexion.command.ExecuteNonQuery();
@@ -239,6 +240,7 @@ namespace Proyecto.Facturacion
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
                     string sql1 = "INSERT INTO detallefactura VALUES ('" + textNumFac.Text + "','" + dataGridView1.Rows[i].Cells[0].Value.ToString() + "','null','null'," + dataGridView1.Rows[i].Cells[3].Value.ToString() + ")";
+                    Console.WriteLine(sql);
                     //Console.WriteLine(sql);
                     conexion.command = new SqlCommand(sql1, conexion.connection);
                     conexion.command.ExecuteNonQuery();
