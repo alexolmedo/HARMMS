@@ -48,12 +48,12 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.txtDireccionDomicilio = new System.Windows.Forms.TextBox();
+            this.txtTelefonoDomicilio = new System.Windows.Forms.TextBox();
+            this.txtNombreDomicilio = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txtCedulaDomicilio = new System.Windows.Forms.TextBox();
             this.txtOrdenDomicilio = new System.Windows.Forms.TextBox();
             this.cbHabilitadaDomicilio = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -119,9 +119,11 @@
             // 
             // horaDomicilio
             // 
-            this.horaDomicilio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.horaDomicilio.CustomFormat = "HH:mm";
+            this.horaDomicilio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.horaDomicilio.Location = new System.Drawing.Point(459, 29);
             this.horaDomicilio.Name = "horaDomicilio";
+            this.horaDomicilio.ShowUpDown = true;
             this.horaDomicilio.Size = new System.Drawing.Size(80, 20);
             this.horaDomicilio.TabIndex = 68;
             // 
@@ -233,12 +235,12 @@
             // 
             this.groupBox4.Controls.Add(this.label22);
             this.groupBox4.Controls.Add(this.label23);
-            this.groupBox4.Controls.Add(this.textBox11);
-            this.groupBox4.Controls.Add(this.textBox12);
-            this.groupBox4.Controls.Add(this.textBox13);
+            this.groupBox4.Controls.Add(this.txtDireccionDomicilio);
+            this.groupBox4.Controls.Add(this.txtTelefonoDomicilio);
+            this.groupBox4.Controls.Add(this.txtNombreDomicilio);
             this.groupBox4.Controls.Add(this.label24);
             this.groupBox4.Controls.Add(this.label25);
-            this.groupBox4.Controls.Add(this.textBox14);
+            this.groupBox4.Controls.Add(this.txtCedulaDomicilio);
             this.groupBox4.Location = new System.Drawing.Point(10, 52);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(553, 99);
@@ -264,29 +266,29 @@
             this.label23.TabIndex = 9;
             this.label23.Text = "Teléfono";
             // 
-            // textBox11
+            // txtDireccionDomicilio
             // 
-            this.textBox11.Location = new System.Drawing.Point(85, 70);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(454, 20);
-            this.textBox11.TabIndex = 8;
+            this.txtDireccionDomicilio.Location = new System.Drawing.Point(85, 70);
+            this.txtDireccionDomicilio.Name = "txtDireccionDomicilio";
+            this.txtDireccionDomicilio.ReadOnly = true;
+            this.txtDireccionDomicilio.Size = new System.Drawing.Size(454, 20);
+            this.txtDireccionDomicilio.TabIndex = 8;
             // 
-            // textBox12
+            // txtTelefonoDomicilio
             // 
-            this.textBox12.Location = new System.Drawing.Point(85, 44);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(153, 20);
-            this.textBox12.TabIndex = 7;
+            this.txtTelefonoDomicilio.Location = new System.Drawing.Point(85, 44);
+            this.txtTelefonoDomicilio.Name = "txtTelefonoDomicilio";
+            this.txtTelefonoDomicilio.ReadOnly = true;
+            this.txtTelefonoDomicilio.Size = new System.Drawing.Size(153, 20);
+            this.txtTelefonoDomicilio.TabIndex = 7;
             // 
-            // textBox13
+            // txtNombreDomicilio
             // 
-            this.textBox13.Location = new System.Drawing.Point(308, 17);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.ReadOnly = true;
-            this.textBox13.Size = new System.Drawing.Size(231, 20);
-            this.textBox13.TabIndex = 6;
+            this.txtNombreDomicilio.Location = new System.Drawing.Point(308, 17);
+            this.txtNombreDomicilio.Name = "txtNombreDomicilio";
+            this.txtNombreDomicilio.ReadOnly = true;
+            this.txtNombreDomicilio.Size = new System.Drawing.Size(231, 20);
+            this.txtNombreDomicilio.TabIndex = 6;
             // 
             // label24
             // 
@@ -306,13 +308,13 @@
             this.label25.TabIndex = 2;
             this.label25.Text = "Cédula";
             // 
-            // textBox14
+            // txtCedulaDomicilio
             // 
-            this.textBox14.Location = new System.Drawing.Point(85, 18);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(153, 20);
-            this.textBox14.TabIndex = 0;
+            this.txtCedulaDomicilio.Location = new System.Drawing.Point(85, 18);
+            this.txtCedulaDomicilio.Name = "txtCedulaDomicilio";
+            this.txtCedulaDomicilio.ReadOnly = true;
+            this.txtCedulaDomicilio.Size = new System.Drawing.Size(153, 20);
+            this.txtCedulaDomicilio.TabIndex = 0;
             // 
             // txtOrdenDomicilio
             // 
@@ -325,8 +327,8 @@
             // 
             this.cbHabilitadaDomicilio.FormattingEnabled = true;
             this.cbHabilitadaDomicilio.Items.AddRange(new object[] {
-            "Si",
-            "No"});
+            "Habilitada",
+            "Deshabilitada"});
             this.cbHabilitadaDomicilio.Location = new System.Drawing.Point(429, 22);
             this.cbHabilitadaDomicilio.Name = "cbHabilitadaDomicilio";
             this.cbHabilitadaDomicilio.Size = new System.Drawing.Size(121, 21);
@@ -352,6 +354,7 @@
             this.button2.TabIndex = 67;
             this.button2.Text = "Buscar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ModificarOrdenD
             // 
@@ -398,12 +401,12 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox txtDireccionDomicilio;
+        private System.Windows.Forms.TextBox txtTelefonoDomicilio;
+        private System.Windows.Forms.TextBox txtNombreDomicilio;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtCedulaDomicilio;
         private System.Windows.Forms.TextBox txtOrdenDomicilio;
         private System.Windows.Forms.ComboBox cbHabilitadaDomicilio;
         private System.Windows.Forms.ComboBox cbEstadoDomicilio;

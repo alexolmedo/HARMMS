@@ -338,6 +338,7 @@
             this.button1.TabIndex = 69;
             this.button1.Text = "Consultar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ModificarOrdenL
             // 
@@ -354,7 +355,8 @@
             this.Controls.Add(this.txtOrdenLocal);
             this.Controls.Add(this.groupBox3);
             this.Name = "ModificarOrdenL";
-            this.Text = "Modificar Orden de Trabajo";
+            this.Text = "Modificar Orden en el Local";
+            this.Load += new System.EventHandler(this.ModificarOrdenL_Load);
             this.groupBoxDL.ResumeLayout(false);
             this.groupBoxDL.PerformLayout();
             this.groupBox3.ResumeLayout(false);
