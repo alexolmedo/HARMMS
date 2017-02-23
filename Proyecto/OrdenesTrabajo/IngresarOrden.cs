@@ -219,7 +219,7 @@ namespace Proyecto.OrdenesTrabajo
 
         private void button9_Click(object sender, EventArgs e)
         {
-            string sql = "INSERT INTO ordendetrabajo VALUES (" + txtNumDomicilio.Text + ",'" + txtCedulaDomicilio.Text + "','D','" + fechaCita.Value.Date.ToString("yyyyMMdd") + "',null,'" + horaCita.Value.TimeOfDay.ToString(@"hh\:mm")+ "','H','" + cbEstado.SelectedItem.ToString()[0]+"','"+txtDescripcionDomicilio.Text+"',"+txtCostoDomicilio.Text+")";
+            string sql = "INSERT INTO ordendetrabajo VALUES (" + txtNumDomicilio.Text + ",'" + txtCedulaDomicilio.Text + "','D','" + fechaCita.Value.Date.ToString("yyyyMMdd") + "',null,'" + horaCita.Value.TimeOfDay.ToString(@"hh\:mm")+ "','H','" + cbEstado.SelectedItem.ToString()[0]+"','"+txtDescripcionDomicilio.Text+"',"+txtCostoDomicilio.Text + ",'')";
             //Console.WriteLine(sql);
             conexion.command = new SqlCommand(sql, conexion.connection);
             conexion.command.ExecuteNonQuery();
@@ -297,7 +297,7 @@ namespace Proyecto.OrdenesTrabajo
 
         private void Agregar_Click(object sender, EventArgs e)
         {
-            string sql = "INSERT INTO ordendetrabajo VALUES (" + txtNumLocal.Text + ",'" + txtCedulaLocal.Text + "','L','" + fechaRecepcion.Value.Date.ToString("yyyyMMdd") + "','"+ fechaEntrega.Value.Date.ToString("yyyyMMdd")+"',null,'H','" + cbEstadoLocal.SelectedItem.ToString()[0] + "','" + txtDescripcionLocal.Text + "'," + txtCostoLocal.Text + ")";
+            string sql = "INSERT INTO ordendetrabajo VALUES (" + txtNumLocal.Text + ",'" + txtCedulaLocal.Text + "','L','" + fechaRecepcion.Value.Date.ToString("yyyyMMdd") + "','"+ fechaEntrega.Value.Date.ToString("yyyyMMdd")+"',null,'H','" + cbEstadoLocal.SelectedItem.ToString()[0] + "','" + txtDescripcionLocal.Text + "'," + txtCostoLocal.Text + ",'')";
             //Console.WriteLine(sql);
             conexion.command = new SqlCommand(sql, conexion.connection);
             conexion.command.ExecuteNonQuery();

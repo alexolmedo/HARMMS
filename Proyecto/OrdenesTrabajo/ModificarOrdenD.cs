@@ -104,7 +104,7 @@ namespace Proyecto.OrdenesTrabajo
             conexion.command = new SqlCommand(sql, conexion.connection);
             conexion.command.ExecuteNonQuery();
             conexion.command.Dispose();
-            MessageBox.Show("La orden se agregó correctamente", "Orden Agregada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            MessageBox.Show("La orden se modificó correctamente", "Orden Agregada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
     }
 }
