@@ -168,14 +168,15 @@
             this.cBEstado.Name = "cBEstado";
             this.cBEstado.Size = new System.Drawing.Size(137, 21);
             this.cBEstado.Sorted = true;
-            this.cBEstado.TabIndex = 24;
+            this.cBEstado.TabIndex = 21;
             // 
             // textPrVenta
             // 
             this.textPrVenta.Location = new System.Drawing.Point(116, 132);
+            this.textPrVenta.MaxLength = 7;
             this.textPrVenta.Name = "textPrVenta";
             this.textPrVenta.Size = new System.Drawing.Size(137, 20);
-            this.textPrVenta.TabIndex = 23;
+            this.textPrVenta.TabIndex = 18;
             this.textPrVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPrVenta_KeyPress);
             this.textPrVenta.Leave += new System.EventHandler(this.textPrVenta_Leave);
             // 
@@ -202,30 +203,33 @@
             this.textCant.Location = new System.Drawing.Point(389, 95);
             this.textCant.Name = "textCant";
             this.textCant.Size = new System.Drawing.Size(137, 20);
-            this.textCant.TabIndex = 19;
+            this.textCant.TabIndex = 20;
             this.textCant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCant_KeyPress);
             // 
             // textPrCompra
             // 
             this.textPrCompra.Location = new System.Drawing.Point(116, 98);
+            this.textPrCompra.MaxLength = 7;
             this.textPrCompra.Name = "textPrCompra";
             this.textPrCompra.Size = new System.Drawing.Size(137, 20);
-            this.textPrCompra.TabIndex = 18;
+            this.textPrCompra.TabIndex = 17;
             this.textPrCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPrCompra_KeyPress);
             this.textPrCompra.Leave += new System.EventHandler(this.textPrCompra_Leave);
             // 
             // textNumSer
             // 
             this.textNumSer.Location = new System.Drawing.Point(389, 31);
+            this.textNumSer.MaxLength = 15;
             this.textNumSer.Name = "textNumSer";
             this.textNumSer.Size = new System.Drawing.Size(137, 20);
-            this.textNumSer.TabIndex = 17;
+            this.textNumSer.TabIndex = 19;
             this.textNumSer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textNumSer_KeyPress);
             this.textNumSer.Leave += new System.EventHandler(this.textNumSer_Leave);
             // 
             // textModelo
             // 
             this.textModelo.Location = new System.Drawing.Point(116, 65);
+            this.textModelo.MaxLength = 30;
             this.textModelo.Name = "textModelo";
             this.textModelo.Size = new System.Drawing.Size(410, 20);
             this.textModelo.TabIndex = 16;
@@ -234,6 +238,7 @@
             // textNombre
             // 
             this.textNombre.Location = new System.Drawing.Point(116, 31);
+            this.textNombre.MaxLength = 20;
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(137, 20);
             this.textNombre.TabIndex = 15;

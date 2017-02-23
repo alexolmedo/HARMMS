@@ -14,8 +14,8 @@ namespace Proyecto.Repuestos
     public partial class IngresarRepuesto : Form
     {
         Conexion conexion = new Conexion();
-        //SqlDataAdapter da;
-        //DataTable dt;
+        SqlDataAdapter da;
+        DataTable dt;
 
         public IngresarRepuesto()
         {
@@ -74,15 +74,6 @@ namespace Proyecto.Repuestos
             else
             {
                 e.Handled = true;
-            }
-        }
-
-        private void textBox3_Leave(object sender, EventArgs e)
-        {
-            if (textBoxCodigo.Text.Length > 15)
-            {
-                MessageBox.Show("El código es muy extenso", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                textBoxCodigo.Text = "";
             }
         }
 
@@ -176,15 +167,14 @@ namespace Proyecto.Repuestos
 
             else if (!textBoxNombre.Text.Equals("") || !textBoxModelo.Text.Equals("") || !textBoxCodigo.Text.Equals("") || !textBoxPrCompra.Text.Equals("") || !textBoxPrVenta.Text.Equals("") || !textBoxCantidad.Text.Equals(""))
             {
-
-                Console.WriteLine("rshtrh");
                 string sql = "insert into producto values('" + textBoxNombre.Text + "','" + textBoxModelo.Text + "',null,'"
-                    + textBoxCodigo.Text + "', " + textBoxPrCompra.Text + "," + textBoxPrVenta.Text + ",null,null,null,"
+                    + textBoxCodigo.Text + "', " + textBoxPrCompra.Text + "," + textBoxPrVenta.Text + ", 'Disponible',null,null,"
                     + textBoxCantidad.Text + ")";
                 conexion.command = new SqlCommand(sql, conexion.connection);
                 conexion.command.ExecuteNonQuery();
                 conexion.command.Dispose();
                 MessageBox.Show("El repuesto se agregó correctamente", "Repuesto Agregado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                button1.PerformClick();
             }
         }
 
@@ -195,6 +185,57 @@ namespace Proyecto.Repuestos
                 MessageBox.Show("El código es muy extenso", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 textBoxCodigo.Text = "";
             }
+
+            string strquery1 = "Select numserie from producto";
+            conexion.command = new SqlCommand(strquery1, conexion.connection);
+
+            da = new SqlDataAdapter();
+            //fetching query in the database.
+            da.SelectCommand = conexion.command;
+            //inicializar nueva datatable
+            dt = new DataTable();
+            //refresca las filas segun el rango especificado en el datasource. 
+            da.Fill(dt);
+
+            foreach (DataRow r in dt.Rows)
+            {
+                if (r[0].ToString().Equals(textBoxCodigo.Text))
+                {
+                    MessageBox.Show("El código ya se encuentra registrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    textBoxCodigo.Text = "";
+                }
+            }
+
+        }
+
+        private void textBoxCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBoxCodigo.Text = "";
+            textBoxNombre.Text = "";
+            textBoxModelo.Text = "";
+            textBoxPrCompra.Text = "";
+            textBoxPrVenta.Text = "";
+            textBoxCantidad.Text = "";
         }
     }
 }
