@@ -176,6 +176,8 @@
             this.textPrVenta.Name = "textPrVenta";
             this.textPrVenta.Size = new System.Drawing.Size(137, 20);
             this.textPrVenta.TabIndex = 23;
+            this.textPrVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPrVenta_KeyPress);
+            this.textPrVenta.Leave += new System.EventHandler(this.textPrVenta_Leave);
             // 
             // label7
             // 
@@ -201,6 +203,7 @@
             this.textCant.Name = "textCant";
             this.textCant.Size = new System.Drawing.Size(137, 20);
             this.textCant.TabIndex = 19;
+            this.textCant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCant_KeyPress);
             // 
             // textPrCompra
             // 
@@ -208,6 +211,8 @@
             this.textPrCompra.Name = "textPrCompra";
             this.textPrCompra.Size = new System.Drawing.Size(137, 20);
             this.textPrCompra.TabIndex = 18;
+            this.textPrCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPrCompra_KeyPress);
+            this.textPrCompra.Leave += new System.EventHandler(this.textPrCompra_Leave);
             // 
             // textNumSer
             // 
@@ -215,6 +220,8 @@
             this.textNumSer.Name = "textNumSer";
             this.textNumSer.Size = new System.Drawing.Size(137, 20);
             this.textNumSer.TabIndex = 17;
+            this.textNumSer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textNumSer_KeyPress);
+            this.textNumSer.Leave += new System.EventHandler(this.textNumSer_Leave);
             // 
             // textModelo
             // 
@@ -222,6 +229,7 @@
             this.textModelo.Name = "textModelo";
             this.textModelo.Size = new System.Drawing.Size(410, 20);
             this.textModelo.TabIndex = 16;
+            this.textModelo.Leave += new System.EventHandler(this.textModelo_Leave);
             // 
             // textNombre
             // 
@@ -229,6 +237,8 @@
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(137, 20);
             this.textNombre.TabIndex = 15;
+            this.textNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textNombre_KeyPress);
+            this.textNombre.Leave += new System.EventHandler(this.textNombre_Leave);
             // 
             // label5
             // 

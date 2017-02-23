@@ -52,7 +52,7 @@ namespace Proyecto.Repuestos
         {
             if (textBoxNombre.Text.Length > 20)
             {
-                MessageBox.Show("La nombre del repuesto es muy extenso", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("El nombre del repuesto es muy extenso", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 textBoxNombre.Text = "";
             }
         }
@@ -81,7 +81,7 @@ namespace Proyecto.Repuestos
         {
             if (textBoxCodigo.Text.Length > 15)
             {
-                MessageBox.Show("La número de serie es muy extenso", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("El código es muy extenso", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 textBoxCodigo.Text = "";
             }
         }
@@ -192,7 +192,7 @@ namespace Proyecto.Repuestos
         {
             if (textBoxCodigo.Text.Length > 15)
             {
-                MessageBox.Show("La número de serie es muy extenso", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("El código es muy extenso", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 textBoxCodigo.Text = "";
             }
         }

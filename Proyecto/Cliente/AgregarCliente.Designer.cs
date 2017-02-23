@@ -73,7 +73,7 @@
             this.txtCorreoAgrCliente.Location = new System.Drawing.Point(168, 213);
             this.txtCorreoAgrCliente.Name = "txtCorreoAgrCliente";
             this.txtCorreoAgrCliente.Size = new System.Drawing.Size(187, 20);
-            this.txtCorreoAgrCliente.TabIndex = 36;
+            this.txtCorreoAgrCliente.TabIndex = 33;
             this.txtCorreoAgrCliente.Leave += new System.EventHandler(this.txtCorreoAgrCliente_Leave);
             // 
             // txtRUCAgrCliente
@@ -82,8 +82,7 @@
             this.txtRUCAgrCliente.MaxLength = 13;
             this.txtRUCAgrCliente.Name = "txtRUCAgrCliente";
             this.txtRUCAgrCliente.Size = new System.Drawing.Size(187, 20);
-            this.txtRUCAgrCliente.TabIndex = 35;
-            this.txtRUCAgrCliente.TextChanged += new System.EventHandler(this.txtRUCAgrCliente_TextChanged);
+            this.txtRUCAgrCliente.TabIndex = 32;
             this.txtRUCAgrCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRUCAgrCliente_KeyPress);
             this.txtRUCAgrCliente.Leave += new System.EventHandler(this.txtRUCAgrCliente_Leave);
             // 
@@ -93,7 +92,7 @@
             this.txtDirecAgrCliente.MaxLength = 150;
             this.txtDirecAgrCliente.Name = "txtDirecAgrCliente";
             this.txtDirecAgrCliente.Size = new System.Drawing.Size(187, 20);
-            this.txtDirecAgrCliente.TabIndex = 34;
+            this.txtDirecAgrCliente.TabIndex = 31;
             this.txtDirecAgrCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDirecAgrCliente_KeyPress);
             this.txtDirecAgrCliente.Leave += new System.EventHandler(this.txtDirecAgrCliente_Leave);
             // 
@@ -140,7 +139,7 @@
             this.txtCedAgrCliente.MaxLength = 10;
             this.txtCedAgrCliente.Name = "txtCedAgrCliente";
             this.txtCedAgrCliente.Size = new System.Drawing.Size(187, 20);
-            this.txtCedAgrCliente.TabIndex = 29;
+            this.txtCedAgrCliente.TabIndex = 28;
             this.txtCedAgrCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedAgrCliente_KeyPress);
             this.txtCedAgrCliente.Leave += new System.EventHandler(this.txtCedAgrCliente_Leave);
             // 
@@ -149,8 +148,9 @@
             this.txtNomAgrCliente.Location = new System.Drawing.Point(168, 56);
             this.txtNomAgrCliente.Name = "txtNomAgrCliente";
             this.txtNomAgrCliente.Size = new System.Drawing.Size(187, 20);
-            this.txtNomAgrCliente.TabIndex = 28;
+            this.txtNomAgrCliente.TabIndex = 29;
             this.txtNomAgrCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomAgrCliente_KeyPress);
+            this.txtNomAgrCliente.Leave += new System.EventHandler(this.txtNomAgrCliente_Leave);
             // 
             // label3
             // 
@@ -186,7 +186,7 @@
             this.btnCerrarAgrCliente.Location = new System.Drawing.Point(344, 291);
             this.btnCerrarAgrCliente.Name = "btnCerrarAgrCliente";
             this.btnCerrarAgrCliente.Size = new System.Drawing.Size(67, 29);
-            this.btnCerrarAgrCliente.TabIndex = 40;
+            this.btnCerrarAgrCliente.TabIndex = 36;
             this.btnCerrarAgrCliente.Text = "Cerrar";
             this.btnCerrarAgrCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCerrarAgrCliente.UseVisualStyleBackColor = true;
@@ -199,7 +199,7 @@
             this.btnNuevoAgrCliente.Location = new System.Drawing.Point(263, 291);
             this.btnNuevoAgrCliente.Name = "btnNuevoAgrCliente";
             this.btnNuevoAgrCliente.Size = new System.Drawing.Size(75, 29);
-            this.btnNuevoAgrCliente.TabIndex = 39;
+            this.btnNuevoAgrCliente.TabIndex = 35;
             this.btnNuevoAgrCliente.Text = "Nuevo";
             this.btnNuevoAgrCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevoAgrCliente.UseVisualStyleBackColor = true;
@@ -212,7 +212,7 @@
             this.btnAgregarAgrCliente.Location = new System.Drawing.Point(188, 291);
             this.btnAgregarAgrCliente.Name = "btnAgregarAgrCliente";
             this.btnAgregarAgrCliente.Size = new System.Drawing.Size(68, 29);
-            this.btnAgregarAgrCliente.TabIndex = 38;
+            this.btnAgregarAgrCliente.TabIndex = 34;
             this.btnAgregarAgrCliente.Text = "Agregar";
             this.btnAgregarAgrCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregarAgrCliente.UseVisualStyleBackColor = true;

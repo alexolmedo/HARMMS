@@ -267,14 +267,20 @@ namespace Proyecto.Cliente
             {
                 try
                 {
-                    //MailAddress m = new MailAddress(txtCorreoAgrCliente.Text);
-                    if (!System.Text.RegularExpressions.Regex.IsMatch(txtCorreoAgrCliente.Text, "^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$"))
+                    if (txtCorreoAgrCliente.Text.Length > 40)
                     {
-                        MessageBox.Show("El correo no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("El correo es muy extenso\nSe aceptan hasta 40 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         txtCorreoAgrCliente.Text = "";
                     }
-
-
+                    else
+                    {
+                        if (!System.Text.RegularExpressions.Regex.IsMatch(txtCorreoAgrCliente.Text,
+                        "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$"))
+                        {
+                            MessageBox.Show("El correo no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                            txtCorreoAgrCliente.Text = "";
+                        }
+                    }
                 }
                 catch (FormatException)
                 {
@@ -312,14 +318,28 @@ namespace Proyecto.Cliente
                 {
                     MessageBox.Show("El RUC no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     txtRUCAgrCliente.Text = "";
+
                 }
+                else
+                {
+                    if (txtRUCAgrCliente.Text.Substring(0, 10) != txtCedAgrCliente.Text || txtRUCAgrCliente.Text.Substring(10, 3) != "001")
+                    {
+                        MessageBox.Show("El RUC no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        txtRUCAgrCliente.Text = "";
+                    }  
+                }
+
             }
-           
         }
 
-        private void txtRUCAgrCliente_TextChanged(object sender, EventArgs e)
+        private void txtNomAgrCliente_Leave(object sender, EventArgs e)
         {
+            if (txtNomAgrCliente.Text.Length > 60) {
 
+                MessageBox.Show("El nombre del cliente es muy extenso\nSe aceptan hasta 60 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                txtNomAgrCliente.Text = "";
+            }
         }
+
     }
 }

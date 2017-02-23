@@ -170,5 +170,163 @@ namespace Proyecto.Repuestos
             return numero.Replace(',', '.');
             
         }
+
+        private void textNombre_Leave(object sender, EventArgs e)
+        {
+            if (textNombre.Text.Length > 20)
+            {
+                MessageBox.Show("El nombre del repuesto es muy extenso\nSe aceptan hasta 20 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                textNombre.Text = "";
+            }
+        }
+
+        private void textNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textNumSer_Leave(object sender, EventArgs e)
+        {
+            if (textNumSer.Text.Length > 15)
+            {
+                MessageBox.Show("El código es muy extenso\nSe acptan hasta 15 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                textNumSer.Text = "";
+            }
+        }
+
+        private void textNumSer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textModelo_Leave(object sender, EventArgs e)
+        {
+            if (textNombre.Text.Length > 20)
+            {
+                MessageBox.Show("El modelo del repuesto es muy extenso\nSe aceptan hasta 30 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                textNombre.Text = "";
+            }
+        }
+
+        private void textPrCompra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textPrCompra_Leave(object sender, EventArgs e)
+        {
+            if (textPrCompra.Text != "")
+            {
+                if (!System.Text.RegularExpressions.Regex.IsMatch(textPrCompra.Text, "^[0-9]{1,4}([.][0-9]{1,2})?$"))
+                {
+                    MessageBox.Show("El precio de compra no es válido\nSe puede ingresar hasta 4 números enteros y 2 decimales", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    textPrCompra.Text = "";
+                }
+            }
+        }
+
+        private void textPrVenta_Leave(object sender, EventArgs e)
+        {
+            if (textPrVenta.Text != "")
+            {
+                if (!System.Text.RegularExpressions.Regex.IsMatch(textPrVenta.Text, "^[0-9]{1,4}([.][0-9]{1,2})?$"))
+                {
+                    MessageBox.Show("El precio de venta no es válido\nSe puede ingresar hasta 4 números enteros y 2 decimales", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    textPrVenta.Text = "";
+                }
+            } 
+        }
+
+        private void textPrVenta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textCant_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+
+
+
+
+
+
     }
 }
