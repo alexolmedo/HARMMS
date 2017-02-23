@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBoxDD = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtHoraDomicilio = new System.Windows.Forms.TextBox();
+            this.txtFechaDomicilio = new System.Windows.Forms.TextBox();
+            this.txtEstadodomicilio = new System.Windows.Forms.TextBox();
+            this.txtDescripcionDomicilio = new System.Windows.Forms.TextBox();
+            this.txtCostoDomicilio = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -50,10 +50,10 @@
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txtCedulaDomicilio = new System.Windows.Forms.TextBox();
             this.txtOrdenDomicilio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtHabilitadaDomicilio = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBoxDD.SuspendLayout();
@@ -62,11 +62,11 @@
             // 
             // groupBoxDD
             // 
-            this.groupBoxDD.Controls.Add(this.textBox4);
-            this.groupBoxDD.Controls.Add(this.textBox3);
-            this.groupBoxDD.Controls.Add(this.textBox1);
-            this.groupBoxDD.Controls.Add(this.textBox9);
-            this.groupBoxDD.Controls.Add(this.textBox8);
+            this.groupBoxDD.Controls.Add(this.txtHoraDomicilio);
+            this.groupBoxDD.Controls.Add(this.txtFechaDomicilio);
+            this.groupBoxDD.Controls.Add(this.txtEstadodomicilio);
+            this.groupBoxDD.Controls.Add(this.txtDescripcionDomicilio);
+            this.groupBoxDD.Controls.Add(this.txtCostoDomicilio);
             this.groupBoxDD.Controls.Add(this.label13);
             this.groupBoxDD.Controls.Add(this.comboBox5);
             this.groupBoxDD.Controls.Add(this.label14);
@@ -81,46 +81,46 @@
             this.groupBoxDD.TabStop = false;
             this.groupBoxDD.Text = "Detalle Orden de Trabajo";
             // 
-            // textBox4
+            // txtHoraDomicilio
             // 
-            this.textBox4.Location = new System.Drawing.Point(486, 29);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(81, 20);
-            this.textBox4.TabIndex = 22;
+            this.txtHoraDomicilio.Location = new System.Drawing.Point(486, 29);
+            this.txtHoraDomicilio.Name = "txtHoraDomicilio";
+            this.txtHoraDomicilio.ReadOnly = true;
+            this.txtHoraDomicilio.Size = new System.Drawing.Size(81, 20);
+            this.txtHoraDomicilio.TabIndex = 22;
             // 
-            // textBox3
+            // txtFechaDomicilio
             // 
-            this.textBox3.Location = new System.Drawing.Point(144, 29);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(199, 20);
-            this.textBox3.TabIndex = 21;
+            this.txtFechaDomicilio.Location = new System.Drawing.Point(144, 29);
+            this.txtFechaDomicilio.Name = "txtFechaDomicilio";
+            this.txtFechaDomicilio.ReadOnly = true;
+            this.txtFechaDomicilio.Size = new System.Drawing.Size(199, 20);
+            this.txtFechaDomicilio.TabIndex = 21;
             // 
-            // textBox1
+            // txtEstadodomicilio
             // 
-            this.textBox1.Location = new System.Drawing.Point(144, 106);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(199, 20);
-            this.textBox1.TabIndex = 20;
+            this.txtEstadodomicilio.Location = new System.Drawing.Point(144, 106);
+            this.txtEstadodomicilio.Name = "txtEstadodomicilio";
+            this.txtEstadodomicilio.ReadOnly = true;
+            this.txtEstadodomicilio.Size = new System.Drawing.Size(199, 20);
+            this.txtEstadodomicilio.TabIndex = 20;
             // 
-            // textBox9
+            // txtDescripcionDomicilio
             // 
-            this.textBox9.Location = new System.Drawing.Point(144, 58);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(423, 40);
-            this.textBox9.TabIndex = 19;
+            this.txtDescripcionDomicilio.Location = new System.Drawing.Point(144, 58);
+            this.txtDescripcionDomicilio.Multiline = true;
+            this.txtDescripcionDomicilio.Name = "txtDescripcionDomicilio";
+            this.txtDescripcionDomicilio.ReadOnly = true;
+            this.txtDescripcionDomicilio.Size = new System.Drawing.Size(423, 40);
+            this.txtDescripcionDomicilio.TabIndex = 19;
             // 
-            // textBox8
+            // txtCostoDomicilio
             // 
-            this.textBox8.Location = new System.Drawing.Point(486, 106);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(81, 20);
-            this.textBox8.TabIndex = 18;
+            this.txtCostoDomicilio.Location = new System.Drawing.Point(486, 106);
+            this.txtCostoDomicilio.Name = "txtCostoDomicilio";
+            this.txtCostoDomicilio.ReadOnly = true;
+            this.txtCostoDomicilio.Size = new System.Drawing.Size(81, 20);
+            this.txtCostoDomicilio.TabIndex = 18;
             // 
             // label13
             // 
@@ -202,7 +202,7 @@
             this.groupBox4.Controls.Add(this.textBox13);
             this.groupBox4.Controls.Add(this.label24);
             this.groupBox4.Controls.Add(this.label25);
-            this.groupBox4.Controls.Add(this.textBox14);
+            this.groupBox4.Controls.Add(this.txtCedulaDomicilio);
             this.groupBox4.Location = new System.Drawing.Point(12, 46);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(575, 99);
@@ -270,13 +270,13 @@
             this.label25.TabIndex = 2;
             this.label25.Text = "Cédula";
             // 
-            // textBox14
+            // txtCedulaDomicilio
             // 
-            this.textBox14.Location = new System.Drawing.Point(85, 18);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(153, 20);
-            this.textBox14.TabIndex = 0;
+            this.txtCedulaDomicilio.Location = new System.Drawing.Point(85, 18);
+            this.txtCedulaDomicilio.Name = "txtCedulaDomicilio";
+            this.txtCedulaDomicilio.ReadOnly = true;
+            this.txtCedulaDomicilio.Size = new System.Drawing.Size(153, 20);
+            this.txtCedulaDomicilio.TabIndex = 0;
             // 
             // txtOrdenDomicilio
             // 
@@ -294,13 +294,13 @@
             this.label1.TabIndex = 54;
             this.label1.Text = "Habilitada";
             // 
-            // textBox2
+            // txtHabilitadaDomicilio
             // 
-            this.textBox2.Location = new System.Drawing.Point(478, 12);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(101, 20);
-            this.textBox2.TabIndex = 56;
+            this.txtHabilitadaDomicilio.Location = new System.Drawing.Point(478, 12);
+            this.txtHabilitadaDomicilio.Name = "txtHabilitadaDomicilio";
+            this.txtHabilitadaDomicilio.ReadOnly = true;
+            this.txtHabilitadaDomicilio.Size = new System.Drawing.Size(101, 20);
+            this.txtHabilitadaDomicilio.TabIndex = 56;
             // 
             // button7
             // 
@@ -317,12 +317,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(249, 8);
+            this.button1.Location = new System.Drawing.Point(249, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 58;
             this.button1.Text = "Consultar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ConsultarOrdenD
             // 
@@ -331,7 +332,7 @@
             this.ClientSize = new System.Drawing.Size(596, 339);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtHabilitadaDomicilio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBoxDD);
             this.Controls.Add(this.label19);
@@ -352,11 +353,11 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxDD;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtHoraDomicilio;
+        private System.Windows.Forms.TextBox txtFechaDomicilio;
+        private System.Windows.Forms.TextBox txtEstadodomicilio;
+        private System.Windows.Forms.TextBox txtDescripcionDomicilio;
+        private System.Windows.Forms.TextBox txtCostoDomicilio;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label14;
@@ -373,10 +374,10 @@
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtCedulaDomicilio;
         private System.Windows.Forms.TextBox txtOrdenDomicilio;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtHabilitadaDomicilio;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button1;
     }

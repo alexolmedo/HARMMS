@@ -53,5 +53,48 @@ namespace Proyecto.OrdenesTrabajo
                 txtOrdenDomicilio.AutoCompleteCustomSource.Add(rw);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String strquery = "";
+
+            strquery = "select [NUM_ORDENTRABAJO],[CI_CLIENTE],[TIPOORDENTRABAJO],CAST(FECHARECEP_REV AS DATE),[FECHAENTREGA],cast(HORAINICIOC as time(0)),[HABILITADA],[ESTADOOT],[DESCRIPCIONOT],[COSTOOT] from ordendetrabajo where num_ordentrabajo = " + txtOrdenDomicilio.Text + "";
+
+
+            conexion.command = new SqlCommand(strquery, conexion.connection);
+
+            da = new SqlDataAdapter();
+            da.SelectCommand = conexion.command;
+            dt = new DataTable();
+            da.Fill(dt);
+
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("La orden no está registrada", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            else
+            {
+                foreach (DataRow r in dt.Rows)
+                {
+                    txtCedulaDomicilio.Text = r[1].ToString();
+                    txtFechaDomicilio.Text = r[3].ToString();
+                    txtHoraDomicilio.Text = r[5].ToString();
+                    if (r[6].ToString().Equals("H")) {
+                        txtHabilitadaDomicilio.Text = "Habilitada" ;
+                    } else {
+                        txtHabilitadaDomicilio.Text = "Deshabilitada";
+                    }
+
+                    if (r[7].ToString().Equals("E")) {
+                        txtEstadodomicilio.Text = "Entregada";
+                    } else {
+                        txtEstadodomicilio.Text = "No entregada";
+                    }
+
+                    txtDescripcionDomicilio.Text = r[8].ToString();
+                    txtCostoDomicilio.Text = r[9].ToString();
+                }
+            }
+        }
     }
 }

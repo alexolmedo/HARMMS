@@ -86,7 +86,7 @@ namespace Proyecto
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new OrdenesTrabajo.BuscarOrdenC().ShowDialog();
+
         }
 
         private void deshabilitarToolStripMenuItem_Click(object sender, EventArgs e)
