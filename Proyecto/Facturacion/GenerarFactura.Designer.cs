@@ -45,17 +45,13 @@
             this.textNumFac = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textDescuento = new System.Windows.Forms.TextBox();
             this.textTotal = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textIVA = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.textSubtotal = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id_Prod_OT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -159,6 +155,7 @@
             this.button6.TabIndex = 3;
             this.button6.Text = "Buscar";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label25
             // 
@@ -226,35 +223,24 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textDescuento);
             this.groupBox2.Controls.Add(this.textTotal);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.textIVA);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.textSubtotal);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(12, 155);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(575, 234);
+            this.groupBox2.Size = new System.Drawing.Size(575, 223);
             this.groupBox2.TabIndex = 51;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle Factura";
             // 
-            // textDescuento
-            // 
-            this.textDescuento.Location = new System.Drawing.Point(437, 190);
-            this.textDescuento.Name = "textDescuento";
-            this.textDescuento.Size = new System.Drawing.Size(132, 20);
-            this.textDescuento.TabIndex = 29;
-            // 
             // textTotal
             // 
-            this.textTotal.Location = new System.Drawing.Point(437, 212);
+            this.textTotal.Location = new System.Drawing.Point(437, 194);
             this.textTotal.Name = "textTotal";
             this.textTotal.ReadOnly = true;
             this.textTotal.Size = new System.Drawing.Size(132, 20);
@@ -263,7 +249,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(378, 216);
+            this.label6.Location = new System.Drawing.Point(378, 198);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 13);
             this.label6.TabIndex = 28;
@@ -286,15 +272,6 @@
             this.label5.TabIndex = 26;
             this.label5.Text = "I.V.A";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(346, 193);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 13);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "DESCUENTO";
-            // 
             // textSubtotal
             // 
             this.textSubtotal.Location = new System.Drawing.Point(437, 146);
@@ -312,32 +289,14 @@
             this.label3.TabIndex = 22;
             this.label3.Text = "SUBTOTAL";
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(123, 184);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Modificar";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(204, 184);
+            this.button3.Location = new System.Drawing.Point(23, 171);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 5;
             this.button3.Text = "Eliminar";
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(42, 183);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Nuevo";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -423,6 +382,7 @@
             this.btnAgregarFactura.Text = "Agregar";
             this.btnAgregarFactura.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregarFactura.UseVisualStyleBackColor = true;
+            this.btnAgregarFactura.Click += new System.EventHandler(this.btnAgregarFactura_Click);
             // 
             // GenerarFactura
             // 
@@ -468,9 +428,7 @@
         private System.Windows.Forms.DateTimePicker dateEmision;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnCerrarAgrCliente;
         private System.Windows.Forms.Button btnNuevoAgrCliente;
         private System.Windows.Forms.Button btnAgregarFactura;
@@ -478,10 +436,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textIVA;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textSubtotal;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textDescuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Prod_OT;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;

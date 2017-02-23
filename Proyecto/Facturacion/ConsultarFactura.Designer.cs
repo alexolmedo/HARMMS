@@ -30,12 +30,10 @@
         {
             this.btnCerrarAgrCliente = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -69,7 +67,7 @@
             // 
             this.btnCerrarAgrCliente.Image = global::Proyecto.Properties.Resources.cancel1;
             this.btnCerrarAgrCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarAgrCliente.Location = new System.Drawing.Point(516, 396);
+            this.btnCerrarAgrCliente.Location = new System.Drawing.Point(516, 392);
             this.btnCerrarAgrCliente.Name = "btnCerrarAgrCliente";
             this.btnCerrarAgrCliente.Size = new System.Drawing.Size(67, 29);
             this.btnCerrarAgrCliente.TabIndex = 60;
@@ -80,33 +78,23 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.textBox5);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.textBox4);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(8, 156);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(575, 234);
+            this.groupBox2.Size = new System.Drawing.Size(575, 224);
             this.groupBox2.TabIndex = 57;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle Factura";
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(437, 190);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(132, 20);
-            this.textBox3.TabIndex = 29;
-            // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(437, 212);
+            this.textBox5.Location = new System.Drawing.Point(437, 193);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(132, 20);
@@ -115,7 +103,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(378, 216);
+            this.label6.Location = new System.Drawing.Point(378, 196);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 13);
             this.label6.TabIndex = 28;
@@ -137,15 +125,6 @@
             this.label5.Size = new System.Drawing.Size(30, 13);
             this.label5.TabIndex = 26;
             this.label5.Text = "I.V.A";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(346, 193);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 13);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "DESCUENTO";
             // 
             // textBox2
             // 
@@ -346,7 +325,7 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(8, 401);
+            this.textBox6.Location = new System.Drawing.Point(8, 397);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(106, 20);
@@ -356,7 +335,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 429);
+            this.ClientSize = new System.Drawing.Size(590, 426);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.btnCerrarAgrCliente);
             this.Controls.Add(this.groupBox2);
@@ -380,12 +359,10 @@
 
         private System.Windows.Forms.Button btnCerrarAgrCliente;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;

@@ -89,9 +89,9 @@ namespace Proyecto.Facturacion
                 foreach (DataRow r in dt.Rows)
                 {
                     //obtiene todas las filas de una columna
-                    dataGridView1.Rows[e.RowIndex].Cells[1].Value = r[1] + " - " + r[2];
-                    dataGridView1.Rows[e.RowIndex].Cells[3].Value = r[6];
-                    dataGridView1.Rows[e.RowIndex].Cells[4].Value = Convert.ToDouble(r[6]) * Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[2].Value);    
+                    dataGridView1.Rows[e.RowIndex].Cells[1].Value = r[0] + " - " + r[1];
+                    dataGridView1.Rows[e.RowIndex].Cells[3].Value = r[5];
+                    dataGridView1.Rows[e.RowIndex].Cells[4].Value = Convert.ToDouble(r[5]) * Convert.ToDouble(dataGridView1.Rows[e.RowIndex].Cells[2].Value);    
                 }
 
                 double subtotal = 0;
@@ -193,40 +193,44 @@ namespace Proyecto.Facturacion
                 da.Fill(dt);
                 //int añoI, añoF, mesI, mesF, diaI, diaF
 
-                foreach (DataRow r in dt.Rows)
+                if (dt.Rows.Count == 0)
                 {
-                    //obtiene todas las filas de una columna
-                    if (r[0].ToString() != "")
-                    {
-
-                        if (numFacturaAnterior(r[1].ToString().Substring(6, 4) + r[1].ToString().Substring(3, 2) + r[1].ToString().Substring(0, 2), r[2].ToString().Substring(6, 4) + r[2].ToString().Substring(3, 2) + r[2].ToString().Substring(0, 2)) == r[3].ToString())
-                        {
-                            Console.WriteLine(strquery3 + " dfgrtg");
-                        }
-
-                        else if (numFacturaAnterior(r[1].ToString().Substring(6, 4) + r[1].ToString().Substring(3, 2) + r[1].ToString().Substring(0, 2), r[2].ToString().Substring(6, 4) + r[2].ToString().Substring(3, 2) + r[2].ToString().Substring(0, 2)) == r[3].ToString())
-                        {
-                            Console.WriteLine(strquery3 + " else if");
-                        }
-
-                        else if (numFacturaAnterior(r[1].ToString().Substring(6, 4) + r[1].ToString().Substring(3, 2) + r[1].ToString().Substring(0, 2), r[2].ToString().Substring(6, 4) + r[2].ToString().Substring(3, 2) + r[2].ToString().Substring(0, 2)) == "")
-                        {
-                            textNumFac.Text = r[3].ToString();
-                        }
-                        else
-                        {
-                            Console.WriteLine((1 + Convert.ToInt32(numFacturaAnterior(r[1].ToString().Substring(6, 4) + r[1].ToString().Substring(3, 2) + r[1].ToString().Substring(0, 2),
-                                r[2].ToString().Substring(6, 4) + r[2].ToString().Substring(3, 2) + r[2].ToString().Substring(0, 2)))).ToString());
-                            textNumFac.Text = (1 + Convert.ToInt32(numFacturaAnterior(r[1].ToString().Substring(6, 4) + r[1].ToString().Substring(3, 2) + r[1].ToString().Substring(0, 2),
-                                r[2].ToString().Substring(6, 4) + r[2].ToString().Substring(3, 2) + r[2].ToString().Substring(0, 2)))).ToString();
-                        }
-                    }
-
-                    else
-                    {
-
-                    }
+                    //MessageBox.Show("", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    
                 }
+                else
+                {
+
+                    foreach (DataRow r in dt.Rows)
+                    {
+                        //obtiene todas las filas de una columna
+                        //if (r[0].ToString() != "")
+                        //{
+
+                            if (numFacturaAnterior(r[1].ToString().Substring(6, 4) + r[1].ToString().Substring(3, 2) + r[1].ToString().Substring(0, 2), r[2].ToString().Substring(6, 4) + r[2].ToString().Substring(3, 2) + r[2].ToString().Substring(0, 2)) == r[3].ToString())
+                            {
+                                Console.WriteLine(strquery3 + " dfgrtg");
+                            }
+
+                            else if (numFacturaAnterior(r[1].ToString().Substring(6, 4) + r[1].ToString().Substring(3, 2) + r[1].ToString().Substring(0, 2), r[2].ToString().Substring(6, 4) + r[2].ToString().Substring(3, 2) + r[2].ToString().Substring(0, 2)) == r[3].ToString())
+                            {
+                                Console.WriteLine(strquery3 + " else if");
+                            }
+
+                            else if (numFacturaAnterior(r[1].ToString().Substring(6, 4) + r[1].ToString().Substring(3, 2) + r[1].ToString().Substring(0, 2), r[2].ToString().Substring(6, 4) + r[2].ToString().Substring(3, 2) + r[2].ToString().Substring(0, 2)) == "")
+                            {
+                                textNumFac.Text = r[3].ToString();
+                            }
+                            else
+                            {
+                                Console.WriteLine((1 + Convert.ToInt32(numFacturaAnterior(r[1].ToString().Substring(6, 4) + r[1].ToString().Substring(3, 2) + r[1].ToString().Substring(0, 2),
+                                    r[2].ToString().Substring(6, 4) + r[2].ToString().Substring(3, 2) + r[2].ToString().Substring(0, 2)))).ToString());
+                                textNumFac.Text = (1 + Convert.ToInt32(numFacturaAnterior(r[1].ToString().Substring(6, 4) + r[1].ToString().Substring(3, 2) + r[1].ToString().Substring(0, 2),
+                                    r[2].ToString().Substring(6, 4) + r[2].ToString().Substring(3, 2) + r[2].ToString().Substring(0, 2)))).ToString();
+                            }
+                        
+                    }                                                                                                
+                }               
             }
             catch (Exception ex)
             {
@@ -237,6 +241,16 @@ namespace Proyecto.Facturacion
         private void textNumFac_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAgregarFactura_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            new Cliente.ConsultarCliente().ShowDialog();
         }
     }
 }
