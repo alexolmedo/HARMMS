@@ -79,7 +79,7 @@ namespace Proyecto.Cliente
                         
                         Console.WriteLine(validadorDeCedula(txtCedAgrCliente.Text));
 
-                        MessageBox.Show("La cedula NO es valida", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); //DAMOS UN MENSAJE DE ERROR
+                        MessageBox.Show("La cédula NO es valida", "Validacion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); //DAMOS UN MENSAJE DE ERROR
                     }
 
                     else
@@ -304,7 +304,7 @@ namespace Proyecto.Cliente
 
         private void txtDirecAgrCliente_Leave(object sender, EventArgs e)
         {
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtDirecAgrCliente.Text, "^[a-zA-Z0-9., -]{0,150}$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtDirecAgrCliente.Text, "^[a-zA-Z0-9., -áéíóú]{0,150}$"))
             {
                 MessageBox.Show("La dirección no es válida", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 txtDirecAgrCliente.Text = "";
