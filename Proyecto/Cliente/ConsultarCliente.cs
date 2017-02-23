@@ -53,7 +53,13 @@ namespace Proyecto.Cliente
 
                 if (radioButNombre.Checked)
                 {
+                    if (txtNombre.Text == "") {
+
+                        MessageBox.Show("No ha ingresado el nombre del cliente a buscar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                    }
                     strquery3 = "Select * from cliente where NombreCliente = '" + txtNombre.Text + "'";
+
                 }
 
                 if (radioButCed.Checked)
