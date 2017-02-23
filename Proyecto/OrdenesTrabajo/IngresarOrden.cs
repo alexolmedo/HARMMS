@@ -232,16 +232,12 @@ namespace Proyecto.OrdenesTrabajo
                 conexion.command = new SqlCommand(strquery3, conexion.connection);
 
                 da = new SqlDataAdapter();
-                //fetching query in the database.
                 da.SelectCommand = conexion.command;
-                //inicializar nueva datatable
                 dt = new DataTable();
-                //refresca las filas segun el rango especificado en el datasource. 
                 da.Fill(dt);
 
                 foreach (DataRow r in dt.Rows)
                 {
-                    //obtiene todas las filas de una columna
                     num = r[0].ToString();
                 }
             }
@@ -258,21 +254,17 @@ namespace Proyecto.OrdenesTrabajo
             try
             {
                 // Numero OT
-                string strquery3 = "Select numinicialOT from parametros";
+                string strquery3 = "Select max(num_ordentrabajo) from ordendetrabajo";
                 String aux ="";
                 conexion.command = new SqlCommand(strquery3, conexion.connection);
 
                 da = new SqlDataAdapter();
-                //fetching query in the database.
                 da.SelectCommand = conexion.command;
-                //inicializar nueva datatable
                 dt = new DataTable();
-                //refresca las filas segun el rango especificado en el datasource. 
                 da.Fill(dt);
 
                 foreach (DataRow r in dt.Rows)
                 {
-                    //obtiene todas las filas de una columna
                     aux = r[0].ToString();
                 }
 
