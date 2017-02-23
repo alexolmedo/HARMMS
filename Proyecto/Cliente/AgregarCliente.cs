@@ -92,7 +92,6 @@ namespace Proyecto.Cliente
                         MessageBox.Show("El cliente se agregó correctamente", "Cliente Agregado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         btnNuevoAgrCliente.PerformClick();
                     }
-                            
             }
         }
 

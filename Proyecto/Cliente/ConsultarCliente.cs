@@ -57,6 +57,7 @@ namespace Proyecto.Cliente
                     if (txtNombre.Text == "") {
 
                         MessageBox.Show("No ha ingresado el nombre del cliente a buscar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        limpiarCampos();   
                     }
                     else
                     {
@@ -69,6 +70,7 @@ namespace Proyecto.Cliente
                     if (txtCedula.Text == "")
                     {
                         MessageBox.Show("No ha ingresado la cédula del cliente a buscar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        limpiarCampos();
                     }
                     else
                     {
@@ -94,8 +96,6 @@ namespace Proyecto.Cliente
                 {
                     foreach (DataRow r in dt.Rows)
                     {
-
-                        Console.WriteLine(r[0].ToString() + "rdghtn");
                         //obtiene todas las filas de una columna
 
                         cedConCliente.Text = r[0].ToString();
@@ -211,6 +211,17 @@ namespace Proyecto.Cliente
                 //adding all rows into the textbox
                 txtNombre.AutoCompleteCustomSource.Add(rw);
             }
+        }
+
+        private void limpiarCampos()
+        {
+            cedConCliente.Text = "";
+            nomConCliente.Text = "";
+            telConCliente.Text = "";
+            dirConCliente.Text = "";
+            RUCConCliente.Text = "";
+            correoConCliente.Text = "";
+            estadoConCliente.Text = "";
         }
     }
 }

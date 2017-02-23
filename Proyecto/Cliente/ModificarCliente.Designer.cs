@@ -83,8 +83,8 @@
             // 
             this.comboBoxEstC.FormattingEnabled = true;
             this.comboBoxEstC.Items.AddRange(new object[] {
-            "Disponible",
-            "Agotado"});
+            "Habilitado",
+            "Deshabilitado"});
             this.comboBoxEstC.Location = new System.Drawing.Point(350, 100);
             this.comboBoxEstC.Name = "comboBoxEstC";
             this.comboBoxEstC.Size = new System.Drawing.Size(121, 21);

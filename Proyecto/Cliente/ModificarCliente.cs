@@ -161,6 +161,7 @@ namespace Proyecto.Cliente
         {
             txtNombre.ReadOnly = false;
             txtCedula.Text = "";
+            txtNombre.Text = "";
             txtCedula.ReadOnly = true;
         }
 
@@ -168,6 +169,7 @@ namespace Proyecto.Cliente
         {
             txtNombre.ReadOnly = true;
             txtNombre.Text = "";
+            txtCedula.Text = "";
             txtCedula.ReadOnly = false;
         }
 
@@ -175,21 +177,33 @@ namespace Proyecto.Cliente
         {
             try
             {
-                /*if (txtCedula.Text.Equals("") || txtNombre.Text.Equals(""))
-                {
-                    MessageBox.Show("No se puede realizar la busqueda\nLlene los campos de busqueda", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                }*/
-
                 string strquery3 = "";
 
                 if (radioButNombre.Checked)
                 {
-                    strquery3 = "Select * from cliente where NombreCliente = '" + txtNombre.Text + "'";
+                    if (txtNombre.Text == "")
+                    {
+
+                        MessageBox.Show("No ha ingresado el nombre del cliente a buscar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        limpiarCampos();
+                    }
+                    else
+                    {
+                        strquery3 = "Select * from cliente where NombreCliente = '" + txtNombre.Text + "'";
+                    }
                 }
 
                 if (radioButCed.Checked)
                 {
-                    strquery3 = "Select * from cliente where CI_Cliente = " + txtCedula.Text + "";
+                    if (txtCedula.Text == "")
+                    {
+                        MessageBox.Show("No ha ingresado la cédula del cliente a buscar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        limpiarCampos();
+                    }
+                    else
+                    {
+                        strquery3 = "Select * from cliente where CI_Cliente = " + txtCedula.Text + "";
+                    }
                 }
 
                 conexion.command = new SqlCommand(strquery3, conexion.connection);
@@ -201,17 +215,24 @@ namespace Proyecto.Cliente
                 dt = new DataTable();
                 //refresca las filas segun el rango especificado en el datasource. 
                 da.Fill(dt);
-
-                foreach (DataRow r in dt.Rows)
+                if (dt.Rows.Count == 0)
                 {
-                    //obtiene todas las filas de una columna
-                    cedActCliente.Text = r[0].ToString();
-                    nomActCliente.Text = r[1].ToString();
-                    telActCliente.Text = r[2].ToString();
-                    dirActCliente.Text = r[3].ToString();
-                    RUCActCliente.Text = r[4].ToString();
-                    correoActCliente.Text = r[5].ToString();
-                    comboBoxEstC.SelectedItem = r[6];
+                    MessageBox.Show("El cliente no está registrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    limpiarCampos();
+                }
+                else
+                {
+                    foreach (DataRow r in dt.Rows)
+                    {
+                        //obtiene todas las filas de una columna
+                        cedActCliente.Text = r[0].ToString();
+                        nomActCliente.Text = r[1].ToString();
+                        telActCliente.Text = r[2].ToString();
+                        dirActCliente.Text = r[3].ToString();
+                        RUCActCliente.Text = r[4].ToString();
+                        correoActCliente.Text = r[5].ToString();
+                        comboBoxEstC.SelectedItem = r[6];
+                    }
                 }
 
             }
@@ -337,7 +358,7 @@ namespace Proyecto.Cliente
 
         private void dirActCliente_Leave(object sender, EventArgs e)
         {
-            if (!System.Text.RegularExpressions.Regex.IsMatch(dirActCliente.Text, "^[a-zA-Z0-9., -]{0,150}$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(dirActCliente.Text, "^[a-zA-Z0-9., -áéíóú]{0,150}$"))
             {
                 MessageBox.Show("La dirección no es válida", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 dirActCliente.Text = "";
@@ -388,6 +409,17 @@ namespace Proyecto.Cliente
         private void comboBoxEstC_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void limpiarCampos()
+        {
+            cedActCliente.Text = "";
+            nomActCliente.Text = "";
+            telActCliente.Text = "";
+            dirActCliente.Text = "";
+            RUCActCliente.Text = "";
+            correoActCliente.Text = "";
+            comboBoxEstC.SelectedItem = "";
         }
     }
 }
