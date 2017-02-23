@@ -90,6 +90,7 @@ namespace Proyecto.Cliente
                         conexion.command.ExecuteNonQuery();
                         conexion.command.Dispose();
                         MessageBox.Show("El cliente se agregó correctamente", "Cliente Agregado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        btnNuevoAgrCliente.PerformClick();
                     }
                             
             }
