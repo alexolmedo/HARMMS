@@ -296,7 +296,7 @@ namespace Proyecto.Cliente
             {
                 if (txtTelAgrCliente.Text.Length == 8 || txtTelAgrCliente.Text.Length < 7 || txtTelAgrCliente.Text.Length > 10|| !System.Text.RegularExpressions.Regex.IsMatch(txtTelAgrCliente.Text, "^[0-9]{7,10}$"))
                 {
-                    MessageBox.Show("El telefono no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("El teléfono no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     txtTelAgrCliente.Text = "";
                 }
             }
