@@ -289,8 +289,8 @@
             // 
             this.cbHabilitado.FormattingEnabled = true;
             this.cbHabilitado.Items.AddRange(new object[] {
-            "Si",
-            "No"});
+            "Habilitada",
+            "Deshabilitada"});
             this.cbHabilitado.Location = new System.Drawing.Point(446, 15);
             this.cbHabilitado.Name = "cbHabilitado";
             this.cbHabilitado.Size = new System.Drawing.Size(102, 21);
@@ -316,6 +316,7 @@
             this.button2.Text = "Modificar";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button7
             // 

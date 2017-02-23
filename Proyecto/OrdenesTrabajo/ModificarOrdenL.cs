@@ -56,6 +56,54 @@ namespace Proyecto.OrdenesTrabajo
 
         private void button1_Click(object sender, EventArgs e)
         {
+            String strquery = "";
+
+            strquery = "select [NUM_ORDENTRABAJO],[CI_CLIENTE],[TIPOORDENTRABAJO],CAST(FECHARECEP_REV AS DATE),CAST(FECHAENTREGA AS DATE),cast(HORAINICIOC as time(0)),[HABILITADA],[ESTADOOT],[DESCRIPCIONOT],[COSTOOT] from ordendetrabajo where num_ordentrabajo = " + txtOrdenLocal.Text + "";
+
+            conexion.command = new SqlCommand(strquery, conexion.connection);
+
+            da = new SqlDataAdapter();
+            da.SelectCommand = conexion.command;
+            dt = new DataTable();
+            da.Fill(dt);
+
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("La orden no está registrada", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            else
+            {
+                foreach (DataRow r in dt.Rows)
+                {
+                    txtCedulaLocal.Text = r[1].ToString();
+                    fechaEntrega.Value = DateTime.Parse(r[3].ToString());
+                    fechaRecepcion.Value = DateTime.Parse(r[4].ToString());
+                    if (r[6].ToString().Equals("H"))
+                    {
+                        cbHabilitado.SelectedItem = "Habilitada";
+                    }
+                    else
+                    {
+                        cbHabilitado.Text = "Deshabilitada";
+                    }
+
+                    if (r[7].ToString().Equals("E"))
+                    {
+                        cbEstado.Text = "Entregada";
+                    }
+                    else
+                    {
+                        cbEstado.Text = "No entregada";
+                    }
+
+                    txtDescripcionLocal.Text = r[8].ToString();
+                    txtCostoLocal.Text = r[9].ToString();
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
 
         }
     }

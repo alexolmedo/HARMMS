@@ -71,7 +71,6 @@ namespace Proyecto.OrdenesTrabajo
                 foreach (DataRow r in dt.Rows)
                 {
                     txtCedulaDomicilio.Text = r[1].ToString();
-                    //txtFechaDomicilio.Text = r[3].ToString();
                     fechaDomicilio.Value= DateTime.Parse(r[3].ToString());
                     horaDomicilio.Value = DateTime.Parse(r[5].ToString());
                     if (r[6].ToString().Equals("H"))
@@ -96,6 +95,11 @@ namespace Proyecto.OrdenesTrabajo
                     txtCostoDomicilio.Text = r[9].ToString();
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
