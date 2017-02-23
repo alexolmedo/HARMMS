@@ -34,7 +34,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.groupBoxDD = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.horaCita = new System.Windows.Forms.DateTimePicker();
             this.txtDescripcionDomicilio = new System.Windows.Forms.TextBox();
             this.txtCostoDomicilio = new System.Windows.Forms.TextBox();
             this.cbEstado = new System.Windows.Forms.ComboBox();
@@ -43,7 +43,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.fechaCita = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -167,7 +167,7 @@
             // 
             // groupBoxDD
             // 
-            this.groupBoxDD.Controls.Add(this.dateTimePicker3);
+            this.groupBoxDD.Controls.Add(this.horaCita);
             this.groupBoxDD.Controls.Add(this.txtDescripcionDomicilio);
             this.groupBoxDD.Controls.Add(this.txtCostoDomicilio);
             this.groupBoxDD.Controls.Add(this.cbEstado);
@@ -176,7 +176,7 @@
             this.groupBoxDD.Controls.Add(this.label14);
             this.groupBoxDD.Controls.Add(this.label15);
             this.groupBoxDD.Controls.Add(this.label16);
-            this.groupBoxDD.Controls.Add(this.dateTimePicker4);
+            this.groupBoxDD.Controls.Add(this.fechaCita);
             this.groupBoxDD.Controls.Add(this.label17);
             this.groupBoxDD.Controls.Add(this.label18);
             this.groupBoxDD.Location = new System.Drawing.Point(8, 165);
@@ -186,13 +186,15 @@
             this.groupBoxDD.TabStop = false;
             this.groupBoxDD.Text = "Detalle Orden de Trabajo";
             // 
-            // dateTimePicker3
+            // horaCita
             // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker3.Location = new System.Drawing.Point(487, 29);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(80, 20);
-            this.dateTimePicker3.TabIndex = 20;
+            this.horaCita.CustomFormat = "HH:mm";
+            this.horaCita.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.horaCita.Location = new System.Drawing.Point(487, 29);
+            this.horaCita.Name = "horaCita";
+            this.horaCita.ShowUpDown = true;
+            this.horaCita.Size = new System.Drawing.Size(80, 20);
+            this.horaCita.TabIndex = 20;
             // 
             // txtDescripcionDomicilio
             // 
@@ -264,12 +266,12 @@
             this.label16.TabIndex = 10;
             this.label16.Text = "Descripción";
             // 
-            // dateTimePicker4
+            // fechaCita
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(145, 26);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(199, 20);
-            this.dateTimePicker4.TabIndex = 7;
+            this.fechaCita.Location = new System.Drawing.Point(145, 26);
+            this.fechaCita.Name = "fechaCita";
+            this.fechaCita.Size = new System.Drawing.Size(199, 20);
+            this.fechaCita.TabIndex = 7;
             // 
             // label17
             // 
@@ -746,7 +748,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.GroupBox groupBoxDD;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker horaCita;
         private System.Windows.Forms.TextBox txtDescripcionDomicilio;
         private System.Windows.Forms.TextBox txtCostoDomicilio;
         private System.Windows.Forms.ComboBox cbEstado;
@@ -755,7 +757,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.DateTimePicker fechaCita;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;

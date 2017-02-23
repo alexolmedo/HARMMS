@@ -207,6 +207,7 @@ namespace Proyecto.OrdenesTrabajo
             txtDescripcionDomicilio.Text = "";
             txtCostoDomicilio.Text = "";
             txtCedulaDomicilio.Text = "";
+            colocarNumOT();
         }
 
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
@@ -217,7 +218,13 @@ namespace Proyecto.OrdenesTrabajo
 
         private void button9_Click(object sender, EventArgs e)
         {
-
+            string sql = "INSERT INTO ordendetrabajo VALUES (" + txtNumDomicilio.Text + ",'" + txtCedulaDomicilio.Text + "','D','" + fechaCita.Value.Date.ToString("yyyyMMdd") + "',null,'" + horaCita.Value.TimeOfDay.ToString(@"hh\:mm")+ "','H','" + cbEstado.SelectedItem.ToString()[0]+"','"+txtDescripcionDomicilio.Text+"',"+txtCostoDomicilio.Text+")";
+            Console.WriteLine(sql);
+            conexion.command = new SqlCommand(sql, conexion.connection);
+            conexion.command.ExecuteNonQuery();
+            conexion.command.Dispose();
+            MessageBox.Show("La orden se agregó correctamente", "Cliente Agregada", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            button8.PerformClick();
         }
 
         private String numOTAnterior()
