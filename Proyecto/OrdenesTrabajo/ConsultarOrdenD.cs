@@ -23,11 +23,6 @@ namespace Proyecto.OrdenesTrabajo
             autocompletarOrdenDomicilio();
         }
 
-        private void ConsultarOrden_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button7_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -59,7 +54,6 @@ namespace Proyecto.OrdenesTrabajo
             String strquery = "";
 
             strquery = "select [NUM_ORDENTRABAJO],[CI_CLIENTE],[TIPOORDENTRABAJO],CAST(FECHARECEP_REV AS DATE),[FECHAENTREGA],cast(HORAINICIOC as time(0)),[HABILITADA],[ESTADOOT],[DESCRIPCIONOT],[COSTOOT] from ordendetrabajo where num_ordentrabajo = " + txtOrdenDomicilio.Text + "";
-
 
             conexion.command = new SqlCommand(strquery, conexion.connection);
 

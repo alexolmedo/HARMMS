@@ -340,7 +340,6 @@
             this.Controls.Add(this.txtOrdenDomicilio);
             this.Name = "ConsultarOrdenD";
             this.Text = "Consultar Orden a Domicilio";
-            this.Load += new System.EventHandler(this.ConsultarOrden_Load);
             this.groupBoxDD.ResumeLayout(false);
             this.groupBoxDD.PerformLayout();
             this.groupBox4.ResumeLayout(false);
