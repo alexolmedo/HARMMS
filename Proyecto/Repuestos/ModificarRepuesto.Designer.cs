@@ -102,6 +102,7 @@
             this.textBoxNumSerie.ReadOnly = true;
             this.textBoxNumSerie.Size = new System.Drawing.Size(187, 20);
             this.textBoxNumSerie.TabIndex = 3;
+            this.textBoxNumSerie.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNumSerie_KeyPress);
             // 
             // textBoxModelo
             // 
@@ -221,6 +222,7 @@
             this.textNumSer.Location = new System.Drawing.Point(389, 31);
             this.textNumSer.MaxLength = 15;
             this.textNumSer.Name = "textNumSer";
+            this.textNumSer.ReadOnly = true;
             this.textNumSer.Size = new System.Drawing.Size(137, 20);
             this.textNumSer.TabIndex = 19;
             this.textNumSer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textNumSer_KeyPress);

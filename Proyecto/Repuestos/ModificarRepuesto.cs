@@ -54,13 +54,30 @@ namespace Proyecto.Repuestos
 
                 if (radioButModelo.Checked)
                 {
-                    strquery3 = "Select * from producto where modelo = '" + textBoxModelo.Text + "' and tiempousoelec is null";
+                    if (textBoxModelo.Text == "")
+                    {
 
+                        MessageBox.Show("No ha ingresado el modelo del repuesto a buscar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        limpiarCampos();
+                    }
+                    else
+                    {
+                        strquery3 = "Select * from producto where modelo = '" + textBoxModelo.Text + "' and tiempousoelec is null";
+                    }
                 }
 
                 if (radioButNumSerie.Checked)
                 {
-                    strquery3 = "Select * from producto where numSerie = " + textBoxNumSerie.Text + "and tiempousoelec is null";
+                    if (textBoxNumSerie.Text == "")
+                    {
+
+                        MessageBox.Show("No ha ingresado el código del repuesto a buscar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        limpiarCampos();
+                    }
+                    else
+                    {
+                        strquery3 = "Select * from producto where numSerie = '" + textBoxNumSerie.Text + "' and tiempousoelec is null";
+                    }
                 }
 
                 conexion.command = new SqlCommand(strquery3, conexion.connection);
@@ -73,17 +90,26 @@ namespace Proyecto.Repuestos
                 //refresca las filas segun el rango especificado en el datasource. 
                 da.Fill(dt);
 
-                foreach (DataRow r in dt.Rows)
+                if (dt.Rows.Count == 0)
                 {
-                    //obtiene todas las filas de una columna
-                    textNombre.Text = r[0].ToString();
-                    textModelo.Text = r[1].ToString();
+                    MessageBox.Show("El repuesto no está registrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    limpiarCampos();
+                }
+                else
+                {
 
-                    textPrCompra.Text = cambiarComaPorPunto(r[4].ToString());
-                    textPrVenta.Text = cambiarComaPorPunto(r[5].ToString());
-                    textNumSer.Text = r[3].ToString();
-                    textCant.Text = r[9].ToString();
-                    cBEstado.SelectedItem = r [6].ToString();
+                    foreach (DataRow r in dt.Rows)
+                    {
+                        //obtiene todas las filas de una columna
+                        textNombre.Text = r[0].ToString();
+                        textModelo.Text = r[1].ToString();
+
+                        textPrCompra.Text = cambiarComaPorPunto(r[4].ToString());
+                        textPrVenta.Text = cambiarComaPorPunto(r[5].ToString());
+                        textNumSer.Text = r[3].ToString();
+                        textCant.Text = r[9].ToString();
+                        cBEstado.SelectedItem = r[6].ToString();
+                    }
                 }
 
             }
@@ -105,15 +131,23 @@ namespace Proyecto.Repuestos
 
                 if (dr == DialogResult.Yes)
                 {
-                    string sql = "Update producto set nombre = '" + textNombre.Text + "', modelo ='" + textModelo.Text + "', precioCompra=" + textPrCompra.Text +
-                        ",precioVenta=" + textPrVenta.Text + ",numserie='" + Double.Parse(textNumSer.Text) + "', cantidad =" + textCant.Text + ", estadoprod ='" + cBEstado.SelectedItem
-                        + "' where numSerie = '" + textNumSer.Text + "'";
-                    Console.WriteLine(sql);
+                    if (textNombre.Text.Equals("") || textModelo.Text.Equals("") || textNumSer.Text.Equals("") || textPrCompra.Text.Equals("") || textPrVenta.Text.Equals("") || textCant.Text.Equals(""))            
+                    {                
+                        MessageBox.Show("Todos los campos son obligatorios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);          
+                    }
 
-                    conexion.command = new SqlCommand(sql, conexion.connection);
-                    conexion.command.ExecuteNonQuery();
-                    conexion.command.Dispose();
-                    MessageBox.Show("El repuesto se modificó correctamente", "Repuesto Modificado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    else if (!textNombre.Text.Equals("") ||!textModelo.Text.Equals("") || !textNumSer.Text.Equals("") || !textPrCompra.Text.Equals("") || !textPrVenta.Text.Equals("") || !textCant.Text.Equals(""))            
+                    {
+                        string sql = "Update producto set nombre = '" + textNombre.Text + "', modelo ='" + textModelo.Text + "', precioCompra=" + textPrCompra.Text +
+                            ",precioVenta=" + textPrVenta.Text + ",numserie='" + Double.Parse(textNumSer.Text) + "', cantidad =" + textCant.Text + ", estadoprod ='" + cBEstado.SelectedItem
+                            + "' where numSerie = '" + textNumSer.Text + "'";
+                        Console.WriteLine(sql);
+
+                        conexion.command = new SqlCommand(sql, conexion.connection);
+                        conexion.command.ExecuteNonQuery();
+                        conexion.command.Dispose();
+                        MessageBox.Show("El repuesto se modificó correctamente", "Repuesto Modificado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
                 }
             }
             catch (Exception ex)
@@ -161,9 +195,29 @@ namespace Proyecto.Repuestos
         {
             if (textNumSer.Text.Length > 15)
             {
-                MessageBox.Show("El código es muy extenso\nSe acptan hasta 15 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("El código es muy extenso\nSe aceptan hasta 15 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 textNumSer.Text = "";
             }
+
+            /*string strquery1 = "Select numserie from producto";
+            conexion.command = new SqlCommand(strquery1, conexion.connection);
+
+            da = new SqlDataAdapter();
+            //fetching query in the database.
+            da.SelectCommand = conexion.command;
+            //inicializar nueva datatable
+            dt = new DataTable();
+            //refresca las filas segun el rango especificado en el datasource. 
+            da.Fill(dt);
+
+            foreach (DataRow r in dt.Rows)
+            {
+                if (r[0].ToString().Equals(textNumSer.Text))
+                {
+                    MessageBox.Show("El código ya se encuentra registrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    textNumSer.Text = "";
+                }
+            }*/
         }
 
         private void textNumSer_KeyPress(object sender, KeyPressEventArgs e)
@@ -337,6 +391,36 @@ namespace Proyecto.Repuestos
             }
         }
 
+        private void limpiarCampos()
+        {
+            textNombre.Text = "";
+            textModelo.Text = "";
 
+            textPrCompra.Text = "";
+            textPrVenta.Text = "";
+            textNumSer.Text = "";
+            textCant.Text = "";
+            cBEstado.SelectedItem = "";
+        }
+
+        private void textBoxNumSerie_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
