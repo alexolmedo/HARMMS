@@ -14,6 +14,8 @@ namespace Proyecto.GestionElectrodomesticos
     public partial class IngresarCompra : Form
     {
         Conexion conexion = new Conexion();
+        SqlDataAdapter da;
+        DataTable dt;
 
         public IngresarCompra()
         {
@@ -55,6 +57,7 @@ namespace Proyecto.GestionElectrodomesticos
                 conexion.command.ExecuteNonQuery();
                 conexion.command.Dispose();
                 MessageBox.Show("El electrodoméstico se agregó correctamente", "Electrodoméstico Agregado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                butNuevo.PerformClick();
             }
         }
 
@@ -148,8 +151,28 @@ namespace Proyecto.GestionElectrodomesticos
         {
             if (txtNumSer.Text.Length > 15) {
 
-                MessageBox.Show("El nombre el muy extenso\n Se aceptan hasta 15 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("El número de serie es muy extenso\n Se aceptan hasta 15 caracteres", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 txtNumSer.Text = "";
+            }
+
+            string strquery1 = "Select numserie from producto";
+            conexion.command = new SqlCommand(strquery1, conexion.connection);
+
+            da = new SqlDataAdapter();
+            //fetching query in the database.
+            da.SelectCommand = conexion.command;
+            //inicializar nueva datatable
+            dt = new DataTable();
+            //refresca las filas segun el rango especificado en el datasource. 
+            da.Fill(dt);
+
+            foreach (DataRow r in dt.Rows)
+            {
+                if (r[0].ToString().Equals(txtNumSer.Text))
+                {
+                    MessageBox.Show("El número de serie ya se encuentra registrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    txtNumSer.Text = "";
+                }
             }
         }
 
@@ -203,7 +226,6 @@ namespace Proyecto.GestionElectrodomesticos
             {
                 e.Handled = true;
             }
-
         }
 
         private void txtDueñoAnt_KeyPress(object sender, KeyPressEventArgs e)

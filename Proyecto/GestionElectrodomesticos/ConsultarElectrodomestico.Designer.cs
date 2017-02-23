@@ -92,6 +92,7 @@
             this.txtPorNumSer.ReadOnly = true;
             this.txtPorNumSer.Size = new System.Drawing.Size(184, 20);
             this.txtPorNumSer.TabIndex = 3;
+            this.txtPorNumSer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorNumSer_KeyPress);
             // 
             // butBuscar
             // 

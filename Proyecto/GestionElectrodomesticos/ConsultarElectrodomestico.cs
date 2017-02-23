@@ -25,26 +25,20 @@ namespace Proyecto.GestionElectrodomesticos
             autoCompletarNumeroSerie();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             txtPorModelo.ReadOnly = false;
             txtPorNumSer.ReadOnly = true;
+            txtPorModelo.Text = "";
+            txtPorNumSer.Text = "";
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             txtPorModelo.ReadOnly = true;
             txtPorNumSer.ReadOnly = false;
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
+            txtPorModelo.Text = "";
+            txtPorNumSer.Text = "";
         }
 
         private void btnCerrarAgrCliente_Click(object sender, EventArgs e)
@@ -56,33 +50,50 @@ namespace Proyecto.GestionElectrodomesticos
         {
             txtPorNumSer.ReadOnly = true;
             txtPorModelo.ReadOnly = false;
+            txtPorNumSer.Text = "";
+            txtPorModelo.Text = "";
         }
 
         private void radioButNumSerie_CheckedChanged(object sender, EventArgs e)
         {
             txtPorModelo.ReadOnly = true;
             txtPorNumSer.ReadOnly = false;
+            txtPorNumSer.Text = "";
+            txtPorModelo.Text = "";
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             try
             {
-                /*if (txtCedula.Text.Equals("") || txtNombre.Text.Equals(""))
-                {
-                    MessageBox.Show("No se puede realizar la busqueda\nLlene los campos de busqueda", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                }*/
-
                 string strquery3 = "";
 
                 if (radioButModelo.Checked)
                 {
-                    strquery3 = "Select * from producto where modelo = '" + txtPorModelo.Text + "' and cantidad is null";
+                    if (txtPorModelo.Text == "")
+                    {
+
+                        MessageBox.Show("No ha ingresado el modelo del electrodoméstico a buscar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        limpiarCampos();
+                    }
+                    else
+                    {
+                        strquery3 = "Select * from producto where modelo = '" + txtPorModelo.Text + "' and cantidad is null";
+                    }
                 }
 
                 if (radioButNumSerie.Checked)
                 {
-                    strquery3 = "Select * from producto where numSerie = " + txtPorNumSer.Text + " and cantidad is null";
+                    if (txtPorNumSer.Text == "")
+                    {
+
+                        MessageBox.Show("No ha ingresado el número de serie del electrodoméstico a buscar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        limpiarCampos();
+                    }
+                    else
+                    {
+                        strquery3 = "Select * from producto where numSerie = '" + txtPorNumSer.Text + "' and cantidad is null";
+                    }
                 }
 
                 conexion.command = new SqlCommand(strquery3, conexion.connection);
@@ -95,18 +106,27 @@ namespace Proyecto.GestionElectrodomesticos
                 //refresca las filas segun el rango especificado en el datasource. 
                 da.Fill(dt);
 
-                foreach (DataRow r in dt.Rows)
+
+                if (dt.Rows.Count == 0)
                 {
-                    //obtiene todas las filas de una columna
-                    txtNombre.Text = r[0].ToString();
-                    txtModelo.Text = r[1].ToString();
-                    textTiempoUso.Text = r[2].ToString();
-                    txtNumSer.Text = r[3].ToString();
-                    txtPrCompra.Text = r[4].ToString();
-                    textPrVenta.Text = r[5].ToString();
-                    textEstado.Text = r[6].ToString();
-                    txtPropAnterior.Text = r[7].ToString();
-                    textContacto.Text = r[8].ToString();
+                    MessageBox.Show("El electrodoméstico no está registrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    limpiarCampos();
+                }
+                else
+                {
+                    foreach (DataRow r in dt.Rows)
+                    {
+                        //obtiene todas las filas de una columna
+                        txtNombre.Text = r[0].ToString();
+                        txtModelo.Text = r[1].ToString();
+                        textTiempoUso.Text = r[2].ToString();
+                        txtNumSer.Text = r[3].ToString();
+                        txtPrCompra.Text = r[4].ToString();
+                        textPrVenta.Text = r[5].ToString();
+                        textEstado.Text = r[6].ToString();
+                        txtPropAnterior.Text = r[7].ToString();
+                        textContacto.Text = r[8].ToString();
+                    }
                 }
 
             }
@@ -171,6 +191,39 @@ namespace Proyecto.GestionElectrodomesticos
                 txtPorNumSer.AutoCompleteCustomSource.Add(rw);
             }
         
+        }
+
+        private void limpiarCampos()
+        {
+            txtNombre.Text = "";
+            txtModelo.Text = "";
+            textTiempoUso.Text = "";
+            txtNumSer.Text = "";
+            txtPrCompra.Text = "";
+            textPrVenta.Text = "";
+            textEstado.Text = "";
+            txtPropAnterior.Text = "";
+            textContacto.Text = "";
+        }
+
+        private void txtPorNumSer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

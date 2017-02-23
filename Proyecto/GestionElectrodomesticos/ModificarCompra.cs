@@ -25,60 +25,26 @@ namespace Proyecto.GestionElectrodomesticos
             autoCompletarNumeroSerie();
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            txtPorModelo.ReadOnly = false;
-            txtPorNumSer.ReadOnly = true;
-        }
-
-        private void radioButton2_CheckedChanged_1(object sender, EventArgs e)
-        {
-            txtPorModelo.ReadOnly = true;
-            txtPorNumSer.ReadOnly = false;
-        }
-
-        private void radioButton4_CheckedChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCerrarAgrCliente_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void radioButModelo_CheckedChanged(object sender, EventArgs e)
         {
             txtPorNumSer.ReadOnly = true;
             txtPorModelo.ReadOnly = false;
+            txtPorNumSer.Text = "";
+            txtPorModelo.Text = "";
         }
 
         private void radioButNumSerie_CheckedChanged(object sender, EventArgs e)
         {
             txtPorModelo.ReadOnly = true;
             txtPorNumSer.ReadOnly = false;
+            txtPorNumSer.Text = "";
+            txtPorModelo.Text = "";
         }
-
 
         private void autoCompletarModelo()
         {
@@ -142,21 +108,36 @@ namespace Proyecto.GestionElectrodomesticos
         {
             try
             {
-                /*if (txtCedula.Text.Equals("") || txtNombre.Text.Equals(""))
-                {
-                    MessageBox.Show("No se puede realizar la busqueda\nLlene los campos de busqueda", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                }*/
 
                 string strquery3 = "";
 
                 if (radioButModelo.Checked)
                 {
-                    strquery3 = "Select * from producto where modelo = '" + txtPorModelo.Text + "' and cantidad is null";
+
+                    if (txtPorModelo.Text == "")
+                    {
+
+                        MessageBox.Show("No ha ingresado el modelo del electrodoméstico a buscar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        limpiarCampos();
+                    }
+                    else {
+                    
+                        strquery3 = "Select * from producto where modelo = '" + txtPorModelo.Text + "' and cantidad is null";
+                    }
                 }
 
                 if (radioButNumSerie.Checked)
                 {
-                    strquery3 = "Select * from producto where numSerie = " + txtPorNumSer.Text + " and cantidad is null";
+                    if (txtPorNumSer.Text == "")
+                    {
+
+                        MessageBox.Show("No ha ingresado el número de serie del electrodoméstico a buscar", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        limpiarCampos();
+                    }
+                    else
+                    {
+                        strquery3 = "Select * from producto where numSerie = '" + txtPorNumSer.Text + "' and cantidad is null";
+                    }
                 }
 
                 conexion.command = new SqlCommand(strquery3, conexion.connection);
@@ -169,19 +150,27 @@ namespace Proyecto.GestionElectrodomesticos
                 //refresca las filas segun el rango especificado en el datasource. 
                 da.Fill(dt);
 
-                foreach (DataRow r in dt.Rows)
+                if (dt.Rows.Count == 0)
                 {
-                    //obtiene todas las filas de una columna
-                    txtNombre.Text = r[0].ToString();
-                    txtModelo.Text = r[1].ToString();
-                    cbAños.SelectedItem = ponertimpoUsoCBAños(Convert.ToInt32(r[2])).ToString();
-                    cbMeses.SelectedItem = ponertiempoUsoCBMese(Convert.ToInt32(r[2])).ToString();
-                    txtNumSer.Text = r[3].ToString();
-                    txtPrCompra.Text = r[4].ToString().Replace(",",".");
-                    textPrVenta.Text = r[5].ToString().Replace(",", ".");
-                    cbEstado.SelectedItem = r[6].ToString();
-                    txtDueñoAnt.Text = r[7].ToString();
-                    textContacto.Text = r[8].ToString();
+                    MessageBox.Show("El electrodoméstico no está registrado", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    limpiarCampos();
+                }
+                else
+                {
+                    foreach (DataRow r in dt.Rows)
+                    {
+                        //obtiene todas las filas de una columna
+                        txtNombre.Text = r[0].ToString();
+                        txtModelo.Text = r[1].ToString();
+                        cbAños.SelectedItem = ponertimpoUsoCBAños(Convert.ToInt32(r[2])).ToString();
+                        cbMeses.SelectedItem = ponertiempoUsoCBMese(Convert.ToInt32(r[2])).ToString();
+                        txtNumSer.Text = r[3].ToString();
+                        txtPrCompra.Text = r[4].ToString().Replace(",", ".");
+                        textPrVenta.Text = r[5].ToString().Replace(",", ".");
+                        cbEstado.SelectedItem = r[6].ToString();
+                        txtDueñoAnt.Text = r[7].ToString();
+                        textContacto.Text = r[8].ToString();
+                    }
                 }
 
             }
@@ -237,18 +226,34 @@ namespace Proyecto.GestionElectrodomesticos
 
                 if (dr == DialogResult.Yes)
                 {
-                    string sql = "Update producto set nombre = '" + txtNombre.Text + "', modelo ='" + txtModelo.Text + "', tiempousoelec = " + 
-                        pasCBs_Meses(cbAños.SelectedItem.ToString(), cbMeses.SelectedItem.ToString()) + ", numserie='" +
-                         txtNumSer.Text + "',precioCompra = " + txtPrCompra.Text + ", precioVenta=" + textPrVenta.Text + 
-                         ",estadoProd = '" + cbEstado.SelectedItem + "', propanterior = '" + txtDueñoAnt.Text + "', telefpropanterior ='" + textContacto.Text +
-                         "' where numSerie = '" + txtNumSer.Text + "'";
+                    if (txtNombre.Text.Equals("") || txtModelo.Text.Equals("") ||                 
+                    txtNumSer.Text.Equals("") || textPrVenta.Text.Equals("") || 
+                    txtPrCompra.Text.Equals("") || txtDueñoAnt.Text.Equals("") || 
+                    textContacto.Text.Equals("") || cbAños.SelectedItem.Equals("") || cbMeses.SelectedItem.Equals(""))            
+                    {
+                        MessageBox.Show("Datos Incompletos \n Todos los campos son obligatorios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
                     
-                    Console.WriteLine(sql);
+                    else if (!txtNombre.Text.Equals("") || !txtModelo.Text.Equals("") ||
+                        !txtNumSer.Text.Equals("") || !textPrVenta.Text.Equals("") ||
+                        !txtPrCompra.Text.Equals("") || !txtDueñoAnt.Text.Equals("") ||
+                        !textContacto.Text.Equals("") || !cbAños.SelectedItem.Equals("") || !cbMeses.SelectedItem.Equals(""))
+                    {
 
-                    conexion.command = new SqlCommand(sql, conexion.connection);
-                    conexion.command.ExecuteNonQuery();
-                    conexion.command.Dispose();
-                    MessageBox.Show("El electrodoméstico se modificó correctamente", "Electrodoméstico Modificado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        string sql = "Update producto set nombre = '" + txtNombre.Text + "', modelo ='" + txtModelo.Text + "', tiempousoelec = " +
+                            pasCBs_Meses(cbAños.SelectedItem.ToString(), cbMeses.SelectedItem.ToString()) + ", numserie='" +
+                             txtNumSer.Text + "',precioCompra = " + txtPrCompra.Text + ", precioVenta=" + textPrVenta.Text +
+                             ",estadoProd = '" + cbEstado.SelectedItem + "', propanterior = '" + txtDueñoAnt.Text + "', telefpropanterior ='" + textContacto.Text +
+                             "' where numSerie = '" + txtNumSer.Text + "'";
+
+                        Console.WriteLine(sql);
+
+                        conexion.command = new SqlCommand(sql, conexion.connection);
+                        conexion.command.ExecuteNonQuery();
+                        conexion.command.Dispose();
+                        MessageBox.Show("El electrodoméstico se modificó correctamente", "Electrodoméstico Modificado", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                    }
                 }
             }
             catch (Exception ex)
@@ -300,5 +305,174 @@ namespace Proyecto.GestionElectrodomesticos
             return mes;
         }
 
+        public void limpiarCampos()
+        {
+            txtNombre.Text = "";
+            txtModelo.Text = "";
+            cbAños.SelectedItem = "-";
+            cbMeses.SelectedItem = "-";           
+            txtNumSer.Text = "";
+            txtPrCompra.Text = "";
+            textPrVenta.Text = "";
+            cbEstado.Text = "";
+            txtDueñoAnt.Text = "";
+            textContacto.Text = "";
+        }
+
+        private void txtPorNumSer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPrCompra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPrCompra_Leave(object sender, EventArgs e)
+        {
+            if (txtPrCompra.Text != "")
+            {
+                if (!System.Text.RegularExpressions.Regex.IsMatch(txtPrCompra.Text, "^[0-9]{1,4}([.][0-9]{1,2})?$"))
+                {
+                    MessageBox.Show("El precio de compra no es válido\nSe puede ingresar hasta 4 números enteros y 2 decimales", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    txtPrCompra.Text = "";
+                }
+            }
+        }
+
+        private void textPrVenta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (e.KeyChar == '.')
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textPrVenta_Leave(object sender, EventArgs e)
+        {
+            if (txtPrCompra.Text != "")
+            {
+                if (!System.Text.RegularExpressions.Regex.IsMatch(txtPrCompra.Text, "^[0-9]{1,4}([.][0-9]{1,2})?$"))
+                {
+                    MessageBox.Show("El precio de venta no es válido\nSe puede ingresar hasta 4 números enteros y 2 decimales", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    txtPrCompra.Text = "";
+                }
+            }
+        }
+
+        private void txtDueñoAnt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textContacto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textContacto_Leave(object sender, EventArgs e)
+        {
+            if (textContacto.Text != "")
+            {
+                if (textContacto.Text.Length == 8 || textContacto.Text.Length < 7 || textContacto.Text.Length > 10 || !System.Text.RegularExpressions.Regex.IsMatch(textContacto.Text, "^[0-9]{7,10}$"))
+                {
+                    MessageBox.Show("El contacto (teléfono) del \npropietario anterior no es válido", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    textContacto.Text = "";
+                }
+            }
+        }
     }
 }

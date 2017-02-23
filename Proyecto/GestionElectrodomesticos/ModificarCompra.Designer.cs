@@ -81,6 +81,7 @@
             this.txtPorNumSer.ReadOnly = true;
             this.txtPorNumSer.Size = new System.Drawing.Size(184, 20);
             this.txtPorNumSer.TabIndex = 3;
+            this.txtPorNumSer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorNumSer_KeyPress);
             // 
             // butBuscar
             // 
@@ -154,7 +155,6 @@
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Electrodoméstico Usado";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // cbEstado
             // 
@@ -182,9 +182,12 @@
             // textContacto
             // 
             this.textContacto.Location = new System.Drawing.Point(415, 116);
+            this.textContacto.MaxLength = 10;
             this.textContacto.Name = "textContacto";
             this.textContacto.Size = new System.Drawing.Size(140, 20);
             this.textContacto.TabIndex = 70;
+            this.textContacto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textContacto_KeyPress);
+            this.textContacto.Leave += new System.EventHandler(this.textContacto_Leave);
             // 
             // label8
             // 
@@ -198,9 +201,12 @@
             // textPrVenta
             // 
             this.textPrVenta.Location = new System.Drawing.Point(121, 143);
+            this.textPrVenta.MaxLength = 7;
             this.textPrVenta.Name = "textPrVenta";
             this.textPrVenta.Size = new System.Drawing.Size(140, 20);
             this.textPrVenta.TabIndex = 68;
+            this.textPrVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPrVenta_KeyPress);
+            this.textPrVenta.Leave += new System.EventHandler(this.textPrVenta_Leave);
             // 
             // label7
             // 
@@ -226,8 +232,7 @@
             "8 meses",
             "9 meses",
             "10 meses",
-            "11 meses",
-            "12 meses"});
+            "11 meses"});
             this.cbMeses.Location = new System.Drawing.Point(480, 32);
             this.cbMeses.Name = "cbMeses";
             this.cbMeses.Size = new System.Drawing.Size(75, 21);
@@ -242,7 +247,12 @@
             "2 Años",
             "3 Años",
             "4 Años",
-            "5 Años"});
+            "5 Años",
+            "6 Años",
+            "7 Años",
+            "8 Años",
+            "9 Años",
+            "10 Años"});
             this.cbAños.Location = new System.Drawing.Point(415, 32);
             this.cbAños.Name = "cbAños";
             this.cbAños.Size = new System.Drawing.Size(59, 21);
@@ -260,27 +270,34 @@
             // txtDueñoAnt
             // 
             this.txtDueñoAnt.Location = new System.Drawing.Point(415, 88);
+            this.txtDueñoAnt.MaxLength = 60;
             this.txtDueñoAnt.Name = "txtDueñoAnt";
             this.txtDueñoAnt.Size = new System.Drawing.Size(140, 20);
             this.txtDueñoAnt.TabIndex = 63;
+            this.txtDueñoAnt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDueñoAnt_KeyPress);
             // 
             // txtPrCompra
             // 
             this.txtPrCompra.Location = new System.Drawing.Point(121, 116);
+            this.txtPrCompra.MaxLength = 7;
             this.txtPrCompra.Name = "txtPrCompra";
             this.txtPrCompra.Size = new System.Drawing.Size(140, 20);
             this.txtPrCompra.TabIndex = 62;
+            this.txtPrCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrCompra_KeyPress);
+            this.txtPrCompra.Leave += new System.EventHandler(this.txtPrCompra_Leave);
             // 
             // txtNumSer
             // 
             this.txtNumSer.Location = new System.Drawing.Point(121, 88);
             this.txtNumSer.Name = "txtNumSer";
+            this.txtNumSer.ReadOnly = true;
             this.txtNumSer.Size = new System.Drawing.Size(140, 20);
             this.txtNumSer.TabIndex = 61;
             // 
             // txtModelo
             // 
             this.txtModelo.Location = new System.Drawing.Point(121, 62);
+            this.txtModelo.MaxLength = 30;
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(434, 20);
             this.txtModelo.TabIndex = 60;
@@ -288,9 +305,11 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(121, 33);
+            this.txtNombre.MaxLength = 20;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(140, 20);
             this.txtNombre.TabIndex = 59;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label5
             // 
